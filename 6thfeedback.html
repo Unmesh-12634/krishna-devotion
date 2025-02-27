@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta property="og:image" content="https://yourwebsite.com/images/pic3.jpg">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feedback - Krishna Devotion</title>
+    <style>
+        body { background: linear-gradient(to bottom, #e0f7fa, #80deea);font-family: 'Arial', sans-serif; text-align: center; margin: 0; padding: 0;  }
+
+        .navbar {display: flex; justify-content: center; background: #ff6600;padding: 10px; position: sticky; top: 0; z-index: 1000; }
+        .navbar a {text-decoration: none; color: white; padding: 10px 20px; font-size: 18px;font-weight: bold;transition: background 0.3s ease-in-out; }
+        .navbar a:hover { background: #e65c00; border-radius: 5px; }
+        marquee { font-size: 20px; color: #ff6600; font-weight: bold; animation: glow 2s infinite alternate; }
+      
+
+        h1 { color: white;background: linear-gradient(to right, #ff6600, #ffcc00);padding: 15px;border-radius: 10px; display: inline-block;margin-top: 20px; }
+
+        .form-container { width: 90%; max-width: 700px; margin: 20px auto; background: rgba(255, 255, 255, 0.9); padding: 20px; border-radius: 10px; box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); }
+
+        footer {
+            margin-top: 30px;
+            padding: 15px;
+            background: rgba(0, 0, 0, 0.2);
+            color: white;
+            font-size: 16px;
+            border-radius: 10px;
+        }
+        .hamburger { display: none; flex-direction: column; cursor: pointer; position: absolute; left: 20px; top: 15px; }
+        .hamburger div { width: 20px; height: 2px; background: rgb(0, 0, 0); margin: 5px 0; transition: 0.4s; }
+        .mobile-nav { position: fixed; top: 0; left: -100%; width: 250px; height: 100vh; background: rgba(255, 102, 0, 0.9); padding: 20px; transition: 0.3s ease-in-out; }
+        .mobile-nav a { display: block; text-decoration: none; color: white; font-size: 20px; padding: 10px 0; }
+        .mobile-nav a:hover { background: #e65c00; }
+        .mobile-nav.open { left: 0; }
+        @media screen and (max-width: 768px) {
+            .nav-links { display: none; }
+            .hamburger { display: flex; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="hamburger" onclick="toggleMenu()">
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+    <div class="mobile-nav" id="mobileNav">
+        <a href="index.html">Home</a>
+        <a href="2nd.html">Krishna Pictures</a>
+        <a href="3rd.html">Krishna Songs</a>
+        <a href="4th.html">Shree Krishna Names</a>
+        <a href="5th.html">Krishna Shlokas</a>
+        <a href="7thqueots.html">Daily Krishna Says</a>
+        <a href="8th.html">Stories</a>
+        <a href="6thfeedback.html">Feedback</a>
+        <a href="creator.html">About Creator</a>
+    </div>
+    <div class="navbar">
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="2nd.html">Krishna Pictures</a>
+            <a href="3rd.html">Krishna Songs</a>
+            <a href="4th.html">Shree Krishna Names</a>
+            <a href="5th.html">Krishna Shlokas</a>
+            <a href="7thqueots.html">Daily Krishna Says</a>
+            <a href="8th.html">Stories</a>
+            <a href="6thfeedback.html">Feedback</a>
+            <a href="creator.html">About Creator</a>
+        </div>
+    </div>
+    <script>
+        function toggleMenu() {
+            var mobileNav = document.getElementById("mobileNav");
+            if (mobileNav.classList.contains("open")) {
+                mobileNav.classList.remove("open");
+            } else {
+                mobileNav.classList.add("open");
+            }
+        }
+        document.addEventListener("click", function(event) {
+            var mobileNav = document.getElementById("mobileNav");
+            var hamburger = document.querySelector(".hamburger");
+            if (!mobileNav.contains(event.target) && !hamburger.contains(event.target)) {
+                mobileNav.classList.remove("open");
+            }
+        });
+    </script>
+
+    <h1>💬 Share Your Feedback</h1>
+    
+    <div class="form-container">
+        <p>We value your thoughts! Please share your feedback to help us improve. 🙏✨</p>
+        <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdI6rKDr-_bWcoE-vHoGxFSkYF6TWGxMrymyymmAHu36LIcGA/viewform" 
+                width="100%" height="600px" frameborder="0" marginheight="0" marginwidth="0">
+            Loading…
+        </iframe>
+    </div>
+    <h2>📲 Connect With Me</h2>
+    <p>Follow me for updates, new content, and Krishna devotion! 🙏✨</p>
+    
+    
+    <div class="social-links">
+        <a href="https://www.youtube.com/channel/UC9qr5anLvw3DBXLvgvvwUMQ" target="_blank">
+            <img src="https://cdn-icons-png.flaticon.com/512/1384/1384060.png" alt="YouTube" width="30">
+        </a>
+        <a href="https://www.instagram.com/unmesh12634?igsh=MWNkcTNodTBjNnZ1MA%3D%3D&fbclid=PAZXh0bgNhZW0CMTEAAaZKyYCKXTDO7csJfcR8n4VODb25SJe4dz1C57qAE2Yq3A58_papCdSfyZc_aem_JFuwBIy2OUpn-TjQ4-DUMw" target="_blank">
+            <img src="https://cdn-icons-png.flaticon.com/512/1384/1384063.png" alt="Instagram" width="30">
+        </a>
+        <a href="mailto:unmeshjoshi083@gmail.com">
+            <img src="https://cdn-icons-png.flaticon.com/512/732/732200.png" alt="Email" width="30">
+        </a>
+    </div>
+    <marquee><h3>  कृष्णाय वासुदेवाय हरये परमात्मने।   प्रणतः क्लेशनाशाय गोविंदाय नमो नमः॥...कृष्णाय वासुदेवाय हरये परमात्मने।  प्रणतः क्लेशनाशाय गोविंदाय नमो नमः॥...</h3></marquee>
+  
+
+    <footer>
+        <p>&copy; 2025 Radhe Krishna Devotion. All Rights Reserved.</p>
+    </footer>
+
+</body>
+</html>

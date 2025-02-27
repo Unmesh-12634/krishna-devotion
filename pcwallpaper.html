@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta property="og:image" content="https://yourwebsite.com/images/pic3.jpg">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Krishna Pictures & Wallpapers</title>
+    <style>
+        h1 { color: #fb8f02; font-family: 'Great Vibes', cursive; }
+        body { background-color: rgb(191, 241, 241); font-family: Arial, sans-serif; text-align: center; margin: 0; padding: 0; }
+        h1, h2, h3 { text-align: center; margin: 10px 0; }
+        hr { margin: 20px 0; }
+        .navbar {display: flex; flex-wrap: wrap; justify-content: center; background: #ff6600; padding: 10px; position: sticky; top: 0; z-index: 1000; }
+        .navbar a {text-decoration: none; color: white; padding: 10px 20px; font-size: 18px; font-weight: bold; transition: background 0.3s ease-in-out; }
+        .navbar a:hover { background: #e65c00; border-radius: 5px; }
+        .gallery-container { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; padding: 20px; justify-content: center; }
+        .gallery-item { position: relative; overflow: hidden; border-radius: 10px; box-shadow: 0px 4px 8px rgba(0,0,0,0.3); transition: transform 0.3s; }
+        .gallery-item img { width: 200%; height: 300px; object-fit: cover; border-radius: 10px; }
+        .gallery-item:hover { transform: scale(1.05); }
+        .download-link { display: block; margin-top: 5px; font-size: 14px; color: #ff6600; text-decoration: none; font-weight: bold; }
+        .center { text-align: center; }
+        .social-links { margin-top: 20px; }
+        marquee { font-size: 20px; color: #ff6600; font-weight: bold; animation: glow 5s infinite alternate; }
+        .pinterest-board { margin: 40px auto; text-align: center; }
+
+        @media screen and (max-width: 768px) {.navbar a { padding: 5px 10px; font-size: 16px; }.gallery-container { padding: 10px; gap: 10px; }.gallery-item img { height: 200px; }h1, h2, h3 { margin: 5px 0; }}
+
+        @media screen and (max-width: 480px) {.navbar a { padding: 3px 8px; font-size: 14px; }.gallery-container { grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); padding: 5px; gap: 5px; }.gallery-item img { height: 150px; } h1, h2, h3 { margin: 5px 0; } marquee { font-size: 18px; } }
+        .hamburger { display: none; flex-direction: column; cursor: pointer; position: absolute; left: 20px; top: 15px; }
+        .hamburger div { width: 20px; height: 2px; background: rgb(0, 0, 0); margin: 5px 0; transition: 0.4s; }
+        .mobile-nav { position: fixed; top: 0; left: -100%; width: 250px; height: 100vh; background: rgba(255, 102, 0, 0.9); padding: 20px; transition: 0.3s ease-in-out; }
+        .mobile-nav a { display: block; text-decoration: none; color: white; font-size: 20px; padding: 10px 0; }
+        .mobile-nav a:hover { background: #e65c00; }
+        .mobile-nav.open { left: 0; }
+        @media screen and (max-width: 768px) {.nav-links { display: none; }.hamburger { display: flex; } }
+        @media screen and (max-width: 768px) {
+  body { font-size: 16px; }
+  img { max-width: 100%; height: auto; }
+  @media screen and (max-width: 768px) {
+  body { font-size: 16px; }
+  img { max-width: 100%; height: auto; }}
+}
+    </style>
+    <title>Radha Krishna Gallery - Divine Images & Wallpapers</title>
+    <meta name="description" content="Browse beautiful Radha Krishna images, divine wallpapers, and artistic illustrations.">
+    <meta name="keywords" content="Radha Krishna images, Krishna wallpapers, Radha Krishna art, Hindu spirituality">
+    
+</head>
+<body>
+    <div class="hamburger" onclick="toggleMenu()">
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+    <div class="mobile-nav" id="mobileNav">
+        <a href="index.html">Home</a>
+        <a href="2nd.html">Krishna Pictures</a>
+        <a href="3rd.html">Krishna Songs</a>
+        <a href="4th.html">Shree Krishna Names</a>
+        <a href="5th.html">Krishna Shlokas</a>
+        <a href="7thqueots.html">Daily Krishna Says</a>
+        <a href="8th.html">Stories</a>
+        <a href="6thfeedback.html">Feedback</a>
+        <a href="creator.html">About Creator</a>
+    </div>
+    <div class="navbar">
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="2nd.html">Krishna Pictures</a>
+            <a href="3rd.html">Krishna Songs</a>
+            <a href="4th.html">Shree Krishna Names</a>
+            <a href="5th.html">Krishna Shlokas</a>
+            <a href="7thqueots.html">Daily Krishna Says</a>
+            <a href="8th.html">Stories</a>
+            <a href="6thfeedback.html">Feedback</a>
+            <a href="creator.html">About Creator</a>
+        </div>
+    </div>
+    <script>
+        function toggleMenu() {
+            var mobileNav = document.getElementById("mobileNav");
+            if (mobileNav.classList.contains("open")) {
+                mobileNav.classList.remove("open");
+            } else {
+                mobileNav.classList.add("open");
+            }
+        }
+        document.addEventListener("click", function(event) {
+            var mobileNav = document.getElementById("mobileNav");
+            var hamburger = document.querySelector(".hamburger");
+            if (!mobileNav.contains(event.target) && !hamburger.contains(event.target)) {
+                mobileNav.classList.remove("open");
+            }
+        });
+    </script>
+    </div>
+    <h1>Krishna Pictures & Wallpapers</h1>
+    <p>Explore and download beautiful pictures and wallpapers of Lord Krishna.</p>
+    <hr>
+    
+    <h2>📱 PC Wallpapers</h2>
+    <div class="gallery-container">
+        <div class="gallery-item">
+            <img src="7th cover.gif" alt="Krishna Image" style="width:100%; max-height: 200px;">
+            <a class="download-link" href="7th cover.gif" download>Download</a>
+        </div>
+        <div class="gallery-item">
+            <img src="krishnpic.jpg" alt="Krishna Image" style="width:100%; max-height: 200px;">
+            <a class="download-link" href="krishnpic.jpg" download>Download</a>
+        </div>
+        <div class="gallery-item">
+            <img src="cover2.jpg" alt="Krishna Image" style="width:100%; max-height: 200px;">
+            <a class="download-link" href="cover2.jpg" download>Download</a>
+        </div>
+        <div class = "gallery-item">
+            <img src="pic13.png" alt="Radha Krishna Digital Art Wallpaper" style="width:100%; max-height: 200px;">
+            <a class="download-link" href="pic13.png" download>Download</a>
+        </div> 
+        <div class = "gallery-item">
+            <img src="pic14.png" alt="Radha Krishna Digital Art Wallpaper" style="width:100%; max-height: 200px;">
+            <a class="download-link" href="pic14.png" download>Download</a>
+        </div>
+        <div class = "gallery-item">
+            <img src="b40f26453b32f58a98848d15df8cc6fa.jpeg" alt="Radha Krishna in one eyes" style="width:100%; max-height: 200px;">
+            <a class="download-link" href="b40f26453b32f58a98848d15df8cc6fa.jpeg" download>Download</a>
+        </div>
+        <div class = "gallery-item">
+            <img src="pic15.jpg" alt="digital art" style="width:100%; max-height: 200px;">
+            <a class="download-link" href="pic15.jpg" download>Download</a>
+        </div>
+    </div>
+    <hr>
+    <div class="pinterest-board" style="text-align: center; margin: 20px auto;">
+        <a data-pin-do="embedBoard" data-pin-board-width="1000" data-pin-scale-height="500" 
+           data-pin-scale-width="100" 
+           href="https://www.pinterest.com/unmeshjoshi083/krishna-pc-wallpapers/">View on Pinterest</a>
+        <script async defer src="//assets.pinterest.com/js/pinit.js"></script>
+    </div>
+   
+    
+    <hr>
+    <marquee><h3>यदा यदा हि धर्मस्य ग्लानिर्भवति भारत। अभ्युत्थानम् अधर्मस्य तदात्मानं सृजाम्यहम्॥ परित्राणाय साधूनां विनाशाय च दुष्कृताम्। धर्मसंस्थापनार्थाय संभवामि युगे युगे॥</h3></marquee>
+    <hr>
+</body>
+<footer style="background: #ff6600; color: white; text-align: center; padding: 10px; font-size: 16px; margin-top: 20px;">
+    <p>✨ Created with ❤️ by <strong>Unmesh Joshi</strong></p>
+    <p>📩 Contact: <a href="mailto:unmeshjoshi083@gmail.com" style="color: white; text-decoration: underline;">unmeshjoshi083@gmail.com</a></p>
+    <p>📷 Follow me on <a href="https://www.instagram.com/unmesh12634" style="color: white; text-decoration: underline;" target="_blank">Instagram</a> | 🎵 <a href="https://www.youtube.com/channel/UC9qr5anLvw3DBXLvgvvwUMQ" style="color: white; text-decoration: underline;" target="_blank">YouTube</a></p>
+</footer>
+</html>

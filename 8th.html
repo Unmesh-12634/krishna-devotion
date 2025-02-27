@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Radha Krishna Stories</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
+        body {background: linear-gradient(to bottom, #e7fdf8, #c1fff7, #affff4); font-family: Arial, sans-serif; text-align: center; color: #5a2a27; }
+        h1 { color: #fb8f02; font-family: 'Great Vibes', cursive; }
+        .story-container { width: 80%; margin: auto; }
+        .story { border: 2px solid gold; background-color: rgba(255, 248, 225, 0.8); padding: 20px; margin: 20px 0; border-radius: 10px; box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);transition: transform 0.3s ease-in-out, box-shadow 0.3s; }
+        .story img { width: 80px; border-radius: 50px;width: 120px;height: auto; width: 120px;height: auto;} 
+        .close-btn { font-size: 28px;padding: 10px;}
+        .story-title { font-family: 'Great Vibes', cursive; font-size: 1.8em; margin: 10px 0; }
+        .story:hover {transform: scale(1.05);box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.2);}
+        .view-full-btn { background: #ff6600; color: white; padding: 10px; border: none; border-radius: 5px; cursor: pointer; }
+        .view-full-btn:hover { background: #e65c00; }
+        .modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.6); }
+        .modal-content { background: white; padding: 20px; width: 60%; margin: 10% auto; border-radius: 10px; text-align: left; }
+        .close-btn { float: right; font-size: 24px; cursor: pointer; }
+        .navbar {display: flex; justify-content: center; background: #ff6600;padding: 10px; position: sticky; top: 0; z-index: 1000; }
+        .navbar a {text-decoration: none; color: white; padding: 10px 20px; font-size: 18px;font-weight: bold;transition: background 0.3s ease-in-out; }
+        .navbar a:hover { background: #e65c00; border-radius: 5px; }
+        .hamburger { display: none; flex-direction: column; cursor: pointer; position: absolute; left: 20px; top: 15px; }
+        .hamburger div { width: 20px; height: 2px; background: rgb(0, 0, 0); margin: 5px 0; transition: 0.4s; }
+        .mobile-nav { position: fixed; top: 0; left: -100%; width: 250px; height: 100vh; background: rgba(255, 102, 0, 0.9); padding: 20px; transition: 0.3s ease-in-out; }
+        .mobile-nav a { display: block; text-decoration: none; color: white; font-size: 20px; padding: 10px 0; }
+        .mobile-nav a:hover { background: #e65c00; }
+        .mobile-nav.open { left: 0; }
+        @media screen and (max-width: 768px) {
+            .nav-links { display: none; }
+            .hamburger { display: flex; }
+            
+        }
+        button {background: #ff6600;color: white;padding: 10px 20px;border: none;border-radius: 8px;font-size: 16px;cursor: pointer;}
+        button:hover {background: #e65c00;}
+
+    </style>
+    <title>Radha Krishna Stories - Divine Love & Leelas</title>
+    <meta name="description" content="Read enchanting Radha Krishna stories, experience divine love, and explore their spiritual leelas.">
+    <meta name="keywords" content="Radha Krishna stories, Krishna leela, spiritual stories, Hindu mythology, Bhakti">
+    <meta name="author" content="Unmesh Joshi">
+    <meta name="robots" content="index, follow">
+
+</head>
+<body>
+   <div class="hamburger" onclick="toggleMenu()">
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+    <div class="mobile-nav" id="mobileNav">
+        <a href="index.html">Home</a>
+        <a href="2nd.html">Krishna Pictures</a>
+        <a href="3rd.html">Krishna Songs</a>
+        <a href="4th.html">Shree Krishna Names</a>
+        <a href="5th.html">Krishna Shlokas</a>
+        <a href="7thqueots.html">Daily Krishna Says</a>
+        <a href="8th.html">Stories</a>
+        <a href="6thfeedback.html">Feedback</a>
+        <a href="creator.html">About Creator</a>
+
+    </div>
+    <div class="navbar">
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="2nd.html">Krishna Pictures</a>
+            <a href="3rd.html">Krishna Songs</a>
+            <a href="4th.html">Shree Krishna Names</a>
+            <a href="5th.html">Krishna Shlokas</a>
+            <a href="7thqueots.html">Daily Krishna Says</a>
+            <a href="8th.html">Stories</a>
+            <a href="6thfeedback.html">Feedback</a>
+            <a href="creator.html">About Creator</a>
+        </div>
+    </div>
+    <script>
+        function toggleMenu() {
+            var mobileNav = document.getElementById("mobileNav");
+            if (mobileNav.classList.contains("open")) {
+                mobileNav.classList.remove("open");
+            } else {
+                mobileNav.classList.add("open");
+            }
+        }
+        document.addEventListener("click", function(event) {
+            var mobileNav = document.getElementById("mobileNav");
+            var hamburger = document.querySelector(".hamburger");
+            if (!mobileNav.contains(event.target) && !hamburger.contains(event.target)) {
+                mobileNav.classList.remove("open");
+            }
+        });
+    </script> 
+    <h1>Radha Krishna Stories</h1>
+    <audio id="bg-music" autoplay loop>
+        <source src="flutemusic.mp3" type="audio/mpeg">
+
+    </audio>
+    
+    <button class="button" onclick="toggleMusic()">🔊 Play/Pause Music</button>
+    <div class="story-container" id="stories"></div>
+    <button id="see-more" onclick="seeMoreStories()">See More Stories</button>
+    
+    
+    
+    <div id="storyModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeModal()">&times;</span>
+            <h2 id="modalTitle"></h2>
+            <p id="modalText"></p>
+        </div>
+    </div>
+    
+    <script>
+        let storiesData = [
+            {title: "Radha & Krishna’s First Meeting", img: "radhakrishn8thpage.jpg" , text: "Krishna and Radha first met in Vrindavan...", fullText: "This is the full story of how Krishna and Radha first met in Vrindavan, filled with divine moments. In the beautiful land of Vrindavan, Krishna, the charming cowherd, grew up spreading love and joy. Meanwhile, in Barsana, King Vrishabhanu and Queen Kirti were blessed with a divine daughter, Radha. But from birth, Radha never opened her eyes, leaving everyone worried.One day, Yashoda took little Krishna to Vrishabhanu’s palace. As Krishna’s tiny hands touched baby Radha, a miracle happened—Radha opened her eyes for the first time and saw Krishna. It was as if she had been waiting for him all along. Their souls recognized each other instantly, forming an eternal bond of divine love.From that moment, Radha and Krishna became inseparable, their love transcending time. More than a worldly love story, their union symbolized the purest form of devotion (Bhakti) and divine connection—a love that still inspires millions." },
+            {title: "The Rasleela", img: "rasleela.jpg", text: "One of the most beautiful leelas was the Rasleela...", fullText: "This is the full story of the divine Rasleela where Krishna danced with the gopis One moonlit night in Vrindavan, under the cool silver glow of Sharad Purnima, Krishna stood by the Yamuna River, playing his flute. The melody was so enchanting that the Gopis (cowherd women) of Vrindavan, leaving behind their homes, families, and all worldly ties, rushed towards him, drawn by the divine call of love.Krishna welcomed them with a smile, and in that sacred moment, he multiplied himself so that each Gopi felt his undivided presence. In the heart of the forest, under the celestial sky, began the Rāsleela, a divine dance where Krishna and the Gopis moved in perfect harmony. Their love was pure, free from desire, a devotion that transcended the material world.As the dance reached its peak, the Gopis, in their pride, thought Krishna belonged only to them. To humble them, Krishna suddenly disappeared. The Gopis, heartbroken, searched for him everywhere, calling out his name in longing. Finally, when their love turned into pure surrender, Krishna reappeared, showering them with divine bliss.The Rāsleela was not just a dance—it was the highest form of devotion (Bhakti), where the soul merges with the Divine. Even today, it symbolizes selfless love, surrender, and eternal union with God. 💖✨."},
+            {title: "Krishna Lifting Govardhan Hill", img: "goverdhanparvat.jpg", text: "To protect the villagers of Vrindavan...", fullText: "Krishna lifted the Govardhan Hill on his little finger to protect the villagers from the wrath of Indra. In Vrindavan, the people worshipped Indra, the god of rain, believing he controlled their prosperity. But young Krishna taught them that it was Govardhan Hill, with its lush pastures and rivers, that truly nurtured them. Following Krishna’s advice, the villagers offered prayers to Govardhan instead of Indra.Angered by this, Indra sent a terrifying storm with heavy rain and thunder to punish them. The villagers, frightened, rushed to Krishna for help. With a divine smile, Krishna effortlessly lifted the massive Govardhan Hill on his little finger, providing shelter to all. For seven days and nights, he held it up while the storm raged.Defeated, Indra finally realized Krishna’s divine power and bowed before him, seeking forgiveness. Krishna, ever merciful, forgave Indra and taught him that true devotion lies in humility, not pride.Since then, the people of Vrindavan celebrate Govardhan Puja, honoring Krishna as the Divine Protector and nurturer of all beings. 🌿🙏✨"},
+            {title : "Radha's Jealousy", img :"radharanijelous.jpg", text:"Radha once became very jealous...", fullText: "Radha's jealousy and how Krishna pacified her with his divine charm and loveRadha and Krishna's love was divine, yet like any true love, it had moments of playful jealousy. Krishna, known for his charming nature, often teased Radha by spending time with other Gopis, making her heart burn with longing.One day, as Radha waited for Krishna, she heard whispers that he was flirting with another Gopi. Filled with jealousy, she refused to speak to him when he arrived. Krishna, seeing her anger, smiled mischievously and tried to pacify her with sweet words and playful gestures. But Radha turned away, her face glowing with both love and annoyance.Understanding her feelings, Krishna humbly placed his flute at her feet, promising that no melody, no moment, and no love could ever be greater than his love for her. Radha's heart melted, and she forgave him, realizing that her jealousy was only a reflection of her deep, divine love.This leela (divine play) symbolizes that even in love, moments of longing and separation only strengthen the eternal bond between the soul (Radha) and the Divine (Krishna). 💖✨"},
+            {title: "Krishna and the Butter Thief", img: "makhan.jpg", text: "Little Krishna loved butter...", fullText: "The mischievous tales of young Krishna stealing butter from the homes of the villagers.Little Krishna, the naughty but lovable child of Vrindavan, had a special love for butter. No matter where his mother Yashoda hid it, he always found a way to steal and enjoy it, earning the name “Makhan Chor” (Butter Thief).he village women (Gopis) were often troubled by Krishna and his friends sneaking into their homes, breaking pots, and eating butter. They complained to Yashoda, who decided to catch him. One day, she saw Krishna with his friends, happily eating butter and feeding it to monkeys. As soon as the Gopis arrived, the monkeys ran away, and Krishna stood there, his face covered in butter!Yashoda scolded him, but Krishna, with his big, innocent eyes, denied everything. Amused yet firm, she tried to tie him up as punishment, but each time the rope fell short. Only when she tied him with love and not anger did the rope finally fit.This story shows Krishna’s playful nature and the power of pure love—for even God can only be bound by true devotion. His butter-stealing mischief is still celebrated during Janmashtami! 🥄💛✨"},
+            {title: "🐍 Krishna and Kaliya – The Divine Dance of Victory 🐍"  ,img:"kaliya.jpg", text: "Krishna danced so powerfully that Kaliya started bleeding, his pride crushed.", fullText:"In the Yamuna River near Vrindavan, a giant, poisonous serpent named Kaliya lived with his family. His venom was so deadly that it turned the water black, killing fish, trees, and even birds that flew above. The people of Vrindavan were terrified, as no one could go near the river.Hearing their worries, Krishna decided to stop Kaliya’s terror. One day, while playing with his friends, he climbed a tree near the river and jumped into the toxic waters. The loud splash disturbed Kaliya, and the angry serpent rose from the water, wrapping his huge coils around Krishna. Everyone watching from the shore screamed in fear.But Krishna, the Supreme Protector, smiled and easily freed himself. He leapt onto Kaliya’s hood and began dancing gracefully, pressing down with his divine feet. Kaliya tried to fight back, but Krishna’s weight became unbearable. With every step, the serpent’s strength weakened. Krishna danced so powerfully that Kaliya started bleeding, his pride crushed.Realizing Krishna was no ordinary boy but the Supreme Lord, Kaliya surrendered. His wives begged Krishna for mercy. Krishna forgave him but ordered him to leave the Yamuna River forever. Defeated but blessed, Kaliya and his family left for the deep ocean, and the Yamuna’s waters became pure again.The people of Vrindavan celebrated Krishna’s victory, for he had once again protected them. The story of Kaliya Mardhan teaches that evil and arrogance are destroyed when faced with divine grace, and true surrender leads to salvation. 🐍✨" },
+            { title: "🌟The Divine Birth of Lord Krishna 🌟", img:"birth.jpg",text:" Vishnu transformed into a beautiful baby—Krishna.", fullText:"Long ago, in the kingdom of Mathura, there was a cruel king named Kansa. He was feared by all and had even imprisoned his own sister, Devaki, and her husband, Vasudeva, after hearing a prophecy that Devaki’s eighth son would be the cause of his death.One by one, Kansa killed every child born to Devaki. When the time came for the birth of her eighth child, the atmosphere was filled with a divine glow. At midnight on the holy day of Janmashtami, Lord Vishnu appeared before Devaki and Vasudeva, revealing that he would take birth as their son to end Kansa’s tyranny. In an instant, Vishnu transformed into a beautiful baby—Krishna.A miracle happened—the prison doors unlocked, the guards fell into a deep sleep, and the chains binding Vasudeva broke open. Following divine guidance, Vasudeva carried baby Krishna in a basket and set out to Gokul, crossing the flooded Yamuna River. As he walked, the waters parted, and Sheshnag, the divine serpent, spread his hoods to protect Krishna from the rain.Vasudeva safely reached the house of Nanda and Yashoda, where a baby girl had just been born. He exchanged Krishna with the girl and hurried back to Mathura. When Kansa tried to kill the newborn girl, she transformed into Goddess Yogmaya, warning him that his destroyer was already born and safe.Meanwhile, in Gokul, Krishna was lovingly raised by Yashoda and Nanda, growing up to fulfill the prophecy and defeat Kansa, bringing peace to the world. 🌿✨Even today, Janmashtami is celebrated with devotion and joy to honor the divine birth of Lord Krishna. 🎊💛"},
+            {title:"🎶 Krishna’s Flute – The Melody of Divine Love 🎶", img:"flute.jpg", text:"The sound of Krishna’s flute was not just music, but a call of love....", fullText:"Krishna, the Divine Cowherd, was never seen without his flute (bansuri). With its enchanting melodies, he could calm raging storms, make animals dance, and captivate every heart in Vrindavan.The Gopis (cowherd women) would leave their household chores the moment they heard Krishna’s flute. Radha, the closest to Krishna’s heart, was the most enchanted by its melody. When he played, it felt as if his flute whispered secrets of divine love to her soul.One day, the Gopis asked Krishna, 'Why does your flute get to stay so close to your lips? What makes it so special?'' Krishna smiled and said, 'Because it is empty inside. It has surrendered completely to me, allowing my breath to flow through it'.This simple answer revealed a deep truth—only those who surrender their ego completely can become an instrument of the Divine. The flute was not just a musical instrument; it was a symbol of devotion and selflessness.The sound of Krishna’s flute was not just music, but a call of love, reminding all souls to seek him, to merge with him, and to become as hollow and surrendered as the flute itself. Even today, Krishna’s flute remains a symbol of eternal love, devotion, and the music of the universe. 🎶💖✨"},
+            { title: "Krishna and Sudama – The Tale of Friendship", text: "Krishna’s childhood friend Sudama visited him after years...", fullText: "Sudama and Krishna were childhood friends who studied together at Guru Sandipani’s ashram. While Krishna became the King of Dwarka, Sudama remained a poor Brahmin, struggling to feed his family. His wife, seeing his hardships, urged him to visit Krishna and seek help. Hesitant, Sudama took a small bundle of puffed rice (his only offering) and set out for Dwarka. Upon arrival, Krishna welcomed Sudama with immense love and washed his feet. Despite his poverty, Sudama felt ashamed to offer the simple rice, but Krishna joyfully ate it, relishing his friend’s affection. Sudama, overwhelmed by Krishna’s love, left without asking for anything. However, when he returned home, he was astonished to see his humble hut transformed into a magnificent palace. Krishna had secretly blessed his friend with prosperity, showing that true friendship is beyond material wealth.", img: "sudama.jpg" },
+            { title: "The Story of Kansa Vadh – The End of a Tyrant",img: "kans vadh.jpg", text: "Krishna ended Kansa’s cruel rule and freed Mathura from his tyranny...", fullText: "Kansa, the evil king of Mathura, ruled with cruelty and arrogance. He imprisoned his own sister Devaki and her husband Vasudeva, after hearing a prophecy that Devaki’s eighth son would be his destroyer. One by one, he killed each child Devaki gave birth to, but Krishna, the eighth son, was secretly taken to Gokul by Vasudeva.As Krishna grew up in Vrindavan, Kansa sent numerous demons like Putana, Trinavarta, and Bakasura to kill him, but each time, Krishna defeated them with ease.Krishna Arrives in Mathura When Krishna and his brother Balarama reached their teenage years, Kansa devised a plan to kill them. He invited them to Mathura under the pretext of a grand wrestling competition. Knowing this was his destiny, Krishna accepted the challenge.Upon arriving, Krishna:Broke the massive bow of Lord Shiva, proving his divine strength.Killed the evil elephant Kuvalayapeeda, which was meant to stop him.Defeated Kansa’s mighty wrestlers, Chanur and Mushtik, in the arena.The End of KansaSeeing Krishna’s unstoppable power, Kansa panicked. But before he could react, Krishna leaped onto the royal throne and dragged him down. A fierce battle followed, and in the end, Krishna seized Kansa and threw him to the ground, ending his reign of terror.With Kansa dead, Mathura was finally freed from his tyranny, and the people rejoiced. Krishna crowned Ugrasena (his grandfather) as the rightful king and fulfilled the prophecy that had been foretold years ago." },
+            {title: "Krishna and the Fruit Seller", img: "fruitseller.png", text: "A poor fruit seller offers Krishna fruits, and her basket fills with gold.", fullText: "In the bustling streets of Vrindavan, a humble fruit seller balanced her basket on her head, calling out to sell her fruits. Little Krishna, his eyes twinkling with mischief, rushed to her with tiny fists full of grains. As he ran, the grains slipped through his fingers, leaving only a few in his palm. The fruit seller, captivated by the divine glow of the little boy, smiled warmly and gave him as many fruits as he could carry. As she turned to leave, her empty basket suddenly overflowed with dazzling gold and jewels. Overwhelmed with joy and devotion, she realized that Krishna had blessed her beyond measure, teaching the world that true kindness never goes unrewarded."},
+            {title: "Krishna Eating Mud", img: "mud.jpg", text: "Yashoda sees the entire universe in Krishna’s mouth.", fullText: "One sunny afternoon in Vrindavan, Krishna played gleefully with his friends. As he laughed and ran through the fields, he playfully scooped up a handful of mud and ate it. His friends, alarmed, rushed to Yashoda, exclaiming what had happened. Yashoda, concerned, demanded that Krishna open his mouth. What she saw left her breathless—inside his tiny mouth, she witnessed galaxies, stars, the sun, and the vast cosmos. She saw all of existence in her little boy. Overcome with divine awe, she pulled Krishna into her embrace, her heart filled with both motherly love and the realization of his divine nature."},
+            {title: "Krishna Lifting the Chariot Wheel", img: "wheel.jpg", text: "Krishna breaks his vow to protect Dharma in the Kurukshetra war.", fullText: "During the Kurukshetra war, Bhishma fought fiercely against the Pandavas, unleashing his divine warrior skills and causing havoc in their ranks. Arjuna, despite being an exceptional archer, struggled to counter Bhishma's relentless attacks. Seeing his beloved devotee in distress and the Pandava army on the verge of collapse, Krishna's anger surged. Breaking his own vow not to wield a weapon, Krishna leaped from his chariot, picked up a massive chariot wheel, and charged towards Bhishma like a storm. His eyes burned with divine fury, and his presence alone sent shivers across the battlefield. Bhishma, witnessing Krishna's divine rage, stood still, dropping his weapons in complete surrender. With folded hands, he proclaimed, O Lord... If breaking your vow brings me the fortune of being struck by your divine hands, then so be it I accept my fate with joy. At that moment, Krishna's anger subsided. Smiling, he put down the chariot wheel and embraced Bhishma with affection. This incident became a profound lesson that Krishna always protects Dharma, and when necessary, even divine laws can be transcended to uphold righteousness."},
+            {title: "Krishna Rescuing Draupadi", img: "draupati.jpg", text: "Krishna miraculously saves Draupadi’s dignity in the royal court.", fullText: "During the infamous dice game in Hastinapur, Draupadi was dragged into the royal court and humiliated as Dushasana attempted to disrobe her before the assembly. The Kauravas, fueled by arrogance, sought to disgrace her in front of the elders and warriors of the kingdom. Helpless and desperate, Draupadi first appealed to her husbands, but they remained silent, bound by the conditions of the game. Realizing that no human could save her, she surrendered completely to Krishna, crying out his name in devotion.In that instant, Krishna, seated far away in Dwarka, heard her plea and performed his divine miracle. As Dushasana pulled at her sari, an endless stream of cloth manifested, wrapping around her, preventing her dishonor. The more he pulled, the longer the sari extended, exhausting him completely. The court watched in astonishment as Krishna’s unseen hands protected Draupadi’s dignity.This moment became a timeless testament to Krishna’s unwavering commitment to his devotees, reinforcing the belief that when one surrenders with complete faith, Krishna always comes to their aid. Draupadi’s trust in Krishna transformed a moment of despair into one of divine grace and ultimate protection."},
+           {title:" The Story of Krishna Worshiping Radha", img: "worship.jpg", text:"Even the Supreme Lord bows to the power of pure love...", fullText:"One day, Rishi Narada saw Krishna worshiping Radha’s idol and was astonished. He asked, “My Lord, why do you, the Supreme Being, worship Radha?”Krishna smiled and said, “Radha is my soul, my very essence. Without her, I am incomplete. The universe sings my name, but my heart forever sings Radha’s.”Narada realized that Radha wasn’t just Krishna’s beloved—she was pure devotion, divine energy, and the essence of love itself. From that day, Krishna was worshiped not alone, but always with Radha."},
+            {title:"Krishna’s Last Moments – The End of an Avatar", img :"last.webp " , text:"Here’s a short and touching story about Krishna’s last moments", fullText:"After the Mahabharata war, Krishna stayed in Dwarka, guiding his people. But as time passed, he knew his earthly journey was coming to an end.One day, resting under a Peepal tree in the forest, Krishna closed his eyes in deep meditation. At that moment, a hunter named Jara, mistaking his foot for a deer, shot an arrow that pierced Krishna’s foot.Jara rushed to Krishna in deep regret, but Krishna smiled and said, “Do not grieve. This is destiny. Just as I ended many, now my time has come.” He forgave the hunter and, with his final breath, left his mortal body, merging back into the eternal cosmic light."},
+        ];
+        let visibleStories = 4;
+
+        function loadStories() {
+            let container = document.getElementById("stories");
+            container.innerHTML = "";
+            for (let i = 0; i < visibleStories && i < storiesData.length; i++) {
+                let story = storiesData[i];
+                let storyElement = document.createElement("div");
+                storyElement.classList.add("story");
+                storyElement.innerHTML = `
+                    <img src="${story.img}" alt="${story.title}">
+                    <h2 class="story-title">${story.title}</h2>
+                    <p>${story.text}</p>
+                    <button class="view-full-btn" onclick="viewFullStory(${i})">View Full Story</button>
+                    
+                `;
+                container.appendChild(storyElement);
+            }
+            if (visibleStories >= storiesData.length) {
+                document.getElementById("see-more").style.display = "none";
+            }
+        }
+
+        function seeMoreStories() {
+            visibleStories += 2;
+            loadStories();
+        }
+
+        function viewFullStory(index) {
+            document.getElementById("modalTitle").innerText = storiesData[index].title;
+            document.getElementById("modalText").innerText = storiesData[index].fullText;
+            document.getElementById("storyModal").style.display = "block";
+        }
+
+        function closeModal() {
+            document.getElementById("storyModal").style.display = "none";
+        }
+        
+        document.addEventListener("DOMContentLoaded", loadStories);
+    </script>
+    <h2>📝 Submit Your Own Story</h2>
+    
+    <form>
+        <textarea placeholder="Write your experience..." required></textarea>
+        <button type="submit">Submit Story</button>
+    </form>
+    <button id="backToTop">⬆ Top</button>
+<script>
+    const topButton = document.getElementById("backToTop");
+    window.onscroll = function () {
+        topButton.style.display = window.scrollY > 300 ? "block" : "none";
+    };
+    topButton.onclick = function () {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+    };
+</script>
+<style>
+    #backToTop { position: fixed; bottom: 20px; right: 20px; display: none; background: orange; padding: 10px; border-radius: 50%; cursor: pointer; }
+</style>
+<div id="music-player">
+    <audio id="bg-music" loop>
+        <source src="flutemusic.mp3" type="audio/mpeg">
+    </audio>
+    <button onclick="toggleMusic()">🔊 Play/Pause</button>
+</div>
+
+<script>
+    function toggleMusic() {
+        var music = document.getElementById("bg-music");
+        if (music.paused) {
+            music.play();
+        } else {
+            music.pause();
+        }
+    }
+</script>
+<style>
+    #music-player {
+        position: fixed; nav-up: 10px; right: 10px; background: #ff6600;
+        padding: 10px; border-radius: 10px; color: white; cursor: pointer;
+    }
+</style>
+
+</body>
+<footer style="background: #ff6600; color: white; text-align: center; padding: 10px; font-size: 16px; margin-top: 20px;">
+    <p>✨ Created with ❤ by <strong>Unmesh Joshi</strong></p>
+    <p>📩 Contact: <a href="mailto:unmeshjoshi083@gmail.com" style="color: white; text-decoration: underline;">unmeshjoshi083@gmail.com</a></p>
+    <p>📷 Follow me on <a href="https://www.instagram.com/unmesh12634" style="color: white; text-decoration: underline;" target="_blank">Instagram</a> | 🎵 <a href="https://www.youtube.com/channel/UC9qr5anLvw3DBXLvgvvwUMQ" style="color: white; text-decoration: underline;" target="_blank">YouTube</a></p>
+</footer>
+</html>

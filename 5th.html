@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta property="og:image" content="https://yourwebsite.com/images/pic3.jpg">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Krishna Shlokas & Mantras</title>
+    <style>
+        h1 { color: #fb8f02; font-family: 'Great Vibes', cursive; }
+        body {
+            background: linear-gradient(to bottom, #e0f7fa, #80deea);  font-family: 'Arial', sans-serif; text-align: center; padding: 20px;}
+             .navbar {display: flex; justify-content: center; background: #ff6600;padding: 10px; position: sticky; top: 0; z-index: 1000; }
+        .navbar a {text-decoration: none; color: white; padding: 10px 20px; font-size: 18px;font-weight: bold;transition: background 0.3s ease-in-out; }
+        .navbar a:hover { background: #e65c00; border-radius: 5px; }
+        h1 {color: white;  background: linear-gradient(to right, #ff6600, #ffcc00);  padding: 15px;  border-radius: 10px;  display: inline-block; }
+        .shloka-container { width: 90%; max-width: 700px;  background: rgba(255, 255, 255, 0.9); padding: 20px;  margin: 20px auto;  border-radius: 10px;  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); text-align: left; }
+        .shloka { font-size: 18px; font-weight: bold; padding: 15px; border-bottom: 1px solid #ddd; transition: background 0.3s ease-in-out; }
+        .shloka:hover { background: #bcf0f0; color: rgb(0, 0, 0); }
+        .nav-links { margin-top: 20px; }
+        .nav-links a { text-decoration: none; color: white;  background: #ff6600;  padding: 10px 15px;  border-radius: 5px; font-weight: bold; margin: 5px; display: inline-block; transition: transform 0.3s ease-in-out;}
+        .nav-links a:hover { background: #e65c00; transform: scale(1.1); }
+        footer {margin-top: 30px; padding: 15px; background: rgba(204, 204, 44, 0.953);  color: rgb(0, 0, 0); font-size: 16px;  border-radius: 10px; }
+        
+     .social-links {margin-top: 20px; }
+     .social-links a { text-decoration: none;color: white;background: #ff6600; padding: 10px 15px;border-radius: 5px;font-weight:    bold; margin: 5px; display: inline-flex; align-items: center;gap: 10px; transition: transform 0.3s ease-in-out; }
+     .social-links a:hover {background: #e65c00;transform: scale(1.1); }
+     .social-links img {width: 25px; height: 25px; }
+        marquee { font-size: 20px; color: #ff6600; font-weight: bold; animation  : glow 2s infinite alternate; }
+        .hamburger { display: none; flex-direction: column; cursor: pointer; position: absolute; left: 20px; top: 15px; }
+        .hamburger div { width: 20px; height: 2px; background: rgb(0, 0, 0); margin: 5px 0; transition: 0.4s; }
+        .mobile-nav { position: fixed; top: 0; left: -100%; width: 250px; height: 100vh; background: rgba(255, 102, 0, 0.9); padding: 20px; transition: 0.3s ease-in-out; }
+        .mobile-nav a { display: block; text-decoration: none; color: white; font-size: 20px; padding: 10px 0; }
+        .mobile-nav a:hover { background: #e65c00; }
+        .mobile-nav.open { left: 0; }
+        @media screen and (max-width: 768px) {
+            .nav-links { display: none; }
+            .hamburger { display: flex; }
+        }
+        @media screen and (max-width: 768px) {
+  body { font-size: 16px; }
+  img { max-width: 100%; height: auto; }
+}
+.view-more-btn { background: #ff6600; color: white; padding: 10px 15px; border: none; border-radius: 5px; font-size: 16px; cursor: pointer; margin-top: 10px; }
+.view-more-btn:hover { background: #e65c00; }
+    </style>
+    <title>Radha Krishna Shlokas - Divine Verses & Mantras</title>
+    <meta name="description" content="Discover powerful Radha Krishna shlokas, sacred verses, and devotional mantras to enrich your spiritual journey.">
+    <meta name="keywords" content="Radha Krishna shlokas, Krishna mantras, Hindu prayers, devotional verses, Bhakti">
+    <meta name="author" content="Unmesh Joshi">
+    <meta name="robots" content="index, follow">
+    
+</head>
+<body>
+    <div class="hamburger" onclick="toggleMenu()">
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+    <div class="mobile-nav" id="mobileNav">
+        <a href="index.html">Home</a>
+        <a href="2nd.html">Krishna Pictures</a>
+        <a href="3rd.html">Krishna Songs</a>
+        <a href="4th.html">Shree Krishna Names</a>
+        <a href="5th.html">Krishna Shlokas</a>
+        <a href="7thqueots.html">Daily Krishna Says</a>
+        <a href="8th.html">Stories</a>
+        <a href="6thfeedback.html">Feedback</a>
+        <a href="creator.html">About Creator</a>
+    </div>
+    <div class="navbar">
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="2nd.html">Krishna Pictures</a>
+            <a href="3rd.html">Krishna Songs</a>
+            <a href="4th.html">Shree Krishna Names</a>
+            <a href="5th.html">Krishna Shlokas</a>
+            <a href="7thqueots.html">Daily Krishna Says</a>
+            <a href="8th.html">Stories</a>
+            <a href="6thfeedback.html">Feedback</a>
+            <a href="creator.html">About Creator</a>
+        </div>
+    </div>
+    <script>
+        function toggleMenu() {
+            var mobileNav = document.getElementById("mobileNav");
+            if (mobileNav.classList.contains("open")) {
+                mobileNav.classList.remove("open");
+            } else {
+                mobileNav.classList.add("open");
+            }
+        }
+        document.addEventListener("click", function(event) {
+            var mobileNav = document.getElementById("mobileNav");
+            var hamburger = document.querySelector(".hamburger");
+            if (!mobileNav.contains(event.target) && !hamburger.contains(event.target)) {
+                mobileNav.classList.remove("open");
+            }
+        });
+    </script>
+
+    <h1>Krishna Shlokas & Mantras</h1>
+    
+    <div class="shloka-container">
+        <div class="shloka">
+            <b>1. Krishnaya Vasudevaya Mantra</b>  
+            <p>**कृष्णाय वासुदेवाय हरये परमात्मने।**<br>  
+            **प्रणतः क्लेशनाशाय गोविंदाय नमो नमः॥**</p>  
+            <p><b>Meaning:</b> Salutations to Krishna, the son of Vasudeva, who is the Supreme Soul and removes the sufferings of His devotees.</p>
+        </div>
+
+        <div class="shloka">
+            <b>2. Hare Krishna Mahamantra</b>  
+            <p>**हरे कृष्ण हरे कृष्ण कृष्ण कृष्ण हरे हरे**<br>  
+            **हरे राम हरे राम राम राम हरे हरे॥**</p>  
+            <p><b>Meaning:</b> A powerful mantra that invokes the divine energy of Lord Krishna and Lord Rama for peace, devotion, and liberation.</p>
+        </div>
+
+        <div class="shloka">
+            <b>3. Vasudeva Sutam Devam</b>  
+            <p>**वासुदेवसुतं देवं कंसचाणूरमर्दनम्।**<br>  
+            **देवकीपरमानन्दं कृष्णं वन्दे जगद्गुरुम्॥**</p>  
+            <p><b>Meaning:</b> I bow to Lord Krishna, the son of Vasudeva, the supreme joy of Devaki, and the one who destroyed Kansa and Chanoora.</p>
+        </div>
+
+        <div class="shloka">
+            <b>4. Gita Shloka – Surrender to Krishna</b>  
+            <p>**सर्वधर्मान्परित्यज्य मामेकं शरणं व्रज।**<br>  
+            **अहं त्वां सर्वपापेभ्यो मोक्षयिष्यामि मा शुचः॥**</p>  
+            <p><b>Meaning:</b> Abandon all duties and surrender to Me. I shall free you from all sins. Do not fear.</p>
+        </div>
+        <button class="view-more-btn" onclick="showMore()">View More Shlokas</button>
+        <div id="hidden-shlokas" style="display: none;">
+        <div class="shloka">
+            <b>5. Govinda Damodara Madhaveti</b>  
+            <p>**गोविन्द दामोदर माधवेति**<br>  
+            **हे कृष्ण हे यादव हे सखेति॥**</p>  
+            <p><b>Meaning:</b> Chanting the divine names of Krishna, Govinda, and Madhava brings spiritual joy and removes all difficulties.</p>
+        </div>
+        <div class="shloka">
+            <b>6. Achyutam Keshavam</b>
+            <br><P>**अच्युतं केशवं रामनारायणम्।**<br>
+                **कृष्णदामोदरं वासुदेवं हरिम्॥**</P><br>
+            <b>Meaning:</b> This mantra praises the many names of Lord Krishna, describing His eternal nature and divine presence.</div>
+        <div class="shloka"><b>7. Om Namo Bhagavate Vasudevaya</b>
+            <br><P>**ॐ नमो भगवते वासुदेवाय॥**<br></P>
+            <b>Meaning:</b> I bow to Lord Vasudeva, the Supreme God, who grants liberation and divine knowledge.</div>
+        <div class="shloka">
+            <b>8. Yada Yada Hi Dharmasya</b>
+            <br><p>**यदा यदा हि धर्मस्य ग्लानिर्भवति भारत।**<br>**अभ्युत्थानम् अधर्मस्य तदात्मानं सृजाम्यहम्॥**</p><br>
+            <b>Meaning:</b> Whenever righteousness declines and unrighteousness rises, I manifest Myself to restore dharma.</div>
+        <div class="shloka"><b>9. Madhurashtakam</b>
+            <br><p>**अधरं मधुरं वदनं मधुरं।**<br>**नयनं मधुरं हसितं मधुरम्॥**</p><br>
+            <b>Meaning:</b> Everything about Lord Krishna is sweet and beautiful, from His lips and smile to His divine presence.</div>
+        <div class="shloka"><b>10. Bhaja Govindam</b>
+            <br><p>**भज गोविन्दं भज गोविन्दं गोविन्दं भज मूढमते।**<br>**संप्राप्ते सन्निहिते काले न हि न हि रक्षति डुकृञ्करणे॥**</p><br>
+            <b>Meaning:</b> Worship Govinda! When the final moment comes, knowledge alone will not save you; devotion is the key.</div>
+
+        </div>
+
+        <script>
+            function showMore() {
+                document.getElementById("hidden-shlokas").style.display = "block";
+                document.querySelector(".view-more-btn").style.display = "none";
+            }
+        </script>
+        
+      <marquee><h3>Radhe Krishna.....Radhe Krishna.....Radhe Krishna.....</h3></marquee>
+
+    <footer>
+        <p>&copy; 2025 Radhe Krishna Devotion. All Rights Reserved.</p>
+        <p>✨ Created with ❤️ by <strong>Unmesh Joshi</strong></p>
+    </footer>
+
+</body>
+</html>

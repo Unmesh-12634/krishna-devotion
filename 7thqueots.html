@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta property="og:image" content="https://yourwebsite.com/images/pic3.jpg">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daily Krishna Quote</title>
+    <style>
+        body { background: linear-gradient(to bottom, #e0f7fa, #80deea); font-family: 'Arial', sans-serif; text-align: center; padding: 20px; margin: 0; }
+        .navbar { display: flex; flex-wrap: wrap; justify-content: center; background: #ff6600; padding: 10px; position: sticky; top: 0; z-index: 1000; }
+        .navbar a { text-decoration: none;color: white; padding: 10px 20px; font-size: 18px; font-weight: bold; transition: background 0.3s ease-in-out; }
+        .navbar a:hover { background: #e65c00;border-radius: 5px; }
+        h1 { color: white;background: linear-gradient(to right, #ff6600, #ffcc00); padding: 15px; border-radius: 10px; display: inline-block; }
+        .quote-box { width: 90%; max-width: 700px;  background: rgba(255, 255, 255, 0.9); padding: 20px; margin: 20px auto;border-radius: 10px; box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); font-size: 20px; font-weight: bold; }
+        .button { margin-top: 20px; padding: 10px 20px;font-size: 18px; background: #ff6600;color: white; border: none; border-radius: 5px; cursor: pointer; transition: 0.3s;}
+        .button:hover { background: #e65c00; }
+        .social-links { margin-top: 20px; }
+        .social-links a { text-decoration: none;color: white; background: #ff6600; padding: 10px 15px; border-radius: 5px; font-weight: bold; margin: 5px; display: inline-flex; align-items: center; gap: 10px; transition: transform 0.3s ease-in-out; }
+        .social-links a:hover { background: #e65c00; transform: scale(1.1); }
+        .social-links img { width: 25px; height: 25px; }
+        footer { margin-top: 30px; padding: 15px;background: rgba(0, 0, 0, 0.2);color: white;font-size: 16px;border-radius: 10px; }
+        marquee { font-size: 20px; color: #ff6600; font-weight: bold; animation: glow 2s infinite alternate; }
+        body { background: url("new7th.jpg") no-repeat center center fixed; background-size: cover; }
+        .quote-box { width: 90%;max-width: 600px;word-wrap: break-word;font-size: 18px}
+         @media screen and (max-width: 768px) {
+    .quote-box { font-size: 16px;padding: 15px;}
+}
+
+
+        @media screen and (max-width: 768px) {
+            .navbar a { padding: 5px 10px; font-size: 16px; }
+            .quote-box { width: 100%; padding: 15px; font-size: 18px; }
+            h1 { padding: 10px; font-size: 24px; }
+            .button { padding: 8px 16px; font-size: 16px; }
+            .social-links a { padding: 8px 10px; font-size: 14px; }
+        }
+
+        @media screen and (max-width: 480px) {
+            .navbar a { padding: 3px 8px; font-size: 14px; }
+            .quote-box { width: 100%; padding: 10px; font-size: 16px; }
+            h1 { padding: 8px; font-size: 20px; }
+            .button { padding: 6px 12px; font-size: 14px; }
+            .social-links a { padding: 6px 8px; font-size: 12px; }
+            marquee { font-size: 18px; }
+        }
+
+        .button {
+            transition: background 0.3s, transform 0.3s;
+        }
+        .button:hover {
+            transform: scale(1.05);
+        }
+        .glow-effect {
+            text-shadow: 0 0 10px rgba(255, 165, 0, 0.8), 0 0 20px rgba(255, 165, 0, 0.6);
+        }
+        .hamburger { display: none; flex-direction: column; cursor: pointer; position: absolute; left: 20px; top: 15px; background: rgba(239, 236, 236, 0.5); 
+    padding: 5px;border-radius: 5px ;z-index: 1100}
+        .hamburger div { width: 20px; height: 2px; background: rgb(0, 0, 0); margin: 5px 0; transition: 0.4s; }
+        .mobile-nav { position: fixed; top: 0; left: -100%; width: 250px; height: 100vh; background: rgba(255, 102, 0, 0.9); padding: 20px; transition: 0.3s ease-in-out; }
+        .mobile-nav a { display: block; text-decoration: none; color: white; font-size: 20px; padding: 10px 0; }
+        .mobile-nav a:hover { background: #e65c00; }
+        .mobile-nav.open { left: 0; }
+        @media screen and (max-width: 768px) {
+            .nav-links { display: none; }
+            .hamburger { display: flex; }
+        }
+        @media screen and (max-width: 768px) {
+  body { font-size: 16px; }
+  img { max-width: 100%; height: auto; }
+}
+    </style>
+    <title>Krishna Says - Teachings & Divine Wisdom</title>
+    <meta name="description" content="Explore Lord Krishna's timeless teachings and divine wisdom from the Bhagavad Gita and other scriptures.">
+    <meta name="keywords" content="Krishna teachings, Bhagavad Gita wisdom, Hindu philosophy, Krishna's words">
+    <meta name="author" content="Unmesh Joshi">
+    <meta name="robots" content="index, follow">
+    
+</head>
+<body>
+    <div class="hamburger" onclick="toggleMenu()">
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+    <div class="mobile-nav" id="mobileNav">
+        <a href="index.html">Home</a>
+        <a href="2nd.html">Krishna Pictures</a>
+        <a href="3rd.html">Krishna Songs</a>
+        <a href="4th.html">Shree Krishna Names</a>
+        <a href="5th.html">Krishna Shlokas</a>
+        <a href="7thqueots.html">Daily Krishna Says</a>
+        <a href="8th.html">Stories</a>
+        <a href="6thfeedback.html">Feedback</a>
+        <a href="creator.html">About Creator</a>
+    </div>
+    <div class="navbar">
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="2nd.html">Krishna Pictures</a>
+            <a href="3rd.html">Krishna Songs</a>
+            <a href="4th.html">Shree Krishna Names</a>
+            <a href="5th.html">Krishna Shlokas</a>
+            <a href="7thqueots.html">Daily Krishna Says</a>
+            <a href="8th.html">Stories</a>
+            <a href="6thfeedback.html">Feedback</a>
+            <a href="creator.html">About Creator</a>
+        </div>
+    </div>
+   
+    <script>
+        function toggleMenu() {
+            var mobileNav = document.getElementById("mobileNav");
+            if (mobileNav.classList.contains("open")) {
+                mobileNav.classList.remove("open");
+            } else {
+                mobileNav.classList.add("open");
+            }
+        }
+        document.addEventListener("click", function(event) {
+            var mobileNav = document.getElementById("mobileNav");
+            var hamburger = document.querySelector(".hamburger");
+            if (!mobileNav.contains(event.target) && !hamburger.contains(event.target)) {
+                mobileNav.classList.remove("open");
+            }
+        });
+    </script>
+
+    <h1>📜 Daily Krishna Quote</h1>
+    <div class="quote-box" id="quote-box">
+        "Loading Krishna's wisdom..."
+    </div>
+    <button class="button" onclick="generateQuote()">🔄 Get a New Quote</button>
+    <button class="button whatsapp-button" onclick="shareOnWhatsApp()">📲 Share on WhatsApp</button>
+
+<script>
+    function shareOnWhatsApp() {
+        let quoteText = document.getElementById("quote-box").innerText;
+        let whatsappURL = "https://api.whatsapp.com/send?text=" + encodeURIComponent(quoteText + " 🙏 ~ Shared from Radhe Krishna Devotion");
+        window.open(whatsappURL, "_blank");
+    }
+</script>
+    <br>
+    <br>
+    <audio id="bg-music" autoplay loop>
+        <source src="Powerful Krishna Mantra.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+    <button class="button" onclick="toggleMusic()">🔊 Play/Pause Music</button>
+    
+    <script>
+        function toggleMusic() {
+            var music = document.getElementById("bg-music");
+            if (music.paused) {
+                music.play();
+            } else {
+                music.pause();
+            }
+        }
+</script> 
+    <br>
+
+
+    <div class="social-links">
+        <a href="https://www.youtube.com/channel/UC9qr5anLvw3DBXLvgvvwUMQ" target="_blank">
+            <img src="https://cdn-icons-png.flaticon.com/512/1384/1384060.png" alt="YouTube" width="30"> YouTube
+        </a>
+        <a href="https://www.instagram.com/unmesh12634?igsh=MWNkcTNodTBjNnZ1MA%3D%3D&fbclid=PAZXh0bgNhZW0CMTEAAaZKyYCKXTDO7csJfcR8n4VODb25SJe4dz1C57qAE2Yq3A58_papCdSfyZc_aem_JFuwBIy2OUpn-TjQ4-DUMw" target="_blank">
+            <img src="https://cdn-icons-png.flaticon.com/512/1384/1384063.png" alt="Instagram" width="30"> Instagram
+        </a>
+        <a href="mailto:unmeshjoshi083@gmail.com">
+            <img src="https://cdn-icons-png.flaticon.com/512/732/732200.png" alt="Email" width="30"> Email Me
+        </a>
+    </div>
+   
+
+    <script>
+        const quotes = [
+            "Even if you are the most sinful of all sinners, you can cross over all sin by the raft of knowledge. – Bhagavad Gita 4.36",
+            "Hell has three gates: lust, anger, and greed. – Bhagavad Gita 16.21",
+            "Among all types of yogis, one who worships Me with faith and devotion is the highest. – Bhagavad Gita 6.47",
+            "For one who sees Me everywhere and sees everything in Me, I am never lost, nor is he ever lost to Me. – Bhagavad Gita 6.30",
+            "Those who are free from anger and all material desires, who are self-disciplined and constantly engage in the practice of devotion, attain liberation. – Bhagavad Gita 5.26",
+            "Neither in this world nor in the next is there any happiness for one who doubts. – Bhagavad Gita 4.40",
+            "He who has no attachments can truly love others, for his love is pure and divine. – Bhagavad Gita 2.55",
+            "The offering of wisdom is greater than any material offering. – Bhagavad Gita 4.33",
+            "I am the source of all spiritual and material worlds. Everything emanates from Me. – Bhagavad Gita 10.8",
+            "Perform your prescribed duty, for action is better than inaction. – Bhagavad Gita 3.8",
+            "The devotee who is free from malice toward others, friendly and compassionate, free from possessiveness, and self-controlled, is dear to Me. – Bhagavad Gita 12.13",
+            "A true yogi is one who looks upon all beings with an equal eye. – Bhagavad Gita 6.29",
+            "My devotee never perishes. – Bhagavad Gita 9.31",
+            "I am time, the great destroyer of the world. – Bhagavad Gita 11.32",
+            "The wise work without attachment, striving for the welfare of the world. – Bhagavad Gita 3.25",
+            "The soul is neither born, nor does it ever die. – Bhagavad Gita 2.20",
+            "The soul is neither born, nor does it ever die. – Bhagavad Gita 2.20",
+            "A person is made by their belief. As they believe, so they become. – Bhagavad Gita 17.3",
+            "There is neither this world nor the world beyond nor happiness for the one who doubts. – Bhagavad Gita 4.40",
+            "That person who is not disturbed by happiness and distress and is steady in both is certainly eligible for liberation. – Bhagavad Gita 2.15",
+            "The wise see that there is action in the midst of inaction and inaction in the midst of action. – Bhagavad Gita 4.18",
+            "Change is the law of the universe. You can be a millionaire or a pauper in an instant. – Bhagavad Gita 2.14",
+            "Happiness comes not by desire, but by letting go of desires. – Bhagavad Gita 5.12",
+            "One who sees all beings in Me, and Me in all beings, is truly enlightened. – Bhagavad Gita 6.29",
+            "Fear not. For the soul is eternal and beyond destruction. – Bhagavad Gita 2.23",
+            "He who does not hate anyone and is free from envy is very dear to Me. – Bhagavad Gita 12.13",
+            "Detachment from material possessions leads to true peace. – Bhagavad Gita 5.3",
+            "By devotion alone can I be truly known. – Bhagavad Gita 18.55",
+            "When meditation is mastered, the mind is unwavering like the flame of a lamp in a windless place. – Bhagavad Gita 6.19",
+            "No one who does good work will ever come to a bad end, either here or in the world to come. – Bhagavad Gita 6.40",
+            "You have control over your actions, never over the results. – Bhagavad Gita 2.47",
+            "Be steadfast in yoga, O Arjuna. Perform your duty and abandon attachment. – Bhagavad Gita 2.48"];
+        
+        function generateQuote() {
+            const randomIndex = Math.floor(Math.random() * quotes.length);
+            document.getElementById("quote-box").innerText = quotes[randomIndex];
+        }
+
+        window.onload = generateQuote;
+    </script>
+
+       <marquee><h3>Radhe Radhe... Radhe Radhe... Radhe Radhe...Radhe Radhe... Radhe Radhe... Radhe Radhe...Radhe Radhe... Radhe Radhe... Radhe Radhe...Radhe Radhe... Radhe Radhe... Radhe Radhe...</h3></marquee>
+     <footer>
+        <p>&copy; 2025 Radhe Krishna Devotion. All Rights Reserved.</p>
+    </footer>
+</body>
+</html>
