@@ -1,59 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-E0FNFMFRPF"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-E0FNFMFRPF');
-</script>
-    <meta property="og:image" content="https://yourwebsite.com/images/pic3.jpg">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Feedback - Krishna Devotion</title>
     <style>
-        body { background: linear-gradient(to bottom, #e0f7fa, #80deea);font-family: 'Arial', sans-serif; text-align: center; margin: 0; padding: 0;  }
-
-        .navbar {display: flex; justify-content: center; background: #ff6600;padding: 10px; position: sticky; top: 0; z-index: 1000; }
-        .navbar a {text-decoration: none; color: white; padding: 10px 20px; font-size: 18px;font-weight: bold;transition: background 0.3s ease-in-out; }
-        .navbar a:hover { background: #e65c00; border-radius: 5px; }
-        marquee { font-size: 20px; color: #ff6600; font-weight: bold; animation: glow 2s infinite alternate; }
-      
-
-        h1 { color: white;background: linear-gradient(to right, #ff6600, #ffcc00);padding: 15px;border-radius: 10px; display: inline-block;margin-top: 20px; }
-
-        .form-container { width: 90%; max-width: 700px; margin: 20px auto; background: rgba(255, 255, 255, 0.9); padding: 20px; border-radius: 10px; box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); }
-
-        footer {
-            margin-top: 30px;
-            padding: 15px;
-            background: rgba(0, 0, 0, 0.2);
-            color: white;
-            font-size: 16px;
-            border-radius: 10px;
-        }
-        .hamburger { display: none; flex-direction: column; cursor: pointer; position: absolute; left: 20px; top: 15px; }
-        .hamburger div { width: 20px; height: 2px; background: rgb(0, 0, 0); margin: 5px 0; transition: 0.4s; }
-        .mobile-nav { position: fixed; top: 0; left: -100%; width: 250px; height: 100vh; background: rgba(255, 102, 0, 0.9); padding: 20px; transition: 0.3s ease-in-out; }
-        .mobile-nav a { display: block; text-decoration: none; color: white; font-size: 20px; padding: 10px 0; }
-        .mobile-nav a:hover { background: #e65c00; }
-        .mobile-nav.open { left: 0; }
-        @media screen and (max-width: 768px) {
-            .nav-links { display: none; }
-            .hamburger { display: flex; }
-        }
+        body { background: linear-gradient(to bottom, #e0f7fa, #80deea);font-family: 'Arial', sans-serif;text-align: center;margin: 0; padding: 0; .menu-open { overflow: hidden;}}
+        .navbar {display: flex;justify-content: center;background: #ff6600; padding: 10px; position: sticky;top: 0; z-index: 1000;}
+        .navbar a {text-decoration: none; color: white;padding: 10px 15px;font-size: 16px;font-weight: bold; transition: background 0.3s ease-in-out; border-radius: 8px;}
+        .navbar a:hover { background: #e65c00;}
+        .hamburger {display: none;font-size: 30px; cursor: pointer; position: absolute;top: 10px;left: 15px;color: rgb(3, 3, 3); z-index: 2000;}
+        .mobile-nav { display: none;position: fixed;top: 0;left: 0; width: 70%; height: 100vh;background: rgba(255, 102, 0, 0.95);padding: 20px;transform: translateX(-100%);transition: transform 0.3s ease-in-out;z-index: 1500; }
+        .mobile-nav.open {transform: translateX(0);}
+        .mobile-nav a { display: block;text-decoration: none;color: white;font-size: 20px; padding: 10px 0;}
+        .mobile-nav a:hover { background: #e65c00;padding-left: 10px;}
+        h1 { color: white;background: linear-gradient(to right, #ff6600, #ffcc00);padding: 15px 25px; border-radius: 12px; display: inline-block; margin-top: 20px;font-size: 24px;}
+        .form-container { width: auto; max-width: 500px;margin: 20px auto;background: white;padding: 20px;border-radius: 12px;box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2); text-align: center; }
+        .form-container input{width: auto;padding: 12px; margin: 10px 0;border: 2px solid #ff6600;border-radius: 8px; font-size: 16px;outline: none;}
+        .form-container textarea {width: 90%;padding: 12px; margin: 10px 0;border: 2px solid #ff6600;border-radius: 8px; font-size: 16px;outline: none;}
+        .star-rating {font-size: 28px;cursor: pointer;margin: 10px 0;display: flex; justify-content: center;gap: 5px;}
+        .star {color: gray;transition: color 0.3s;}
+        .star:hover, .star.active {color: gold;}
+        button { background: #ff6600;color: white;padding: 12px 20px;border: none;border-radius: 8px;font-size: 18px; font-weight: bold; cursor: pointer;transition: 0.3s; width: 100%;}
+        button:hover {background: #e65c00; }
+        .modal {display: none; position: fixed; z-index: 100; left: 50%; top: 50%; transform: translate(-50%, -50%); background: white; padding: 20px; box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.3);border-radius: 30px;width: 90%;text-align: center; }
+    .modal-content {text-align: center; }
+    .modal input {width: 80%;padding: 8px;margin: 5px;}
+    .modal button {margin: 5px;padding: 8px;cursor: pointer;}
+    #reviews-container { width: auto;max-width: 500px;margin: 20px auto;background: rgba(255, 255, 255, 0.95); padding: 15px;border-radius: 12px;box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);text-align: left;}
+    .review-box {background: #fff8e1;padding: 12px;margin: 8px 0;border-radius: 8px;box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);font-size: 14px;}
+    footer {margin-top: 30px;padding: 15px; background: rgba(0, 0, 0, 0.5); color: white; font-size: 14px; border-radius: 10px;}
+    @media screen and (max-width: 768px) {.navbar { display: none; }
+    .hamburger { display: block; }
+    .mobile-nav { display: block; }
+    }
     </style>
 </head>
 <body>
-
-    <div class="hamburger" onclick="toggleMenu()">
-        <div></div>
-        <div></div>
-        <div></div>
-    </div>
+    <div class="hamburger" onclick="toggleMenu()">☰</div>
     <div class="mobile-nav" id="mobileNav">
         <a href="index.html">Home</a>
         <a href="2nd.html">Krishna Pictures</a>
@@ -66,18 +50,230 @@
         <a href="creator.html">About Creator</a>
     </div>
     <div class="navbar">
-        <div class="nav-links">
-            <a href="index.html">Home</a>
-            <a href="2nd.html">Krishna Pictures</a>
-            <a href="3rd.html">Krishna Songs</a>
-            <a href="4th.html">Shree Krishna Names</a>
-            <a href="5th.html">Krishna Shlokas</a>
-            <a href="7thqueots.html">Daily Krishna Says</a>
-            <a href="8th.html">Stories</a>
-            <a href="6thfeedback.html">Feedback</a>
-            <a href="creator.html">About Creator</a>
-        </div>
+        <a href="index.html">Home</a>
+        <a href="2nd.html">Krishna Pictures</a>
+        <a href="3rd.html">Krishna Songs</a>
+        <a href="4th.html">Shree Krishna Names</a>
+        <a href="5th.html">Krishna Shlokas</a>
+        <a href="7thqueots.html">Daily Krishna Says</a>
+        <a href="8th.html">Stories</a>
+        <a href="6thfeedback.html">Feedback</a>
+        <a href="creator.html">About Creator</a>
     </div>
+    <h1>💬 Share Your Feedback</h1>
+ <div class="form-container">
+        <p>We value your feedback! Share your thoughts below. 🙏✨</p>
+        <input type="text" id="reviewerName" placeholder="Your Name" required>
+        <br>
+        <input type="email" id="reviewerEmail" placeholder="Your Email (Required)" required>
+        <br>
+
+        <label for="rating">⭐ Select Rating:</label>
+        <div class="star-rating">
+            <span class="star" onclick="setRating(1)">★</span>
+            <span class="star" onclick="setRating(2)">★</span>
+            <span class="star" onclick="setRating(3)">★</span>
+            <span class="star" onclick="setRating(4)">★</span>
+            <span class="star" onclick="setRating(5)">★</span>
+        </div>
+
+        <textarea id="reviewText" placeholder="Write your review..." required></textarea>
+        <button onclick="submitReview()">Submit Review</button>
+    </div>
+    <h2>🌟 User Reviews</h2>
+    <div id="reviews-container">
+        <p>No reviews yet. Be the first to share your thoughts!</p>
+    </div>
+<button onclick="openAdminLogin()">🔑 Admin Login</button>
+<hr>
+<button  onclick="logoutAdmin()">🚪 Logout</button>
+<div id="adminLoginModal" class="modal">
+    <div class="modal-content">
+        <h3>🔒 Admin Login</h3>
+        <input type="text" id="adminName" placeholder="Enter Admin Name"><br>
+        <input type="password" id="adminPassword" placeholder="Enter Password"><br>
+        <button onclick="verifyAdmin()">Login</button>
+        <button onclick="closeAdminLogin()">Cancel</button>
+    </div>
+</div>
+<script>
+  
+    let selectedRating = 0;
+    const adminDetails = { name: "unmesh", password: "unii12634" }; 
+
+    function setRating(rating) {
+        selectedRating = rating;
+        document.querySelectorAll(".star").forEach((star, index) => {
+            star.classList.toggle("active", index < rating);
+        });
+    }
+    function submitReview() {
+        let name = document.getElementById("reviewerName").value.trim();
+        let email = document.getElementById("reviewerEmail").value.trim();
+        let text = document.getElementById("reviewText").value.trim();
+
+        if (name === "" || text === "" || email === "") {
+            alert("Please fill in all fields.");
+            return;
+        }
+        if (selectedRating === 0) {
+            alert("Please select a rating.");
+            return;
+        }
+        let reviews = JSON.parse(localStorage.getItem("reviews")) || [];
+        reviews.push({ name, email, rating: selectedRating, text });
+        localStorage.setItem("reviews", JSON.stringify(reviews));
+
+        loadReviews();
+        document.getElementById("reviewerName").value = "";
+        document.getElementById("reviewerEmail").value = "";
+        document.getElementById("reviewText").value = "";
+        setRating(0);
+    }
+
+    function loadReviews() {
+        let reviews = JSON.parse(localStorage.getItem("reviews")) || [];
+        let container = document.getElementById("reviews-container");
+        container.innerHTML = reviews.length === 0 ? "<p>No reviews yet.</p>" : "";
+
+        reviews.forEach((review, index) => {
+            let stars = "⭐".repeat(review.rating) + "☆".repeat(5 - review.rating);
+            let reviewElement = document.createElement("div");
+            reviewElement.classList.add("review-box");
+
+            reviewElement.innerHTML = `
+                <p><strong>${review.name}</strong>: ${review.text}</p>
+                <p>Rating: ${stars}</p>
+                <button class="delete-btn" onclick="deleteReview(${index})" style="display: none;">🗑 Delete</button>
+            `;
+            container.appendChild(reviewElement);
+        });
+        checkAdmin();
+    }
+
+    function deleteReview(index) {
+        let reviews = JSON.parse(localStorage.getItem("reviews")) || [];
+        reviews.splice(index, 1);
+        localStorage.setItem("reviews", JSON.stringify(reviews));
+        loadReviews();
+    }
+
+    function openAdminLogin() {
+        document.getElementById("adminLoginModal").style.display = "block";
+    }
+
+    function closeAdminLogin() {
+        document.getElementById("adminLoginModal").style.display = "none";
+    }
+
+    function verifyAdmin() {
+        let name = document.getElementById("adminName").value.trim();
+        let password = document.getElementById("adminPassword").value.trim();
+
+        if (name === adminDetails.name && password === adminDetails.password) {
+            localStorage.setItem("adminVerified", "true");
+            alert("✅ Admin Access Granted!");
+            closeAdminLogin();
+            loadReviews();
+        } else {
+            alert("❌ Incorrect Name or Password!");
+        }
+    }
+    function logoutAdmin() {
+    localStorage.removeItem("adminVerified");
+    alert("🔒 Admin Logged Out!");
+    checkAdmin(); 
+}
+
+    function checkAdmin() {
+        let isAdmin = localStorage.getItem("adminVerified");
+        if (isAdmin === "true") {
+            document.querySelectorAll(".delete-btn").forEach(btn => btn.style.display = "inline-block");
+        }
+    }
+
+    document.addEventListener("DOMContentLoaded", () => {
+        loadReviews();
+    });
+</script>
+    <footer>
+        <p>&copy; 2025 Radhe Krishna Devotion. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        let selectedRating = 0;
+
+        function setRating(rating) {
+            selectedRating = rating;
+            let stars = document.querySelectorAll(".star");
+            stars.forEach((star, index) => {
+                star.classList.toggle("active", index < rating);
+            });
+        }
+
+        function submitReview() {
+    let name = document.getElementById("reviewerName").value.trim();
+    let email = document.getElementById("reviewerEmail").value.trim();
+    let text = document.getElementById("reviewText").value.trim();
+
+    if (name === "" || text === "" || email === "") {
+        alert("Please fill in all fields.");
+        return;
+    }
+    if (selectedRating === 0) {
+        alert("Please select a rating.");
+        return;
+    }
+
+    let reviews = JSON.parse(localStorage.getItem("reviews")) || [];
+    reviews.push({ name, email, rating: selectedRating, text });
+    localStorage.setItem("reviews", JSON.stringify(reviews));
+
+    loadReviews();
+
+    sendEmail(name, email, selectedRating, text);
+    document.getElementById("reviewerName").value = "";
+    document.getElementById("reviewerEmail").value = "";
+    document.getElementById("reviewText").value = "";
+    setRating(0);
+}
+function sendEmail(name, email, rating, text) {
+    fetch("https://formsubmit.co/ajax/unmeshjoshi083@gmail.com", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+            name: name,
+            email: email,
+            rating: rating,
+            message: `🌟 New Review Submitted!\n\n👤 Name: ${name}\n📧 Email: ${email}\n⭐ Rating: ${rating}/5\n💬 Review: ${text}`
+        })
+    })
+    .then(response => response.json())
+    .then(data => {
+        console.log("✅ Email Sent Successfully:", data);
+    })
+    .catch(error => console.error("❌ Error Sending Email:", error));
+}
+
+        function loadReviews() {
+            let reviews = JSON.parse(localStorage.getItem("reviews")) || [];
+            let container = document.getElementById("reviews-container");
+            container.innerHTML = reviews.length === 0 ? "<p>No reviews yet.</p>" : "";
+
+            reviews.forEach((review) => {
+                let stars = "⭐".repeat(review.rating) + "☆".repeat(5 - review.rating);
+                let reviewElement = document.createElement("div");
+                reviewElement.classList.add("review-box");
+                reviewElement.innerHTML = `<p><strong>${review.name}</strong>: ${review.text}</p>
+                    <p>Rating: ${stars}</p>`;
+                container.appendChild(reviewElement);
+            });
+        }
+
+        document.addEventListener("DOMContentLoaded", loadReviews);
+    </script>
+    
+
     <script>
         function toggleMenu() {
             var mobileNav = document.getElementById("mobileNav");
@@ -87,45 +283,16 @@
                 mobileNav.classList.add("open");
             }
         }
+
         document.addEventListener("click", function(event) {
             var mobileNav = document.getElementById("mobileNav");
             var hamburger = document.querySelector(".hamburger");
+
             if (!mobileNav.contains(event.target) && !hamburger.contains(event.target)) {
                 mobileNav.classList.remove("open");
             }
         });
     </script>
-
-    <h1>💬 Share Your Feedback</h1>
-    
-    <div class="form-container">
-        <p>We value your thoughts! Please share your feedback to help us improve. 🙏✨</p>
-        <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdI6rKDr-_bWcoE-vHoGxFSkYF6TWGxMrymyymmAHu36LIcGA/viewform" 
-                width="100%" height="600px" frameborder="0" marginheight="0" marginwidth="0">
-            Loading…
-        </iframe>
-    </div>
-    <h2>📲 Connect With Me</h2>
-    <p>Follow me for updates, new content, and Krishna devotion! 🙏✨</p>
-    
-    
-    <div class="social-links">
-        <a href="https://www.youtube.com/channel/UC9qr5anLvw3DBXLvgvvwUMQ" target="_blank">
-            <img src="https://cdn-icons-png.flaticon.com/512/1384/1384060.png" alt="YouTube" width="30">
-        </a>
-        <a href="https://www.instagram.com/unmesh12634?igsh=MWNkcTNodTBjNnZ1MA%3D%3D&fbclid=PAZXh0bgNhZW0CMTEAAaZKyYCKXTDO7csJfcR8n4VODb25SJe4dz1C57qAE2Yq3A58_papCdSfyZc_aem_JFuwBIy2OUpn-TjQ4-DUMw" target="_blank">
-            <img src="https://cdn-icons-png.flaticon.com/512/1384/1384063.png" alt="Instagram" width="30">
-        </a>
-        <a href="mailto:unmeshjoshi083@gmail.com">
-            <img src="https://cdn-icons-png.flaticon.com/512/732/732200.png" alt="Email" width="30">
-        </a>
-    </div>
-    <marquee><h3>  कृष्णाय वासुदेवाय हरये परमात्मने।   प्रणतः क्लेशनाशाय गोविंदाय नमो नमः॥...कृष्णाय वासुदेवाय हरये परमात्मने।  प्रणतः क्लेशनाशाय गोविंदाय नमो नमः॥...</h3></marquee>
-  
-
-    <footer>
-        <p>&copy; 2025 Radhe Krishna Devotion. All Rights Reserved.</p>
-    </footer>
 
 </body>
 </html>
