@@ -133,11 +133,13 @@
     <button class="button whatsapp-button" onclick="shareOnWhatsApp()">📲 Share on WhatsApp</button>
 
 <script>
-    function shareOnWhatsApp() {
-        let quoteText = document.getElementById("quote-box").innerText;
-        let whatsappURL = "https://api.whatsapp.com/send?text=" + encodeURIComponent(quoteText + " 🙏 ~ Shared from Radhe Krishna Devotion");
-        window.open(whatsappURL, "_blank");
-    }
+   function shareOnWhatsApp() {
+    let quoteText = document.getElementById("quote-box").innerText;
+    let pageLink = "https://unmesh-12634.github.io/krishna-devotion/7thqueots.html";
+    let whatsappURL = "https://api.whatsapp.com/send?text=" + encodeURIComponent(quoteText + " 🙏 Read more at: " + pageLink);
+    window.open(whatsappURL, "_blank");
+}
+
 </script>
     <br>
     <br>
