@@ -5,17 +5,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Feedback - Krishna Devotion</title>
     <style>
-        body { background: linear-gradient(to bottom, #e0f7fa, #80deea);font-family: 'Arial', sans-serif;text-align: center;margin: 0; padding: 0; .menu-open { overflow: hidden;}}
-        .navbar {display: flex;justify-content: center;background: #ff6600; padding: 10px; position: sticky;top: 0; z-index: 1000;}
-        .navbar a {text-decoration: none; color: white;padding: 10px 15px;font-size: 16px;font-weight: bold; transition: background 0.3s ease-in-out; border-radius: 8px;}
-        .navbar a:hover { background: #e65c00;}
-        .hamburger {display: none;font-size: 30px; cursor: pointer; position: absolute;top: 10px;left: 15px;color: rgb(3, 3, 3); z-index: 2000;}
-        .mobile-nav { display: none;position: fixed;top: 0;left: 0; width: 70%; height: 100vh;background: rgba(255, 102, 0, 0.95);padding: 20px;transform: translateX(-100%);transition: transform 0.3s ease-in-out;z-index: 1500; }
-        .mobile-nav.open {transform: translateX(0);}
-        .mobile-nav a { display: block;text-decoration: none;color: white;font-size: 20px; padding: 10px 0;}
-        .mobile-nav a:hover { background: #e65c00;padding-left: 10px;}
-        h1 { color: white;background: linear-gradient(to right, #ff6600, #ffcc00);padding: 15px 25px; border-radius: 12px; display: inline-block; margin-top: 20px;font-size: 24px;}
-        .form-container { width: auto; max-width: 500px;margin: 20px auto;background: white;padding: 20px;border-radius: 12px;box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2); text-align: center; }
+       body { background: linear-gradient(to bottom, #e0f7fa, #80deea); font-family: 'Arial', sans-serif; text-align: center; margin: 0; padding: 0; }
+        .navbar { display: flex; justify-content: center; background: #ff6600; padding: 10px; position: sticky; top: 0; z-index: 1000; }
+        .navbar a { text-decoration: none; color: white; padding: 10px 15px; font-size: 16px; font-weight: bold; transition: background 0.3s ease-in-out; border-radius: 8px; }
+        .navbar a:hover { background: #e65c00; }
+        
+        h1 { color: white; background: linear-gradient(to right, #ff6600, #ffcc00); padding: 15px 25px; border-radius: 12px; display: inline-block; margin-top: 20px; font-size: 24px; }
+        .form-container { width: 95%; max-width: 600px; margin: 20px auto; background: white; padding: 20px; border-radius: 12px; box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2); text-align: center; }
+        
+        .star-rating { font-size: 28px; cursor: pointer; margin: 10px 0; display: flex; justify-content: center; gap: 5px; }
+        .star { color: gray; transition: color 0.3s; }
+        .star:hover, .star.active { color: gold; }
+        
+        .hamburger { display: flex; flex-direction: column; cursor: pointer; position: absolute; left: 20px; top: 15px; z-index: 2000; }
+        .hamburger div { width: 15px; height: 2px; background: black; margin: 5px 0; transition: 0.4s; }
+        
+        .mobile-nav { position: fixed; top: 0; left: -100%; width: 250px; height: 100vh; background: rgba(255, 102, 0, 0.9); padding: 20px; transition: 0.3s ease-in-out; z-index: 1500; }
+        .mobile-nav a { display: block; text-decoration: none; color: white; font-size: 20px; padding: 10px 0; }
+        .mobile-nav a:hover { background: #e65c00; }
+        .mobile-nav.open { left: 0; }
+         .form-container { width: auto; max-width: 500px;margin: 20px auto;background: white;padding: 20px;border-radius: 12px;box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2); text-align: center; }
         .form-container input{width: auto;padding: 12px; margin: 10px 0;border: 2px solid #ff6600;border-radius: 8px; font-size: 16px;outline: none;}
         .form-container textarea {width: 90%;padding: 12px; margin: 10px 0;border: 2px solid #ff6600;border-radius: 8px; font-size: 16px;outline: none;}
         .star-rating {font-size: 28px;cursor: pointer;margin: 10px 0;display: flex; justify-content: center;gap: 5px;}
@@ -29,15 +38,20 @@
     .modal button {margin: 5px;padding: 8px;cursor: pointer;}
     #reviews-container { width: auto;max-width: 500px;margin: 20px auto;background: rgba(255, 255, 255, 0.95); padding: 15px;border-radius: 12px;box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);text-align: left;}
     .review-box {background: #fff8e1;padding: 12px;margin: 8px 0;border-radius: 8px;box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);font-size: 14px;}
-    footer {margin-top: 30px;padding: 15px; background: rgba(0, 0, 0, 0.5); color: white; font-size: 14px; border-radius: 10px;}
-    @media screen and (max-width: 768px) {.navbar { display: none; }
-    .hamburger { display: block; }
-    .mobile-nav { display: block; }
-    }
+    
+        
+        @media screen and (max-width: 768px) {
+            .navbar { display: none; }
+            .hamburger { display: flex; }
+        }
     </style>
 </head>
 <body>
-    <div class="hamburger" onclick="toggleMenu()">☰</div>
+    <div class="hamburger" onclick="toggleMenu()">
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
     <div class="mobile-nav" id="mobileNav">
         <a href="index.html">Home</a>
         <a href="2nd.html">Krishna Pictures</a>
@@ -49,234 +63,8 @@
         <a href="6thfeedback.html">Feedback</a>
         <a href="creator.html">About Creator</a>
     </div>
-    <div class="navbar">
-        <a href="index.html">Home</a>
-        <a href="2nd.html">Krishna Pictures</a>
-        <a href="3rd.html">Krishna Songs</a>
-        <a href="4th.html">Shree Krishna Names</a>
-        <a href="5th.html">Krishna Shlokas</a>
-        <a href="7thqueots.html">Daily Krishna Says</a>
-        <a href="8th.html">Stories</a>
-        <a href="6thfeedback.html">Feedback</a>
-        <a href="creator.html">About Creator</a>
-    </div>
-    <h1>💬 Share Your Feedback</h1>
- <div class="form-container">
-        <p>We value your feedback! Share your thoughts below. 🙏✨</p>
-        <form action="https://getform.io/f/azywnjob" method="POST" onsubmit="saveReview(event)">
     
-        <input type="text" id="reviewerName" placeholder="Your Name" required>
-        <br>
-        <input type="email" id="reviewerEmail" placeholder="Your Email (Required)" required>
-        <br>
-
-        <label for="rating">⭐ Select Rating:</label>
-        <div class="star-rating">
-            <span class="star" onclick="setRating(1)">★</span>
-            <span class="star" onclick="setRating(2)">★</span>
-            <span class="star" onclick="setRating(3)">★</span>
-            <span class="star" onclick="setRating(4)">★</span>
-            <span class="star" onclick="setRating(5)">★</span>
-        </div>
-
-        <textarea id="reviewText" placeholder="Write your review..." required></textarea>
-        <button onclick="submitReview()">Submit Review</button>
-    </div>
-    <h2>🌟 User Reviews</h2>
-    <div id="reviews-container">
-        <p>No reviews yet. Be the first to share your thoughts!</p>
-    </div>
-<button onclick="openAdminLogin()">🔑 Admin Login</button>
-<hr>
-<button  onclick="logoutAdmin()">🚪 Logout</button>
-<div id="adminLoginModal" class="modal">
-    <div class="modal-content">
-        <h3>🔒 Admin Login</h3>
-        <input type="text" id="adminName" placeholder="Enter Admin Name"><br>
-        <input type="password" id="adminPassword" placeholder="Enter Password"><br>
-        <button onclick="verifyAdmin()">Login</button>
-        <button onclick="closeAdminLogin()">Cancel</button>
-    </div>
-</div>
-<script>
-  
-    let selectedRating = 0;
-    const adminDetails = { name: "unmesh", password: "unii12634" }; 
-
-    function setRating(rating) {
-        selectedRating = rating;
-        document.querySelectorAll(".star").forEach((star, index) => {
-            star.classList.toggle("active", index < rating);
-        });
-    }
-    function submitReview() {
-        let name = document.getElementById("reviewerName").value.trim();
-        let email = document.getElementById("reviewerEmail").value.trim();
-        let text = document.getElementById("reviewText").value.trim();
-
-        if (name === "" || text === "" || email === "") {
-            alert("Please fill in all fields.");
-            return;
-        }
-        if (selectedRating === 0) {
-            alert("Please select a rating.");
-            return;
-        }
-        let reviews = JSON.parse(localStorage.getItem("reviews")) || [];
-        reviews.push({ name, email, rating: selectedRating, text });
-        localStorage.setItem("reviews", JSON.stringify(reviews));
-
-        loadReviews();
-        document.getElementById("reviewerName").value = "";
-        document.getElementById("reviewerEmail").value = "";
-        document.getElementById("reviewText").value = "";
-        setRating(0);
-    }
-
-    function loadReviews() {
-        let reviews = JSON.parse(localStorage.getItem("reviews")) || [];
-        let container = document.getElementById("reviews-container");
-        container.innerHTML = reviews.length === 0 ? "<p>No reviews yet.</p>" : "";
-
-        reviews.forEach((review, index) => {
-            let stars = "⭐".repeat(review.rating) + "☆".repeat(5 - review.rating);
-            let reviewElement = document.createElement("div");
-            reviewElement.classList.add("review-box");
-
-            reviewElement.innerHTML = `
-                <p><strong>${review.name}</strong>: ${review.text}</p>
-                <p>Rating: ${stars}</p>
-                <button class="delete-btn" onclick="deleteReview(${index})" style="display: none;">🗑 Delete</button>
-            `;
-            container.appendChild(reviewElement);
-        });
-        checkAdmin();
-    }
-
-    function deleteReview(index) {
-        let reviews = JSON.parse(localStorage.getItem("reviews")) || [];
-        reviews.splice(index, 1);
-        localStorage.setItem("reviews", JSON.stringify(reviews));
-        loadReviews();
-    }
-
-    function openAdminLogin() {
-        document.getElementById("adminLoginModal").style.display = "block";
-    }
-
-    function closeAdminLogin() {
-        document.getElementById("adminLoginModal").style.display = "none";
-    }
-
-    function verifyAdmin() {
-        let name = document.getElementById("adminName").value.trim();
-        let password = document.getElementById("adminPassword").value.trim();
-
-        if (name === adminDetails.name && password === adminDetails.password) {
-            localStorage.setItem("adminVerified", "true");
-            alert("✅ Admin Access Granted!");
-            closeAdminLogin();
-            loadReviews();
-        } else {
-            alert("❌ Incorrect Name or Password!");
-        }
-    }
-    function logoutAdmin() {
-    localStorage.removeItem("adminVerified");
-    alert("🔒 Admin Logged Out!");
-    checkAdmin(); 
-}
-
-    function checkAdmin() {
-        let isAdmin = localStorage.getItem("adminVerified");
-        if (isAdmin === "true") {
-            document.querySelectorAll(".delete-btn").forEach(btn => btn.style.display = "inline-block");
-        }
-    }
-
-    document.addEventListener("DOMContentLoaded", () => {
-        loadReviews();
-    });
-</script>
-    <footer>
-        <p>&copy; 2025 Radhe Krishna Devotion. All Rights Reserved.</p>
-    </footer>
-
-    <script>
-        let selectedRating = 0;
-
-        function setRating(rating) {
-            selectedRating = rating;
-            let stars = document.querySelectorAll(".star");
-            stars.forEach((star, index) => {
-                star.classList.toggle("active", index < rating);
-            });
-        }
-
-        function submitReview() {
-    let name = document.getElementById("reviewerName").value.trim();
-    let email = document.getElementById("reviewerEmail").value.trim();
-    let text = document.getElementById("reviewText").value.trim();
-
-    if (name === "" || text === "" || email === "") {
-        alert("Please fill in all fields.");
-        return;
-    }
-    if (selectedRating === 0) {
-        alert("Please select a rating.");
-        return;
-    }
-
-    let reviews = JSON.parse(localStorage.getItem("reviews")) || [];
-    reviews.push({ name, email, rating: selectedRating, text });
-    localStorage.setItem("reviews", JSON.stringify(reviews));
-
-    loadReviews();
-
-    sendEmail(name, email, selectedRating, text);
-    document.getElementById("reviewerName").value = "";
-    document.getElementById("reviewerEmail").value = "";
-    document.getElementById("reviewText").value = "";
-    setRating(0);
-}
-function sendEmail(name, email, rating, text) {
-    fetch("https://formsubmit.co/ajax/unmeshjoshi083@gmail.com", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-            name: name,
-            email: email,
-            rating: rating,
-            message: `🌟 New Review Submitted!\n\n👤 Name: ${name}\n📧 Email: ${email}\n⭐ Rating: ${rating}/5\n💬 Review: ${text}`
-        })
-    })
-    .then(response => response.json())
-    .then(data => {
-        console.log("✅ Email Sent Successfully:", data);
-    })
-    .catch(error => console.error("❌ Error Sending Email:", error));
-}
-
-        function loadReviews() {
-            let reviews = JSON.parse(localStorage.getItem("reviews")) || [];
-            let container = document.getElementById("reviews-container");
-            container.innerHTML = reviews.length === 0 ? "<p>No reviews yet.</p>" : "";
-
-            reviews.forEach((review) => {
-                let stars = "⭐".repeat(review.rating) + "☆".repeat(5 - review.rating);
-                let reviewElement = document.createElement("div");
-                reviewElement.classList.add("review-box");
-                reviewElement.innerHTML = `<p><strong>${review.name}</strong>: ${review.text}</p>
-                    <p>Rating: ${stars}</p>`;
-                container.appendChild(reviewElement);
-            });
-        }
-
-        document.addEventListener("DOMContentLoaded", loadReviews);
-    </script>
-    
-
-    <script>
+     <script>
         function toggleMenu() {
             var mobileNav = document.getElementById("mobileNav");
             if (mobileNav.classList.contains("open")) {
@@ -285,16 +73,151 @@ function sendEmail(name, email, rating, text) {
                 mobileNav.classList.add("open");
             }
         }
-
         document.addEventListener("click", function(event) {
             var mobileNav = document.getElementById("mobileNav");
             var hamburger = document.querySelector(".hamburger");
-
             if (!mobileNav.contains(event.target) && !hamburger.contains(event.target)) {
                 mobileNav.classList.remove("open");
             }
         });
     </script>
+   
+    <h1>💬 Share Your Feedback</h1>
 
+    <div class="form-container">
+        <p>We value your feedback! Share your thoughts below. 🙏✨</p>
+        <form action="https://usebasin.com/f/023d9d16a701" method="POST" onsubmit="saveReview(event)" onsubmit="return handleSubmit(event)">
+            <input type="text" name="name" id="reviewerName" placeholder="Your Name" required><br>
+            <input type="email" name="email" id="reviewerEmail" placeholder="Your Email" required><br>
+            
+            <label for="rating">⭐ Select Rating:</label>
+            <div class="star-rating">
+                <span class="star" data-value="1">★</span>
+                <span class="star" data-value="2">★</span>
+                <span class="star" data-value="3">★</span>
+                <span class="star" data-value="4">★</span>
+                <span class="star" data-value="5">★</span>
+            </div>
+            <input type="hidden" name="rating" id="formRating">
+
+            <textarea name="message" id="reviewText" placeholder="Write your review..." required></textarea><br>
+            <button type="submit">Submit Review</button>
+        </form>
+    </div>
+
+    <h2>🌟 User Reviews</h2>
+    <div id="reviews-container">
+        <p>No reviews yet. Be the first to share your thoughts!</p>
+    </div>
+
+    <button onclick="openAdminLogin()">🔑 Admin Login</button>
+    <hr>
+    <button onclick="logoutAdmin()">🚪 Logout</button>
+
+    <div id="adminLoginModal" class="modal">
+        <div class="modal-content">
+            <h3>🔒 Admin Login</h3>
+            <input type="text" id="adminName" placeholder="Enter Admin Name"><br>
+            <input type="password" id="adminPassword" placeholder="Enter Password"><br>
+            <button onclick="verifyAdmin()">Login</button>
+            <button onclick="closeAdminLogin()">Cancel</button>
+        </div>
+    </div>
+
+    <script>
+        let selectedRating = 0;
+
+        document.querySelectorAll(".star").forEach(star => {
+            star.addEventListener("click", function() {
+                selectedRating = this.getAttribute("data-value");
+                document.getElementById("formRating").value = selectedRating;
+
+                document.querySelectorAll(".star").forEach(s => s.classList.remove("active"));
+                for (let i = 0; i < selectedRating; i++) {
+                    document.querySelectorAll(".star")[i].classList.add("active");
+                }
+            });
+        });
+
+        function saveReview(event) {
+            event.preventDefault(); 
+
+            let form = event.target;
+            let name = document.getElementById("reviewerName").value.trim();
+            let email = document.getElementById("reviewerEmail").value.trim();
+            let text = document.getElementById("reviewText").value.trim();
+
+            if (name === "" || email === "" || text === "" || selectedRating === 0) {
+                alert("Please fill in all fields and select a rating.");
+                return;
+            }
+
+            let reviews = JSON.parse(localStorage.getItem("reviews")) || [];
+            reviews.push({ name, email, rating: selectedRating, text });
+            localStorage.setItem("reviews", JSON.stringify(reviews));
+
+            loadReviews();
+            form.submit(); // Submit form to Basin
+        }
+
+        function loadReviews() {
+            let reviews = JSON.parse(localStorage.getItem("reviews")) || [];
+            let container = document.getElementById("reviews-container");
+            container.innerHTML = reviews.length === 0 ? "<p>No reviews yet.</p>" : "";
+
+            reviews.forEach((review, index) => {
+                let stars = "⭐".repeat(review.rating) + "☆".repeat(5 - review.rating);
+                let reviewElement = document.createElement("div");
+                reviewElement.classList.add("review-box");
+                reviewElement.innerHTML = `<p><strong>${review.name}</strong>: ${review.text}</p>
+                    <p>Rating: ${stars}</p>
+                    <button class="delete-btn" onclick="deleteReview(${index})" style="display: none;">🗑 Delete</button>`;
+                container.appendChild(reviewElement);
+            });
+            checkAdmin();
+        }
+
+        function deleteReview(index) {
+            let reviews = JSON.parse(localStorage.getItem("reviews")) || [];
+            reviews.splice(index, 1);
+            localStorage.setItem("reviews", JSON.stringify(reviews));
+            loadReviews();
+        }
+
+        function openAdminLogin() { document.getElementById("adminLoginModal").style.display = "block"; }
+        function closeAdminLogin() { document.getElementById("adminLoginModal").style.display = "none"; }
+
+        function verifyAdmin() {
+            let adminDetails = { name: "unmesh", password: "unii12634" };
+            let name = document.getElementById("adminName").value.trim();
+            let password = document.getElementById("adminPassword").value.trim();
+
+            if (name === adminDetails.name && password === adminDetails.password) {
+                localStorage.setItem("adminVerified", "true");
+                alert("✅ Admin Access Granted!");
+                closeAdminLogin();
+                checkAdmin();
+            } else {
+                alert("❌ Incorrect Name or Password!");
+            }
+        }
+
+        function logoutAdmin() {
+            localStorage.removeItem("adminVerified");
+            alert("🔒 Admin Logged Out!");
+            checkAdmin();
+        }
+
+        function checkAdmin() {
+            let isAdmin = localStorage.getItem("adminVerified") === "true";
+            document.querySelectorAll(".delete-btn").forEach(btn => btn.style.display = isAdmin ? "inline-block" : "none");
+        }
+
+        document.addEventListener("DOMContentLoaded", loadReviews);
+    </script>
+    
+    <footer>
+        <p>&copy; 2025 Radhe Krishna Devotion. All Rights Reserved.</p>
+    </footer>
 </body>
 </html>
