@@ -63,6 +63,8 @@
     <h1>💬 Share Your Feedback</h1>
  <div class="form-container">
         <p>We value your feedback! Share your thoughts below. 🙏✨</p>
+        <form action="https://getform.io/f/azywnjob" method="POST" onsubmit="saveReview(event)">
+    
         <input type="text" id="reviewerName" placeholder="Your Name" required>
         <br>
         <input type="email" id="reviewerEmail" placeholder="Your Email (Required)" required>
@@ -251,10 +253,10 @@ function sendEmail(name, email, rating, text) {
     .then(response => response.json())
     .then(data => {
         console.log("✅ Email Sent Successfully:", data);
-        alert("✅ Review submitted successfully! A copy has been sent to the admin.");
     })
     .catch(error => console.error("❌ Error Sending Email:", error));
 }
+
         function loadReviews() {
             let reviews = JSON.parse(localStorage.getItem("reviews")) || [];
             let container = document.getElementById("reviews-container");
