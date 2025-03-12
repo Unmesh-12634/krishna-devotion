@@ -3,220 +3,147 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Feedback - Krishna Devotion</title>
+    <title>Krishna Devotion - Feedback</title>
+    <meta name="description" content="Share your feedback on Krishna Devotion. Explore Krishna songs, pictures, shlokas, and more. Hare Krishna!">
+    <link rel="icon" type="image/png" href="https://yourwebsite.com/favicon.png">
     <style>
-       body { background: linear-gradient(to bottom, #e0f7fa, #80deea); font-family: 'Arial', sans-serif; text-align: center; margin: 0; padding: 0; }
-        .navbar { display: flex; justify-content: center; background: #ff6600; padding: 10px; position: sticky; top: 0; z-index: 1000; }
-        .navbar a { text-decoration: none; color: white; padding: 10px 15px; font-size: 16px; font-weight: bold; transition: background 0.3s ease-in-out; border-radius: 8px; }
-        .navbar a:hover { background: #e65c00; }
-        
-        h1 { color: white; background: linear-gradient(to right, #ff6600, #ffcc00); padding: 15px 25px; border-radius: 12px; display: inline-block; margin-top: 20px; font-size: 24px; }
-        .form-container { width: 95%; max-width: 600px; margin: 20px auto; background: white; padding: 20px; border-radius: 12px; box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2); text-align: center; }
-        
-        .star-rating { font-size: 28px; cursor: pointer; margin: 10px 0; display: flex; justify-content: center; gap: 5px; }
-        .star { color: gray; transition: color 0.3s; }
-        .star:hover, .star.active { color: gold; }
-        
-        .hamburger { display: flex; flex-direction: column; cursor: pointer; position: absolute; left: 20px; top: 15px; z-index: 2000; }
-        .hamburger div { width: 15px; height: 2px; background: black; margin: 5px 0; transition: 0.4s; }
-        
-        .mobile-nav { position: fixed; top: 0; left: -100%; width: 250px; height: 100vh; background: rgba(255, 102, 0, 0.9); padding: 20px; transition: 0.3s ease-in-out; z-index: 1500; }
-        .mobile-nav a { display: block; text-decoration: none; color: white; font-size: 20px; padding: 10px 0; }
-        .mobile-nav a:hover { background: #e65c00; }
-        .mobile-nav.open { left: 0; }
-         .form-container { width: auto; max-width: 500px;margin: 20px auto;background: white;padding: 20px;border-radius: 12px;box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2); text-align: center; }
-        .form-container input{width: auto;padding: 12px; margin: 10px 0;border: 2px solid #ff6600;border-radius: 8px; font-size: 16px;outline: none;}
-        .form-container textarea {width: 90%;padding: 12px; margin: 10px 0;border: 2px solid #ff6600;border-radius: 8px; font-size: 16px;outline: none;}
-        .star-rating {font-size: 28px;cursor: pointer;margin: 10px 0;display: flex; justify-content: center;gap: 5px;}
-        .star {color: gray;transition: color 0.3s;}
-        .star:hover, .star.active {color: gold;}
-        button { background: #ff6600;color: white;padding: 12px 20px;border: none;border-radius: 8px;font-size: 18px; font-weight: bold; cursor: pointer;transition: 0.3s; width: 100%;}
-        button:hover {background: #e65c00; }
-        .modal {display: none; position: fixed; z-index: 100; left: 50%; top: 50%; transform: translate(-50%, -50%); background: white; padding: 20px; box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.3);border-radius: 30px;width: 90%;text-align: center; }
-    .modal-content {text-align: center; }
-    .modal input {width: 80%;padding: 8px;margin: 5px;}
-    .modal button {margin: 5px;padding: 8px;cursor: pointer;}
-    #reviews-container { width: auto;max-width: 500px;margin: 20px auto;background: rgba(255, 255, 255, 0.95); padding: 15px;border-radius: 12px;box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);text-align: left;}
-    .review-box {background: #fff8e1;padding: 12px;margin: 8px 0;border-radius: 8px;box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);font-size: 14px;}
-    
-        
+        body {background: linear-gradient(to bottom, #ffedd5, #fcd34d); font-family: Arial, sans-serif; text-align: center; margin: 0; padding: 0;}
+        .navbar {background: #ff6600; padding: 10px; position: fixed; width: 100%; top: 0; z-index: 1000; display: flex; justify-content: center;}
+        .navbar a {color: white; padding: 10px 15px; text-decoration: none; font-weight: bold;}
+        .navbar a:hover {background: #e65c00; border-radius: 5px;}
+        .form-container, .reviews-container {margin-top: 80px; padding: 20px; border: 2px solid #ff6600; border-radius: 10px; background: white; display: inline-block; width: 80%; transition: 0.3s ease-in-out; overflow: auto;}
+        .form-container:hover, .reviews-container:hover {box-shadow: 0px 6px 12px rgba(255, 102, 0, 0.4);}
+        .social-links img {width: 40px; margin: 10px; transition: transform 0.3s ease-in-out;}
+        .social-links img:hover {transform: scale(1.2);}
+        .footer {background: #ff6600; padding: 15px; color: white; margin-top: 20px;}
+        .hamburger {display: none; flex-direction: column; cursor: pointer; position: absolute; left: 20px; top: 15px;}
+        .hamburger div {width: 20px; height: 2px; background: black; margin: 5px 0; transition: 0.4s;}
+        .mobile-nav {position: fixed; top: 0; left: -100%; width: 250px; height: 100vh; background: rgba(255, 102, 0, 0.9); padding: 20px; transition: 0.3s ease-in-out;}
+        .mobile-nav a {display: block; text-decoration: none; color: white; font-size: 20px; padding: 10px 0;}
+        .mobile-nav a:hover {background: #e65c00;}
+        .mobile-nav.open {left: 0;}
         @media screen and (max-width: 768px) {
-            .navbar { display: none; }
-            .hamburger { display: flex; }
+            .nav-links {display: none;}
+            .hamburger {display: flex;}
         }
+        footer {background: #222; /* Dark background */color: #fff;padding: 20px 0; text-align: center;font-family: Arial, sans-serif;}
+
+    .footer-container {display: flex;flex-wrap: wrap;justify-content: space-around; padding: 20px; max-width: 1200px; margin: auto;}
+    .footer-section {flex: 1; min-width: 250px; margin: 10px 0;}
+    .footer-section h3 {font-size: 18px;margin-bottom: 10px;color: #ff6600;}
+    .footer-section p {font-size: 14px;line-height: 1.6;color: #ccc;}
+    .footer-links a {display: block;color: #ccc;text-decoration: none;margin: 5px 0;transition: 0.3s ease;}
+    .footer-links a:hover { color: #ff6600;}
+    .social-icons {margin-top: 10px;}
+    .social-icons a {color: #fff;font-size: 20px;margin: 0 10px;display: inline-block;transition: 0.3s ease;}
+.social-icons a:hover {color: #ff6600}
+.footer-bottom {text-align: center;padding: 15px;background: #111;font-size: 14px;color: #ccc;}
+/* Responsive Design */
+@media (max-width: 768px) {
+    .footer-container {flex-direction: column;text-align: center;}
+}
+        .h1 {color: white; background: linear-gradient(to right, #ff6600, #ffcc00); padding: 15px; border-radius: 10px; display: inline-block; margin-top: 20px;}
     </style>
 </head>
 <body>
+
     <div class="hamburger" onclick="toggleMenu()">
         <div></div>
         <div></div>
-        <div></div>
-    </div>
-    <div class="mobile-nav" id="mobileNav">
-        <a href="index.html">Home</a>
-        <a href="2nd.html">Krishna Pictures</a>
-        <a href="3rd.html">Krishna Songs</a>
-        <a href="4th.html">Shree Krishna Names</a>
-        <a href="5th.html">Krishna Shlokas</a>
-        <a href="7thqueots.html">Daily Krishna Says</a>
-        <a href="8th.html">Stories</a>
-        <a href="6thfeedback.html">Feedback</a>
-        <a href="creator.html">About Creator</a>
+        <div></div> 
     </div>
     
-     <script>
+    <div class="mobile-nav" id="mobileNav">
+        <a href="index.html" onclick="closeMenu()">Home</a>
+        <a href="2nd.html" onclick="closeMenu()">Krishna Pictures</a>
+        <a href="3rd.html" onclick="closeMenu()">Krishna Songs</a>
+        <a href="4th.html" onclick="closeMenu()">Shree Krishna Names</a>
+        <a href="5th.html" onclick="closeMenu()">Krishna Shlokas</a>
+        <a href="7thqueots.html" onclick="closeMenu()">Daily Krishna Says</a>
+        <a href="8th.html" onclick="closeMenu()">Stories</a>
+        <a href="6thfeedback.html" onclick="closeMenu()">Feedback</a>
+        <a href="creator.html" onclick="closeMenu()">About Creator</a>
+    </div>
+
+    <div class="navbar">
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="2nd.html">Krishna Pictures</a>
+            <a href="3rd.html">Krishna Songs</a>
+            <a href="4th.html">Shree Krishna Names</a>
+            <a href="5th.html">Krishna Shlokas</a>
+            <a href="7thqueots.html">Daily Krishna Says</a>
+            <a href="8th.html">Stories</a>
+            <a href="6thfeedback.html">Feedback</a>
+            <a href="creator.html">About Creator</a>
+        </div>
+    </div>
+
+    <script>
         function toggleMenu() {
             var mobileNav = document.getElementById("mobileNav");
-            if (mobileNav.classList.contains("open")) {
-                mobileNav.classList.remove("open");
-            } else {
-                mobileNav.classList.add("open");
-            }
+            mobileNav.classList.toggle("open");
+        }
+        function closeMenu() {
+            document.getElementById("mobileNav").classList.remove("open");
         }
         document.addEventListener("click", function(event) {
             var mobileNav = document.getElementById("mobileNav");
             var hamburger = document.querySelector(".hamburger");
             if (!mobileNav.contains(event.target) && !hamburger.contains(event.target)) {
-                mobileNav.classList.remove("open");
+                closeMenu();
             }
         });
     </script>
-   
+    <br>
+     <hr>
     <h1>💬 Share Your Feedback</h1>
-
-    <div class="form-container">
-        <p>We value your feedback! Share your thoughts below. 🙏✨</p>
-        <form action="https://usebasin.com/f/023d9d16a701" method="POST" onsubmit="saveReview(event)" onsubmit="return handleSubmit(event)">
-            <input type="text" name="name" id="reviewerName" placeholder="Your Name" required><br>
-            <input type="email" name="email" id="reviewerEmail" placeholder="Your Email" required><br>
-            
-            <label for="rating">⭐ Select Rating:</label>
-            <div class="star-rating">
-                <span class="star" data-value="1">★</span>
-                <span class="star" data-value="2">★</span>
-                <span class="star" data-value="3">★</span>
-                <span class="star" data-value="4">★</span>
-                <span class="star" data-value="5">★</span>
-            </div>
-            <input type="hidden" name="rating" id="formRating">
-
-            <textarea name="message" id="reviewText" placeholder="Write your review..." required></textarea><br>
-            <button type="submit">Submit Review</button>
-        </form>
-    </div>
-
-    <button onclick="openAdminLogin()">🔑 Admin Login</button>
-    <hr>
-    <button onclick="logoutAdmin()">🚪 Logout</button>
-
-    <div id="adminLoginModal" class="modal">
-        <div class="modal-content">
-            <h3>🔒 Admin Login</h3>
-            <input type="text" id="adminName" placeholder="Enter Admin Name"><br>
-            <input type="password" id="adminPassword" placeholder="Enter Password"><br>
-            <button onclick="verifyAdmin()">Login</button>
-            <button onclick="closeAdminLogin()">Cancel</button>
-        </div>
-    </div>
-      <hr>
-    <marquee><h3>Radhe Radhe... Radhe Radhe... Radhe Radhe...Radhe Radhe... Radhe Radhe... Radhe Radhe...Radhe Radhe... Radhe Radhe... Radhe Radhe...</h3></marquee>
-   
-
-
-    <script>
-        let selectedRating = 0;
-
-        document.querySelectorAll(".star").forEach(star => {
-            star.addEventListener("click", function() {
-                selectedRating = this.getAttribute("data-value");
-                document.getElementById("formRating").value = selectedRating;
-
-                document.querySelectorAll(".star").forEach(s => s.classList.remove("active"));
-                for (let i = 0; i < selectedRating; i++) {
-                    document.querySelectorAll(".star")[i].classList.add("active");
-                }
-            });
-        });
-
-        function saveReview(event) {
-            event.preventDefault(); 
-
-            let form = event.target;
-            let name = document.getElementById("reviewerName").value.trim();
-            let email = document.getElementById("reviewerEmail").value.trim();
-            let text = document.getElementById("reviewText").value.trim();
-
-            if (name === "" || email === "" || text === "" || selectedRating === 0) {
-                alert("Please fill in all fields and select a rating.");
-                return;
-            }
-
-            let reviews = JSON.parse(localStorage.getItem("reviews")) || [];
-            reviews.push({ name, email, rating: selectedRating, text });
-            localStorage.setItem("reviews", JSON.stringify(reviews));
-
-            loadReviews();
-            form.submit(); // Submit form to Basin
-        }
-
-        function loadReviews() {
-            let reviews = JSON.parse(localStorage.getItem("reviews")) || [];
-            let container = document.getElementById("reviews-container");
-            container.innerHTML = reviews.length === 0 ? "<p>No reviews yet.</p>" : "";
-
-            reviews.forEach((review, index) => {
-                let stars = "⭐".repeat(review.rating) + "☆".repeat(5 - review.rating);
-                let reviewElement = document.createElement("div");
-                reviewElement.classList.add("review-box");
-                reviewElement.innerHTML = `<p><strong>${review.name}</strong>: ${review.text}</p>
-                    <p>Rating: ${stars}</p>
-                    <button class="delete-btn" onclick="deleteReview(${index})" style="display: none;">🗑 Delete</button>`;
-                container.appendChild(reviewElement);
-            });
-            checkAdmin();
-        }
-
-        function deleteReview(index) {
-            let reviews = JSON.parse(localStorage.getItem("reviews")) || [];
-            reviews.splice(index, 1);
-            localStorage.setItem("reviews", JSON.stringify(reviews));
-            loadReviews();
-        }
-
-        function openAdminLogin() { document.getElementById("adminLoginModal").style.display = "block"; }
-        function closeAdminLogin() { document.getElementById("adminLoginModal").style.display = "none"; }
-
-        function verifyAdmin() {
-            let adminDetails = { name: "unmesh", password: "unii12634" };
-            let name = document.getElementById("adminName").value.trim();
-            let password = document.getElementById("adminPassword").value.trim();
-
-            if (name === adminDetails.name && password === adminDetails.password) {
-                localStorage.setItem("adminVerified", "true");
-                alert("✅ Admin Access Granted!");
-                closeAdminLogin();
-                checkAdmin();
-            } else {
-                alert("❌ Incorrect Name or Password!");
-            }
-        }
-
-        function logoutAdmin() {
-            localStorage.removeItem("adminVerified");
-            alert("🔒 Admin Logged Out!");
-            checkAdmin();
-        }
-
-        function checkAdmin() {
-            let isAdmin = localStorage.getItem("adminVerified") === "true";
-            document.querySelectorAll(".delete-btn").forEach(btn => btn.style.display = isAdmin ? "inline-block" : "none");
-        }
-
-        document.addEventListener("DOMContentLoaded", loadReviews);
-    </script>
     
+    <div class="form-container">
+        <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdI6rKDr-_bWcoE-vHoGxFSkYF6TWGxMrymyymmAHu36LIcGA/viewform?embedded=true" width="100%" height="600" frameborder="0"></iframe>
+    </div>
+    <hr>
+    <h2>📝 User Reviews</h2>
+    <hr>
+    <div class="reviews-container">
+        <iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQRl0oW9g-MR_wj_gYy7smOgSadkZXWvaGHWMBaClM2KSRCzT7ksTs5hXhkMoi3H9SuL96_yKGW_sTT/pubhtml" 
+                width="100%" 
+                height="400">
+        </iframe>
+    </div>
+    <button onclick="scrollToTop()" id="backToTop" style="position:fixed; bottom:20px; right:20px; display:none; background:#ff6600; color:white; padding:10px 15px; border:none; border-radius:5px; cursor:pointer;">↑ Top</button>
+
+<script>
+    window.onscroll = function() { showScrollButton(); };
+    function showScrollButton() {
+        let button = document.getElementById("backToTop");
+        if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
+            button.style.display = "block";
+        } else {
+            button.style.display = "none";
+        }
+    }
+    function scrollToTop() {
+        window.scrollTo({top: 0, behavior: 'smooth'});
+    }
+</script>
+
+
+    <h2>📲 Connect With Me</h2>
+    <p>Follow me for updates, new content, and Krishna devotion! 🙏✨</p>
+    
+    <div class="social-links">
+        <a href="https://www.youtube.com/channel/UC9qr5anLvw3DBXLvgvvwUMQ" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/1384/1384060.png" alt="YouTube"></a>
+        <a href="https://wa.me/918209559793" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp"></a>
+        <a href="mailto:unmeshjoshi083@gmail.com"><img src="https://cdn-icons-png.flaticon.com/512/732/732200.png" alt="Email"></a>
+    </div>
+
     <footer>
-        <p>&copy; 2025 Radhe Krishna Devotion. All Rights Reserved.</p>
+        <p>“सर्वधर्मान्परित्यज्य मामेकं शरणं व्रज।” – श्रीमद्भगवद्गीता 18.66</p>
+        <p>&copy; <span id="year"></span> Radhe Krishna Devotion. All Rights Reserved.</p>
     </footer>
+
+    <script>document.getElementById('year').innerText = new Date().getFullYear();</script>
+
 </body>
 </html>
