@@ -46,9 +46,9 @@
             h1, h2, h3 { margin: 5px 0; }
             marquee { font-size: 18px; }
         }
-        .hamburger { display: none; flex-direction: column; cursor: pointer; position: absolute; left: 20px; top: 15px; }
+        .hamburger { display: none; flex-direction: column; cursor: pointer; position: absolute; left: 20px; top: 15px;z-index: 2000 }
         .hamburger div { width: 20px; height: 2px; background: rgb(0, 0, 0); margin: 5px 0; transition: 0.4s; }
-        .mobile-nav { position: fixed; top: 0; left: -100%; width: 250px; height: 100vh; background: rgba(255, 102, 0, 0.9); padding: 20px; transition: 0.3s ease-in-out; }
+        .mobile-nav { position: fixed; top: 0; left: -100%; width: 250px; height: 100vh; background: rgba(255, 102, 0, 0.9); padding: 20px; transition: 0.3s ease-in-out;z-index: 1500 }
         .mobile-nav a { display: block; text-decoration: none; color: white; font-size: 20px; padding: 10px 0; }
         .mobile-nav a:hover { background: #e65c00; }
         .mobile-nav.open { left: 0; }
