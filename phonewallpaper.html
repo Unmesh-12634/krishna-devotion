@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- Google tag (gtag.js) -->
+
+     <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-E0FNFMFRPF"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
@@ -15,51 +16,387 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Krishna Pictures & Wallpapers</title>
     <style>
-        h1 { color: #fb8f02; font-family: 'Great Vibes', cursive; }
-        body { background-color: rgb(191, 241, 241); font-family: Arial, sans-serif; text-align: center; margin: 0; padding: 0; }
-        h1, h2, h3 { text-align: center; margin: 10px 0; }
-        hr { margin: 20px 0; }
-        .navbar {display: flex; flex-wrap: wrap; justify-content: center; background: #ff6600; padding: 10px; position: sticky; top: 0; z-index: 1000; }
-        .navbar a {text-decoration: none; color: white; padding: 10px 20px; font-size: 18px; font-weight: bold; transition: background 0.3s ease-in-out; }
-        .navbar a:hover { background: #e65c00; border-radius: 5px; }
-        .gallery-container { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; padding: 20px; justify-content: center; }
-        .gallery-item { position: relative; overflow: hidden; border-radius: 10px; box-shadow: 0px 4px 8px rgba(0,0,0,0.3); transition: transform 0.3s; }
-        .gallery-item img { width: 100%; height: 300px; object-fit: cover; border-radius: 10px; }
-        .gallery-item:hover { transform: scale(1.05); }
-        .download-link { display: block; margin-top: 5px; font-size: 14px; color: #ff6600; text-decoration: none; font-weight: bold; }
-        .center { text-align: center; }
-        .social-links { margin-top: 20px; }
-        marquee { font-size: 20px; color: #ff6600; font-weight: bold; animation: glow 5s infinite alternate; }
-        .pinterest-board { margin: 40px auto; text-align: center; }
+        :root {
+            --bg-color: #FFF8F0; /* Warm cream background */
+            --text-color: #4A2C2A; /* Deep warm brown text */
+            --primary-accent: #F9A825; /* Vibrant Yellow/Gold */
+            --primary-accent-dark: #F57F17; /* Darker Gold/Orange for hover */
+            --secondary-accent: #DAA520; /* Muted gold (can use for borders/details) */
+            --navbar-bg: #4A2C2A; /* Using dark brown for contrast */
+            --navbar-text: #FFFFFF;
+            --white-color: #FFFFFF;
+            --shadow-color: rgba(74, 44, 42, 0.1);
+            --shadow-color-hover: rgba(74, 44, 42, 0.2);
 
+            --font-heading: 'Prata', serif;
+            --font-body: 'Nunito Sans', sans-serif;
+            --transition-speed: 0.3s;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            font-size: 16px;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            font-family: var(--font-body);
+            color: var(--text-color);
+            line-height: 1.6;
+            position: relative; /* Needed for overlay */
+            overflow-x: hidden; /* Prevent horizontal scroll */
+        }
+
+        /* Overlay for when mobile nav is open */
+        body.mobile-nav-open::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 1400; /* Below mobile nav, above content */
+            transition: background-color var(--transition-speed) ease;
+        }
+
+
+        h1, h2 {
+            text-align: center;
+            font-family: var(--font-heading);
+            color: var(--primary-accent-dark);
+            margin-bottom: 0.8em;
+        }
+
+        h1 {
+            font-size: clamp(2.2rem, 6vw, 3.2rem);
+            margin-top: 1.5em;
+            margin-bottom: 0.5em;
+        }
+
+        h2 {
+            font-size: clamp(1.5rem, 4vw, 1.8rem);
+            margin-top: 2.5em;
+            display: flex; /* For icon alignment */
+            justify-content: center;
+            align-items: center;
+            gap: 10px; /* Space between icon and text */
+        }
+
+        p {
+            text-align: center;
+            max-width: 600px;
+            margin: 0 auto 1.5em auto;
+            font-size: 1.05rem;
+            opacity: 0.9;
+        }
+
+        /* --- Navbar --- */
+        .navbar {
+            display: flex;
+            flex-wrap: wrap; /* Allow wrapping on smaller screens if needed */
+            justify-content: center;
+            background: var(--navbar-bg);
+            padding: 12px 15px;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        .navbar a {
+            text-decoration: none;
+            color: var(--navbar-text);
+            padding: 8px 18px;
+            font-size: 0.95rem;
+            font-weight: 600;
+            transition: background-color var(--transition-speed) ease, color var(--transition-speed) ease;
+            border-radius: 4px;
+            margin: 2px 5px; /* Spacing for wrapped items */
+        }
+
+        .navbar a:hover {
+            background: var(--primary-accent);
+            color: var(--navbar-bg);
+        }
+
+        /* --- Hamburger Menu --- */
+        .hamburger {
+            display: none; /* Hidden by default */
+            flex-direction: column;
+            justify-content: space-around;
+            width: 30px;
+            height: 25px;
+            cursor: pointer;
+            position: fixed;
+            top: 20px; /* Adjusted position */
+            left: 20px;
+            z-index: 2000; /* Above everything */
+            padding: 5px; /* Clickable area */
+            background-color: rgba(255, 255, 255, 0.8); /* Slight background for visibility */
+            border-radius: 4px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+        }
+
+        .hamburger div {
+            width: 100%;
+            height: 3px;
+            background: var(--primary-accent-dark); /* Use accent color */
+            border-radius: 2px;
+            transition: all 0.4s ease;
+        }
+
+        /* Hamburger Animation (Optional) */
+         .hamburger.active div:nth-child(1) { transform: rotate(-45deg) translate(-5px, 6px); }
+         .hamburger.active div:nth-child(2) { opacity: 0; }
+         .hamburger.active div:nth-child(3) { transform: rotate(45deg) translate(-5px, -6px); }
+
+        /* --- Mobile Nav Panel --- */
+        .mobile-nav {
+            position: fixed;
+            top: 0;
+            left: -100%; /* Start off-screen */
+            width: 280px; /* Slightly wider */
+            max-width: 80%; /* Max width */
+            height: 100vh;
+            background: var(--navbar-bg); /* Match desktop nav */
+            padding: 60px 20px 20px 20px; /* Padding top for space */
+            transition: left 0.35s ease-in-out;
+            z-index: 1500; /* Below hamburger, above overlay */
+            box-shadow: 3px 0 10px rgba(0, 0, 0, 0.3);
+            overflow-y: auto; /* Scroll if links exceed height */
+        }
+
+        .mobile-nav a {
+            display: block;
+            text-decoration: none;
+            color: var(--navbar-text);
+            font-size: 1.1rem;
+            font-weight: 600;
+            padding: 12px 15px; /* More padding */
+            margin-bottom: 5px; /* Space between links */
+            border-radius: 4px;
+            transition: background-color var(--transition-speed) ease, color var(--transition-speed) ease;
+        }
+
+        .mobile-nav a:hover {
+            background: var(--primary-accent);
+            color: var(--navbar-bg);
+        }
+
+        .mobile-nav.open {
+            left: 0; /* Slide in */
+        }
+
+        /* --- Gallery --- */
+        .gallery-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px; /* Increased gap */
+            padding: 30px; /* Increased padding */
+            max-width: 1200px; /* Max width for the gallery */
+            margin: 0 auto; /* Center the gallery */
+        }
+
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 10px;
+            background-color: var(--white-color);
+            box-shadow: 0px 5px 15px var(--shadow-color);
+            transition: transform var(--transition-speed) ease, box-shadow var(--transition-speed) ease;
+            padding-bottom: 10px; /* Space for the download link */
+        }
+
+        .gallery-item:hover {
+            transform: scale(1.04) translateY(-5px); /* Enhanced hover */
+            box-shadow: 0px 8px 20px var(--shadow-color-hover);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 300px; /* Default height */
+            object-fit: cover;
+            display: block; /* Remove extra space below image */
+            border-radius: 10px 10px 0 0; /* Round top corners */
+        }
+
+        /* Specific Height for PC Wallpapers */
+        .pc-wallpapers .gallery-item img {
+             height: 200px; /* Override height for PC section */
+             /* Removed inline style from HTML */
+        }
+
+
+        .download-link {
+            display: inline-block; /* Allows padding/margin */
+            margin: 15px auto 5px auto; /* Center below image */
+            padding: 6px 15px;
+            font-size: 0.9rem;
+            color: var(--white-color);
+            background-color: var(--primary-accent);
+            text-decoration: none;
+            font-weight: 600;
+            border-radius: 20px; /* Pill shape */
+            transition: background-color var(--transition-speed) ease;
+        }
+
+        .download-link:hover {
+            background-color: var(--primary-accent-dark);
+            color: var(--white-color); /* Keep text color */
+        }
+
+        /* --- View More Button --- */
+        .view-more-container {
+            text-align: center;
+            margin: 10px 0 40px 0; /* Space around button */
+        }
+
+        .view-more-button {
+            display: inline-block;
+            padding: 10px 25px;
+            background-color: var(--primary-accent-dark);
+            color: var(--white-color);
+            font-size: 1rem;
+            font-weight: 600;
+            text-decoration: none;
+            border-radius: 25px;
+            transition: background-color var(--transition-speed) ease, transform var(--transition-speed) ease;
+        }
+        .view-more-button:hover {
+            background-color: var(--primary-accent);
+            color: var(--navbar-bg);
+            transform: scale(1.05);
+        }
+        .view-more-button h2 { /* Override h2 styles inside button */
+             font-family: var(--font-body);
+             font-size: 1rem;
+             color: inherit;
+             margin: 0;
+             font-weight: 600;
+        }
+
+
+        /* --- Quote Section --- */
+        .quote-section {
+             max-width: 800px;
+             margin: 50px auto;
+             padding: 30px 35px;
+             background-color: var(--subtle-peach, #FFEADB); /* Use var or fallback */
+             border-radius: 15px;
+             border-left: 5px solid var(--primary-accent); /* Accent border */
+             text-align: center;
+             box-shadow: 0 4px 15px var(--shadow-color);
+        }
+
+        .quote-section blockquote {
+             font-family: var(--font-heading);
+             font-size: 1.4rem;
+             color: var(--text-color);
+             opacity: 0.9;
+             margin-bottom: 15px;
+             line-height: 1.6;
+             font-style: italic;
+        }
+
+        .quote-section footer {
+             font-family: var(--font-body);
+             font-size: 0.95rem;
+             font-style: normal;
+             color: var(--text-color);
+             opacity: 0.7;
+             margin-top: 10px;
+             background: none;
+             padding: 0;
+             text-align: center;
+        }
+
+
+        /* --- Footer --- */
+        footer {
+            margin-top: 50px;
+            padding: 30px 20px;
+            background-color: var(--navbar-bg); /* Match navbar */
+            color: var(--navbar-text);
+            opacity: 0.95;
+            font-size: 0.9rem;
+            text-align: center;
+            line-height: 1.8;
+        }
+
+        footer strong {
+            color: var(--primary-accent); /* Highlight name */
+            font-weight: 600;
+        }
+        footer p {
+           color: var(--navbar-text); /* Ensure p tags inherit color */
+           margin-bottom: 0.5em;
+           opacity: 0.9;
+        }
+
+        /* --- Responsive Design --- */
         @media screen and (max-width: 768px) {
-            .navbar a { padding: 5px 10px; font-size: 16px; }
-            .gallery-container { padding: 10px; gap: 10px; }
-            .gallery-item img { height: 200px; }
-            h1, h2, h3 { margin: 5px 0; }
+            .navbar {
+                display: none; /* Hide desktop nav */
+            }
+            .hamburger {
+                display: flex; /* Show hamburger */
+            }
+            .gallery-container {
+                padding: 20px;
+                gap: 20px;
+                grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            }
+            .gallery-item img {
+                height: 250px; /* Adjust height for tablets */
+            }
+             .pc-wallpapers .gallery-item img {
+                 height: 180px; /* Adjust PC height for tablets */
+             }
+            h1 { margin-top: 1em; }
+            h2 { margin-top: 2em; }
         }
 
         @media screen and (max-width: 480px) {
-            .navbar a { padding: 3px 8px; font-size: 14px; }
-            .gallery-container { grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); padding: 5px; gap: 5px; }
-            .gallery-item img { height: 150px; }
-            h1, h2, h3 { margin: 5px 0; }
-            marquee { font-size: 18px; }
+            html { font-size: 15px; } /* Adjust base size */
+
+            .gallery-container {
+                padding: 15px;
+                gap: 15px;
+                grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Smaller columns */
+            }
+            .gallery-item img {
+                height: 200px; /* Adjust height for mobile */
+            }
+             .pc-wallpapers .gallery-item img {
+                 height: 150px; /* Adjust PC height for mobile */
+             }
+             .download-link {
+                 font-size: 0.8rem;
+                 padding: 5px 12px;
+             }
+             .view-more-button {
+                 padding: 8px 20px;
+                 font-size: 0.9rem;
+             }
+             .quote-section {
+                 padding: 20px 25px;
+                 margin: 30px auto;
+             }
+             .quote-section blockquote { font-size: 1.2rem; }
+             h1 { font-size: 2rem; }
+             h2 { font-size: 1.4rem; }
+             p { font-size: 1rem; }
+
+             .hamburger { top: 15px; left: 15px; } /* Adjust hamburger position */
         }
-        .hamburger { display: none; flex-direction: column; cursor: pointer; position: absolute; left: 20px; top: 15px;z-index: 2000 }
-        .hamburger div { width: 20px; height: 2px; background: rgb(0, 0, 0); margin: 5px 0; transition: 0.4s; }
-        .mobile-nav { position: fixed; top: 0; left: -100%; width: 250px; height: 100vh; background: rgba(255, 102, 0, 0.9); padding: 20px; transition: 0.3s ease-in-out;z-index: 1500 }
-        .mobile-nav a { display: block; text-decoration: none; color: white; font-size: 20px; padding: 10px 0; }
-        .mobile-nav a:hover { background: #e65c00; }
-        .mobile-nav.open { left: 0; }
-        @media screen and (max-width: 768px) {
-            .nav-links { display: none; }
-            .hamburger { display: flex; }
-        }
-        @media screen and (max-width: 768px) {
-  body { font-size: 16px; }
-  img { max-width: 100%; height: auto; }
-}
+
     </style>
     <title>Radha Krishna Gallery - Divine Images & Wallpapers</title>
     <meta name="description" content="Browse beautiful Radha Krishna images, divine wallpapers, and artistic illustrations.">
@@ -95,7 +432,7 @@
             <a href="8th.html">Stories</a>
             <a href="9th.html">Quiz</a>
             <a href="6thfeedback.html">Feedback</a>
-            <a href="creator.html">About Creator</a>
+            <a href="creator.html">About Creator</a> 
         </div>
     </div>
     <script>
@@ -206,9 +543,31 @@
     <marquee><h3>यदा यदा हि धर्मस्य ग्लानिर्भवति भारत। अभ्युत्थानम् अधर्मस्य तदात्मानं सृजाम्यहम्॥ परित्राणाय साधूनां विनाशाय च दुष्कृताम्। धर्मसंस्थापनार्थाय संभवामि युगे युगे॥</h3></marquee>
     <hr>
 </body>
-<footer style="background: #ff6600; color: white; text-align: center; padding: 10px; font-size: 16px; margin-top: 20px;">
-    <p>✨ Created with ❤️ by <strong>Unmesh Joshi</strong></p>
-    <p>📩 Contact: <a href="mailto:unmeshjoshi083@gmail.com" style="color: white; text-decoration: underline;">unmeshjoshi083@gmail.com</a></p>
-    <p>📷 Follow me on <a href="https://www.instagram.com/unmesh12634" style="color: white; text-decoration: underline;" target="_blank">Instagram</a> | 🎵 <a href="https://www.youtube.com/channel/UC9qr5anLvw3DBXLvgvvwUMQ" style="color: white; text-decoration: underline;" target="_blank">YouTube</a></p>
+<footer>
+    <p>&copy; <span id="current-year"></span> Radhe Krishna Devotion. All Rights Reserved.</p>
+    <p>✨ Crafted with Bhakti by <strong>Unmesh Joshi</strong></p>
 </footer>
+
+<script>
+    // --- Mobile Menu Toggle ---
+    function toggleMenu() {
+        var mobileNav = document.getElementById("mobileNav");
+        var hamburgerIcon = document.getElementById("hamburgerIcon");
+        var body = document.body;
+
+        mobileNav.classList.toggle("open");
+        hamburgerIcon.classList.toggle("active"); // For icon animation (optional)
+        body.classList.toggle("mobile-nav-open"); // For overlay and preventing body scroll (optional)
+
+        // Optional: Prevent body scroll when mobile menu is open
+        if (body.classList.contains("mobile-nav-open")) {
+            body.style.overflow = 'hidden';
+        } else {
+            body.style.overflow = '';
+        }
+    }
+
+    // --- Auto Year Update ---
+    document.getElementById('current-year').textContent = new Date().getFullYear();
+</script>
 </html>
