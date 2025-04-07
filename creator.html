@@ -12,15 +12,210 @@
     <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     
     <style>
-        body {font-family: 'Poppins', sans-serif;text-align: center;background: linear-gradient(to bottom, #fdf3e7, #ffddc1, #ffbcaf); padding: 20px; color: #5a2a27;}
-        .container { max-width: 800px;margin: auto;background: rgba(255, 248, 225, 0.9);padding: 30px;border-radius: 15px;box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);}
-        h1 {font-family: 'Great Vibes', cursive;font-size: 3em;color: #ff6600;}
-        img {width: 200px;height: 200px;object-fit: cover;border-radius: 50%;margin-bottom: 15px;box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);}
-        p { font-size: 18px; line-height: 1.6; }
-        a {color: #ff6b6b;text-decoration: none;font-weight: bold;}
-        a:hover {text-decoration: underline;}
-        .social-links a { display: inline-block; margin: 10px; padding: 10px 15px; background: #ff6b6b; color: white; border-radius: 5px; transition: 0.3s; }
-        .social-links a:hover { background: #e65c00; transform: scale(1.1); }
+        :root {
+            --bg-color: #FFF8F0; /* Warm cream background */
+            --text-color: #4A2C2A; /* Deep warm brown text */
+            --primary-accent: #F9A825; /* Vibrant Yellow/Gold */
+            --primary-accent-dark: #F57F17; /* Darker Gold/Orange for hover */
+            --secondary-accent: #DAA520; /* Muted gold (can use for borders/details) */
+            --navbar-bg: #4A2C2A; /* Using dark brown for contrast */
+            --navbar-text: #FFFFFF;
+            --white-color: #FFFFFF;
+            --shadow-color: rgba(74, 44, 42, 0.1);
+            --shadow-color-hover: rgba(74, 44, 42, 0.2);
+            --gradient-start: #e7fdf8;
+            --gradient-mid: #c1fff7;
+            --gradient-end: #affff4;
+
+            --font-heading: 'Great Vibes', cursive;
+            --font-body: 'Poppins', sans-serif;
+            --transition-speed: 0.3s;
+        }
+
+        body {
+            font-family: var(--font-body);
+            text-align: center;
+            background: linear-gradient(to bottom, #fdf3e7, #ffddc1, #ffbcaf); /* Original background */
+            padding-bottom: 60px; /* Space for fixed footer if needed */
+            color: var(--text-color);
+            margin: 0;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 50px auto; /* Increased top margin */
+            background: rgba(255, 248, 240, 0.85); /* Slightly more opaque cream */
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0px 6px 15px var(--shadow-color-hover); /* More prominent shadow */
+            border: 1px solid var(--secondary-accent); /* Subtle gold border */
+        }
+
+        h1 {
+            font-family: var(--font-heading);
+            font-size: clamp(2.5rem, 8vw, 4rem);
+            color: var(--primary-accent-dark); /* Darker gold for heading */
+            margin-top: 0.5em;
+            margin-bottom: 0.8em;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+        }
+
+        img {
+            width: 180px; /* Slightly smaller image */
+            height: 180px;
+            object-fit: cover;
+            border-radius: 50%;
+            margin-bottom: 20px;
+            box-shadow: 0px 4px 10px var(--shadow-color);
+            border: 3px solid var(--primary-accent); /* Gold border around image */
+        }
+
+        p {
+            font-size: 1.1rem;
+            line-height: 1.7;
+            margin-bottom: 1.5em;
+        }
+
+        a {
+            color: var(--primary-accent); /* Gold for links */
+            text-decoration: none;
+            font-weight: bold;
+            transition: color var(--transition-speed) ease;
+        }
+
+        a:hover {
+            text-decoration: underline;
+            color: var(--primary-accent-dark); /* Darker gold on hover */
+        }
+
+        h2 {
+            color: var(--primary-accent-dark); /* Darker gold for subheading */
+            font-size: 2rem;
+            margin-top: 2em;
+            margin-bottom: 1em;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+        }
+
+        .social-links {
+            margin-top: 20px;
+        }
+
+        .social-links a {
+            display: inline-block;
+            margin: 10px;
+            padding: 10px 20px;
+            background: var(--primary-accent); /* Gold background for social links */
+            color: var(--navbar-bg); /* Dark text on social links */
+            border-radius: 5px;
+            transition: background-color var(--transition-speed) ease, transform var(--transition-speed) ease, color var(--transition-speed) ease;
+            box-shadow: 2px 2px 5px var(--shadow-color);
+            font-weight: bold;
+        }
+
+        .social-links a:hover {
+            background: var(--primary-accent-dark); /* Darker gold on hover */
+            color: var(--white-color);
+            transform: scale(1.05);
+            box-shadow: 3px 3px 7px var(--shadow-color-hover);
+        }
+
+        
+        .mobile-nav {
+            position: fixed;
+            top: 0;
+            left: -100%;
+            width: 250px;
+            height: 100vh;
+            background: var(--navbar-bg); /* Dark brown mobile nav */
+            padding: 20px;
+            transition: 0.3s ease-in-out;
+        }
+
+        .mobile-nav a {
+            display: block;
+            text-decoration: none;
+            color: var(--navbar-text); /* White text on mobile nav */
+            font-size: 1rem;
+            padding: 10px 0;
+            font-weight: 600;
+        }
+
+        .mobile-nav a:hover {
+            background: var(--primary-accent-dark); /* Darker gold on hover */
+        }
+
+        .mobile-nav.open {
+            left: 0;
+        }
+
+        @media screen and (max-width: 768px) {
+            body {
+                font-size: 16px;
+                padding-bottom: 50px; /* Adjust for mobile footer */
+            }
+            .container {
+                margin: 30px auto;
+                padding: 20px;
+            }
+            h1 {
+                font-size: 3rem;
+            }
+            img {
+                width: 150px;
+                height: 150px;
+            }
+            p {
+                font-size: 1rem;
+                line-height: 1.6;
+            }
+            .social-links a {
+                padding: 8px 15px;
+                margin: 8px;
+                font-size: 0.9rem;
+            }
+        }
+
+        .navbar {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            background: var(--navbar-bg); /* Dark brown navbar */
+            padding: 12px 15px;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        .navbar a {
+            text-decoration: none;
+            color: var(--navbar-text); /* White text on navbar */
+            padding: 8px 18px;
+            font-size: 0.95rem;
+            font-weight: 600;
+            transition: background-color var(--transition-speed) ease, color var(--transition-speed) ease;
+            border-radius: 4px;
+            margin: 2px 5px;
+        }
+
+        .navbar a:hover {
+            background: var(--primary-accent); /* Yellow/gold on hover */
+            color: var(--navbar-bg); /* Dark text on hover */
+        }
+
+        footer {
+            background: var(--navbar-bg); /* Dark background */
+            color: var(--navbar-text); /* White text */
+            text-align: center;
+            padding: 15px;
+            font-size: 0.9rem;
+            margin-top: 30px;
+        }
+
+        footer a {
+            color: var(--primary-accent);
+            text-decoration: underline;
+        }
         .hamburger { display: flex; flex-direction: column; cursor: pointer; position: absolute; top: 15px; left: 20px; z-index: 1001; }
         .hamburger div { width: 20px; height: 2px; background: #ff6600; margin: 3px 0; transition: 0.4s }
         .mobile-nav {
@@ -29,7 +224,7 @@
             left: -100%;
             width: 250px;
             height: 100vh;
-            background: rgba(255, 102, 0, 0.9);
+            background: rgba(0, 0, 0, 0.2);
             padding: 20px;
             transition: 0.3s ease-in-out;
         }
@@ -41,7 +236,7 @@
             padding: 10px 0;
         }
         .mobile-nav a:hover {
-            background: #e65c00;
+            background: #4A2C2A;
         }
         .mobile-nav.open {
             left: 0;
@@ -51,6 +246,17 @@
             img { max-width: 100%; height: auto; }
         }
     </style>
+
+    <script>
+        function toggleMenu() {
+            var mobileNav = document.getElementById("mobileNav");
+            if (mobileNav.classList.contains("open")) {
+                mobileNav.classList.remove("open");
+            } else {
+                mobileNav.classList.add("open");
+            }
+        }
+    </script>
 
     <script>
         function toggleMenu() {
