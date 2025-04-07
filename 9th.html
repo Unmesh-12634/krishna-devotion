@@ -6,37 +6,252 @@
     <title>Gita Quiz - Test Your Knowledge 🏆</title>
     <style>
         /* Global Styles */
-        body {font-family: 'Poppins', sans-serif;background: linear-gradient(to bottom, #ffcc70, #ff9966);text-align: center;margin: 0;padding: 0; }
+        :root {
+             --bg-color: #fff5ea; /* Warm cream background */
+            --text-color: #4A2C2A; /* Deep warm brown text */
+            --primary-accent: #F9A825; /* Vibrant Yellow/Gold */
+            --primary-accent-dark: #F57F17; /* Darker Gold/Orange for hover */
+            --secondary-accent: #DAA520; /* Muted gold (can use for borders/details) */
+            --navbar-bg: #4A2C2A; /* Using dark brown for contrast */
+            --navbar-text: #FFFFFF;
+            --white-color: #FFFFFF;
+            --shadow-color: rgba(74, 44, 42, 0.1);
+            --shadow-color-hover: rgba(74, 44, 42, 0.2);
+
+            --font-heading: 'Prata', serif;
+            --font-body: 'Nunito Sans', sans-serif;
+            --transition-speed: 0.3s;
+        }
+
+        body {
+            font-family: var(--font-body);
+            background: linear-gradient(to bottom, var(--gradient-start), var(--gradient-mid), var(--gradient-end));
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+
         /* Quiz Container */
-        .quiz-container {max-width: 600px;margin: 80px auto; background: white;padding: 30px;border-radius: 12px;box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);animation: fadeIn 1s ease-in-out;}
-        h2 {color: #ff6600;font-size: 24px; }
-        #questionText {font-size: 20px;margin-bottom: 15px;font-weight: bold;color: #333;}
-        .options button {width: 100%;padding: 12px;margin: 8px 0;font-size: 16px;cursor: pointer;border: none;border-radius: 6px;background: #ff9966;color: white;font-weight: bold; transition: 0.3s; box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2); }
-        .options button:hover { background: #ff7043; transform: scale(1.03);}
-        .options button:disabled { cursor: not-allowed;}
-        #nextBtn { display: none;padding: 12px 18px;background: #28a745;color: white;font-size: 16px;border: none;cursor: pointer;border-radius: 6px;margin-top: 15px;font-weight: bold;transition: 0.3s;}
-        #nextBtn:hover {background: #218838;transform: scale(1.05);}
-        #scoreText {margin-top: 15px;font-size: 18px;font-weight: bold;color: #222;}
-        .progress-bar {height: 10px;width: 100%;background: #ddd;border-radius: 5px;margin-bottom: 15px;overflow: hidden;}
-        .progress {height: 100%;width: 0%;background: #ff6600;transition: width 0.5s ease-in-out;}
+        .quiz-container {
+            max-width: 600px;
+            margin: 80px auto;
+            background: rgba(255, 255, 255, 0.9); /* Slightly transparent white */
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 6px 15px var(--shadow-color-hover); /* More pronounced shadow */
+            animation: fadeIn 1s ease-in-out;
+        }
 
-        @keyframes fadeIn {from { opacity: 0; transform: translateY(-20px); }to { opacity: 1; transform: translateY(0); }}
-        .navbar {display: flex; justify-content: center; background: #ff6600;padding: 10px; position: sticky; top: 0; z-index: 1000; }
-        .navbar a {text-decoration: none; color: white; padding: 10px 20px; font-size: 18px;font-weight: bold;transition: background 0.3s ease-in-out; }
-        .navbar a:hover { background: #e65c00; border-radius: 5px; }
-        .hamburger { display: none; flex-direction: column; cursor: pointer; position: absolute; left: 20px; top: 15px; }
-        .hamburger div { width: 20px; height: 2px; background: rgb(0, 0, 0); margin: 5px 0; transition: 0.4s; }
-        .mobile-nav { position: fixed; top: 0; left: -100%; width: 250px; height: 100vh; background: rgba(255, 102, 0, 0.9); padding: 20px; transition: 0.3s ease-in-out; }
-        .mobile-nav a { display: block; text-decoration: none; color: white; font-size: 20px; padding: 10px 0; }
-        .mobile-nav a:hover { background: #e65c00; }
-        .mobile-nav.open { left: 0; }
-        @media screen and (max-width: 768px) {.nav-links { display: none; }.hamburger { display: flex; }}
-        button {background: #ff6600;color: white;padding: 10px 20px;border: none;border-radius: 8px;font-size: 16px;cursor: pointer;}
-        button:hover {background: #e65c00;}
-        .review-box {
-    word-wrap: break-word; /* Prevent text overflow */
-}
+        h2 {
+            color: var(--primary-accent-dark); /* Use darker gold for heading */
+            font-size: 28px; /* Slightly larger */
+            margin-bottom: 20px;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+        }
 
+        #questionText {
+            font-size: 20px;
+            margin-bottom: 20px;
+            font-weight: bold;
+            color: var(--text-color); /* Use consistent text color */
+        }
+
+        .options button {
+            width: 100%;
+            padding: 12px;
+            margin: 10px 0; /* Slightly more vertical space */
+            font-size: 16px;
+            cursor: pointer;
+            border: none;
+            border-radius: 8px; /* Slightly more rounded */
+            background: var(--primary-accent); /* Use yellow/gold */
+            color: var(--navbar-bg); /* Dark text on yellow/gold */
+            font-weight: bold;
+            transition: background-color var(--transition-speed) ease, transform var(--transition-speed) ease, box-shadow var(--transition-speed) ease;
+            box-shadow: 2px 2px 8px var(--shadow-color);
+        }
+
+        .options button:hover {
+            background: var(--primary-accent-dark); /* Darker gold on hover */
+            color: var(--white-color);
+            transform: scale(1.02);
+            box-shadow: 3px 3px 10px var(--shadow-color-hover);
+        }
+
+        .options button:disabled {
+            cursor: not-allowed;
+            opacity: 0.7;
+        }
+
+        #nextBtn {
+            display: none;
+            padding: 12px 20px;
+            background: var(--primary-accent-dark); /* Darker gold for next button */
+            color: var(--white-color);
+            font-size: 16px;
+            border: none;
+            cursor: pointer;
+            border-radius: 8px;
+            margin-top: 20px;
+            font-weight: bold;
+            transition: background-color var(--transition-speed) ease, transform var(--transition-speed) ease, box-shadow var(--transition-speed) ease;
+            box-shadow: 2px 2px 8px var(--shadow-color);
+        }
+
+        #nextBtn:hover {
+            background: var(--primary-accent); /* Lighter gold on hover */
+            color: var(--navbar-bg);
+            transform: scale(1.03);
+            box-shadow: 3px 3px 10px var(--shadow-color-hover);
+        }
+
+        #scoreText {
+            margin-top: 20px;
+            font-size: 18px;
+            font-weight: bold;
+            color: var(--text-color);
+        }
+
+        .progress-bar {
+            height: 12px; /* Slightly thicker progress bar */
+            width: 100%;
+            background: rgba(0, 0, 0, 0.1); /* Light gray background */
+            border-radius: 6px;
+            margin-bottom: 20px;
+            overflow: hidden;
+        }
+
+        .progress {
+            height: 100%;
+            width: 0%;
+            background: var(--primary-accent-dark); /* Darker gold for progress */
+            transition: width 0.4s ease-in-out; /* Slightly faster transition */
+            border-radius: 6px;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: center;
+            background: var(--navbar-bg); /* Dark brown navbar */
+            padding: 12px 15px;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        .navbar a {
+            text-decoration: none;
+            color: var(--navbar-text); /* White text on navbar */
+            padding: 8px 18px;
+            font-size: 0.95rem;
+            font-weight: 600;
+            transition: background-color var(--transition-speed) ease, color var(--transition-speed) ease;
+            border-radius: 4px;
+            margin: 2px 5px;
+        }
+
+        .navbar a:hover {
+            background: var(--primary-accent); /* Yellow/gold on hover */
+            color: var(--navbar-bg); /* Dark text on hover */
+        }
+
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            position: absolute;
+            left: 20px;
+            top: 15px;
+        }
+
+        .hamburger div {
+            width: 25px; /* Slightly wider hamburger lines */
+            height: 3px; /* Slightly thicker hamburger lines */
+            background: var(--text-color); /* Dark brown hamburger */
+            margin: 5px 0;
+            transition: 0.4s;
+        }
+
+        .mobile-nav {
+            position: fixed;
+            top: 0;
+            left: -100%;
+            width: 250px;
+            height: 100vh;
+            background: var(--navbar-bg); /* Dark brown mobile nav */
+            padding: 20px;
+            transition: 0.3s ease-in-out;
+        }
+
+        .mobile-nav a {
+            display: block;
+            text-decoration: none;
+            color: var(--navbar-text); /* White text on mobile nav */
+            font-size: 1rem;
+            padding: 10px 0;
+            font-weight: 600;
+        }
+
+        .mobile-nav a:hover {
+            background: var(--primary-accent-dark); /* Darker gold on hover */
+        }
+
+        .mobile-nav.open {
+            left: 0;
+        }
+
+        @media screen and (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            .hamburger {
+                display: flex;
+            }
+            .navbar {
+                display: none; /* Ensure desktop nav is hidden on mobile */
+            }
+            h2 {
+                font-size: 26px;
+            }
+            #questionText {
+                font-size: 18px;
+            }
+            .options button {
+                font-size: 15px;
+                padding: 10px;
+                margin: 8px 0;
+            }
+        }
+
+        button { /* General button style (might not be directly used by the quiz but for potential future use) */
+            background: var(--primary-accent);
+            color: var(--navbar-bg);
+            padding: 12px 25px;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color var(--transition-speed) ease, color var(--transition-speed) ease, box-shadow var(--transition-speed) ease;
+            box-shadow: 2px 2px 8px var(--shadow-color);
+        }
+
+        button:hover {
+            background: var(--primary-accent-dark);
+            color: var(--white-color);
+            box-shadow: 3px 3px 10px var(--shadow-color-hover);
+        }
     </style>
 </head>
 <body>
@@ -68,7 +283,7 @@
             <a href="8th.html">Stories</a>
             <a href="9th.html">Quiz</a>
             <a href="6thfeedback.html">Feedback</a>
-            <a href="creator.html">About Creator</a> 
+            <a href="creator.html">About Creator</a>
         </div>
     </div>
     <script>
@@ -97,9 +312,9 @@
         </div>
 
         <p id="questionText"></p>
-        
+
         <div class="options" id="options"></div>
-        
+
         <button onclick="nextQuestion()" id="nextBtn">Next ➡️</button>
         <p id="scoreText"></p>
     </div>
@@ -132,13 +347,13 @@
 
             let quiz = quizData[currentQuestion];
             document.getElementById("questionText").innerText = quiz.question;
-            
+
             let shuffledOptions = [...quiz.options].sort(() => Math.random() - 0.5); // Shuffle options
             let optionsHTML = "";
             shuffledOptions.forEach((option, index) => {
                 optionsHTML += `<button onclick="checkAnswer('${option}', '${quiz.options[quiz.correct]}')">${option}</button><br>`;
             });
-            
+
             document.getElementById("options").innerHTML = optionsHTML;
             document.getElementById("nextBtn").style.display = "none";
 
@@ -150,9 +365,9 @@
 
             for (let btn of buttons) {
                 if (btn.innerText === correct) {
-                    btn.style.background = "green";
+                    btn.style.backgroundColor = "green";
                 } else if (btn.innerText === selected) {
-                    btn.style.background = "red";
+                    btn.style.backgroundColor = "red";
                 }
                 btn.disabled = true;
             }
