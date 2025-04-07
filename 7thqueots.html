@@ -211,35 +211,41 @@
         }
 
         @media screen and (max-width: 768px) {
-            body {
-                font-size: 1rem;
-            }
-            .quote-box {
-                font-size: 1rem;
-                padding: 20px;
-            }
-            .navbar a {
-                padding: 5px 10px;
-                font-size: 0.8rem;
-            }
-            h1 {
-                padding: 10px;
-                font-size: 1.8rem;
-            }
-            .button {
-                padding: 10px 20px;
-                font-size: 0.9rem;
-            }
-            .social-links a {
-                padding: 8px 10px;
-                font-size: 0.8rem;
-            }
-            .hamburger {
-                display: flex;
-                left: 15px;
-                top: 12px;
-            }
+        .navbar {
+            display: none; /* This line was missing or not effective enough */
         }
+        .hamburger {
+            display: flex; /* Show hamburger */
+        }
+        body {
+            font-size: 1rem;
+        }
+        .quote-box {
+            font-size: 1rem;
+            padding: 20px;
+        }
+        .navbar a { /* This rule is now redundant as .navbar is hidden */
+            padding: 5px 10px;
+            font-size: 0.8rem;
+        }
+        h1 {
+            padding: 10px;
+            font-size: 1.8rem;
+        }
+        .button {
+            padding: 10px 20px;
+            font-size: 0.9rem;
+        }
+        .social-links a {
+            padding: 8px 10px;
+            font-size: 0.8rem;
+        }
+        .hamburger {
+            display: flex;
+            left: 15px;
+            top: 12px;
+        }
+    }
 
         @media screen and (max-width: 480px) {
             body {
