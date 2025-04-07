@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-        <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-E0FNFMFRPF"></script>
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-E0FNFMFRPF"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
@@ -10,135 +10,521 @@
 
   gtag('config', 'G-E0FNFMFRPF');
 </script>
-    
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta property="og:image" content="https://yourwebsite.com/images/pic3.jpg">
-    <meta name="description" content="Read enchanting Radha Krishna stories, experience divine love, and explore their spiritual leelas.">
-    <meta name="keywords" content="Radha Krishna stories, Krishna leela, divine love, Bhakti, Hindu mythology">
+    <meta property="og:image" content="https://yourwebsite.com/images/radha_krishna_share_image.jpg">
+    <meta name="description" content="Immerse yourself in enchanting Radha Krishna stories, experience divine love, and explore their spiritual leelas on Radhe Krishna Devotion.">
+    <meta name="keywords" content="Radha Krishna stories, Krishna leela, divine love, Bhakti, Hindu mythology, Vrindavan, ISKCON, spiritual journey">
     <meta name="author" content="Unmesh Joshi">
     <meta name="robots" content="index, follow">
-    <title>Radha Krishna Devotion</title>
-    <style>
-        body {
-            background: url("newcover.gif") no-repeat center center fixed;
-            background-size: cover;
-            font-family: 'Arial', sans-serif;
-            text-align: center;
-            animation: fadeIn 2s ease-in-out;
-        }
-        h1 {
-            color: white;
-            background: linear-gradient(to right, #ff6600, #ffcc00);
-            padding: 20px;
-            border-radius: 10px;
-            display: inline-block;
-            font-size: 32px;
-            text-shadow: 2px 2px 5px rgba(255, 205, 205, 0.3);
-        }   
-        .intro {
-            margin: 20px auto;
-            width: 80%;
-            font-size: 20px;
-            font-weight: bold;
-            color: #e0dada;
-        }
-        .image-container {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            margin-top: 20px;
-        }
-        .image-container img {
-            margin: 10px;
-            border-radius: 15px;
-            width: 350px;
-            box-shadow: 0px 4px 8px rgba(247, 243, 243, 0.2);
-            transition: transform 0.3s, filter 0.3s;
-        }
-        .image-container img:hover {
-            transform: scale(1.05);
-            filter: brightness(1.2);
-        }
-        .nav-links {
-            margin-top: 30px;
-            font-size: 22px;
-        }
-        .nav-links a {
-            margin: 10px;
-            text-decoration: none;
-            color: white;
-            background: #0077b5;
-            padding: 10px 20px;
-            border-radius: 5px;
-            font-weight: bold;
-            transition: 0.3s;
-            display: inline-block;
-        }
-        .nav-links a:hover {
-            background: #005fa3;
-            transform: scale(1.1);
-            box-shadow: 0px 4px 8px rgba(0,0,0,0.3);
-        }
-        .social-links {
-            display: flex;
-            justify-content: center;
-            gap: 15px;
-            margin-top: 20px;
-        }
-        .social-links img {
-            width: 30px;
-        }
-        marquee {
-            font-size: 20px;
-            color: #ff6600;
-            font-weight: bold;
-        }
-        footer {
-            margin-top: 30px;
-            padding: 15px;
-            background: rgba(0, 0, 0, 0.2);
-            color: white;
-            font-size: 16px;
-            border-radius: 10px;
-        }
+
+    <title>Radha Krishna Devotion - Experience Divine Love</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Prata&family=Nunito+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+
+
+   <style>
+     /* --- Google Fonts --- */
+     /* Prata: Elegant Serif for Headings */
+     /* Nunito Sans: Clean Sans-Serif for Body/Nav */
+
+     /* --- CSS Variables (Color Palette & Fonts) --- */
+     :root {
+         --bg-color: #FFF8F0; /* Warm cream background */
+         --text-color: #4A2C2A; /* Deep warm brown text */
+         --primary-gold: #DAA520; /* Muted gold */
+         --accent-blue: #A0D2DB; /* Soft sky blue */
+         --subtle-peach: #FFEADB; /* Very light peach */
+         --white-color: #FFFFFF;
+         --shadow-color: rgba(74, 44, 42, 0.1); /* Shadow based on text color */
+         --shadow-color-hover: rgba(74, 44, 42, 0.15); /* Slightly darker shadow on hover */
+
+         --font-heading: 'Prata', serif;
+         --font-body: 'Nunito Sans', sans-serif;
+
+         --transition-speed: 0.4s;
+     }
+
+     /* --- Reset & Base Styles --- */
+     * {
+         margin: 0;
+         padding: 0;
+         box-sizing: border-box;
+     }
+
+     html {
+         scroll-behavior: smooth;
+         font-size: 16px; /* Base font size */
+     }
+
+     body {
+         font-family: var(--font-body);
+         background-color: var(--bg-color);
+         color: var(--text-color);
+         line-height: 1.7;
+         text-align: center;
+         overflow-x: hidden; /* Prevent horizontal scroll */
+     }
+
+     /* --- Main Content Container --- */
+     main {
+         max-width: 1100px; /* Max width for content */
+         margin: 0 auto; /* Center the content */
+         padding: 20px;
+     }
+
+     /* --- General Styling --- */
+     h1, h2 {
+         font-family: var(--font-heading);
+         color: var(--primary-gold); /* Consistent heading color */
+         margin-bottom: 1em;
+         line-height: 1.3;
+     }
+
+     a {
+         color: var(--primary-gold);
+         text-decoration: none;
+         transition: color var(--transition-speed) ease;
+     }
+
+     a:hover {
+         color: var(--text-color);
+     }
+
+     img {
+     
+    max-width: 800px;           /* Sets a nice upper limit */
+    height: auto;               /* Keeps aspect ratio */
+    display: block;
+    margin: 40px auto;          /* Centers the image with space around */
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2); /* Adds some depth */
+
+     }
+
+     /* --- Section Styling & Spacing --- */
+     section {
+         padding: 40px 0;
+         margin-bottom: 40px; /* Increased default bottom margin for sections */
+     }
+
+     /* --- Header --- */
+     .main-header {
+         padding: 60px 20px 30px 20px; /* Adjusted padding */
+         animation: fadeInDown 1s ease-out;
+         margin-bottom: 20px; /* Space below header before intro */
+     }
+
+     .main-header h1 {
+         font-size: clamp(2.2rem, 6vw, 3.5rem); /* Slightly larger font size */
+         text-shadow: 1px 1px 3px rgba(255, 255, 255, 0.6);
+         letter-spacing: 1.5px; /* Slightly increased spacing */
+         position: relative; /* Needed for pseudo-elements */
+         display: inline-block; /* Allows centering pseudo-elements */
+         padding-bottom: 15px; /* Space for the bottom line */
+         margin-bottom: 0; /* Removed default h1 margin, using header/section margins */
+     }
+
+    /* Decorative lines for H1 */
+    .main-header h1::before,
+    .main-header h1::after {
+        content: '';
+        position: absolute;
+        height: 2px; /* Line thickness */
+        background-color: var(--primary-gold); /* Match title color */
+        opacity: 0.6; /* Make lines slightly subtle */
+        width: 50px; /* Line width */
+        left: 50%; /* Center the lines */
+        transform: translateX(-50%); /* Ensure centering */
+    }
+
+    /* .main-header h1::before { top: -15px; } */ /* Optional top line */
+    .main-header h1::after { bottom: 0; width: 80px; } /* Bottom line */
+
+     /* --- Intro Section --- */
+     .intro {
+         max-width: 750px;
+         margin: 0 auto 40px auto; /* Keep margin */
+         padding-bottom: 30px; /* Space before border */
+         border-bottom: 1px solid var(--shadow-color); /* Subtle separator line */
+         animation: fadeInUp 1s ease-out 0.2s;
+         animation-fill-mode: backwards;
+     }
+
+     .intro p {
+         font-size: 1.15rem;
+         font-weight: 300;
+         color: var(--text-color);
+         opacity: 0.9;
+     }
+
+     /* --- Image Display --- */
+     .image-display {
+         margin-bottom: 60px; /* Increased space after image */
+         animation: zoomIn 1s ease-out 0.4s;
+         animation-fill-mode: backwards;
+     }
+
+     .image-display img {
+         max-width: 550px; /* INCREASED max image size */
+         border-radius: 20px; /* Softer corners */
+         box-shadow: 0 10px 30px var(--shadow-color);
+         transition: transform var(--transition-speed) ease, box-shadow var(--transition-speed) ease;
+         border: 5px solid var(--white-color); /* White frame effect */
+     }
+
+     .image-display img:hover {
+         transform: scale(1.03) translateY(-5px);
+         box-shadow: 0 15px 40px var(--shadow-color-hover); /* Use hover shadow */
+     }
+
+     /* --- Navigation --- */
+     .navigation {
+         display: flex;
+         flex-wrap: wrap;
+         justify-content: center;
+         gap: 12px 15px; /* Row gap, column gap */
+         padding: 20px 0;
+         margin-bottom: 50px; /* Increased space after nav */
+         animation: fadeInUp 1s ease-out 0.6s;
+         animation-fill-mode: backwards;
+     }
+
+     .navigation a {
+         background-color: var(--white-color);
+         color: var(--primary-gold);
+         padding: 10px 25px;
+         border-radius: 50px; /* Pill shape */
+         border: 1px solid var(--primary-gold);
+         font-weight: 600;
+         font-size: 0.95rem;
+         box-shadow: 0 4px 10px var(--shadow-color);
+         transition: all var(--transition-speed) ease;
+         letter-spacing: 0.5px;
+     }
+
+     .navigation a:hover {
+         background-color: var(--primary-gold);
+         color: var(--white-color);
+         border-color: var(--primary-gold);
+         transform: translateY(-3px);
+         box-shadow: 0 6px 15px var(--shadow-color-hover); /* Use hover shadow */
+     }
+
+     /* --- Quote Section --- */
+     .quote-section {
+         max-width: 800px;
+         margin: 50px auto; /* Keep margin */
+         padding: 35px 40px;
+         background-color: var(--subtle-peach); /* Different background */
+         border-radius: 15px;
+         border-top: 5px solid var(--accent-blue); /* Accent color border */
+         text-align: center;
+         box-shadow: 0 6px 20px var(--shadow-color);
+         animation: fadeInUp 1s ease-out 0.8s;
+         animation-fill-mode: backwards;
+         transition: transform var(--transition-speed) ease, box-shadow var(--transition-speed) ease; /* ADDED transition */
+     }
+
+     /* ADDED hover effect for quote section */
+     .quote-section:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 30px var(--shadow-color-hover);
+     }
+
+
+     .quote-section blockquote {
+         font-family: var(--font-heading); /* Use heading font for quote */
+         font-size: 1.5rem; /* Larger quote */
+         color: var(--text-color);
+         opacity: 0.85;
+         margin-bottom: 15px;
+         line-height: 1.6;
+         border: none;
+         padding: 0;
+         position: relative;
+     }
+
+     /* Optional: Add quote marks */
+     .quote-section blockquote::before,
+     .quote-section blockquote::after {
+         font-size: 3rem;
+         color: var(--accent-blue);
+         opacity: 0.5;
+         position: absolute;
+     }
+     .quote-section blockquote::before { content: '“'; left: -15px; top: -10px; }
+     .quote-section blockquote::after { content: '”'; right: -15px; bottom: -15px; }
+
+
+     .quote-section blockquote footer {
+         font-family: var(--font-body);
+         font-size: 1rem;
+         font-style: normal;
+         color: var(--text-color);
+         opacity: 0.7;
+         margin-top: 15px;
+         background: none;
+         padding: 0;
+         text-align: center;
+     }
+
+     .quote-section .translation {
+         font-size: 1rem;
+         color: var(--text-color);
+         opacity: 0.7;
+         margin-top: 20px;
+         font-style: italic;
+     }
+
+     /* --- Social Connect --- */
+     .social-connect {
+         padding: 30px 0;
+         margin-bottom: 20px; /* Adjust margin if needed */
+         animation: fadeInUp 1s ease-out 1s;
+         animation-fill-mode: backwards;
+     }
+
+     .social-connect h2 {
+         font-size: 1.8rem; /* Slightly larger H2 */
+         /* color: var(--accent-blue); REMOVED - Using primary gold now */
+         margin-bottom: 30px; /* Increased space below h2 */
+     }
+
+     .social-links {
+         display: flex;
+         justify-content: center;
+         gap: 35px; /* Slightly increased gap */
+     }
+
+     .social-links a {
+         display: inline-block;
+         opacity: 0.7;
+         transition: transform var(--transition-speed) ease, opacity var(--transition-speed) ease;
+     }
+
+     .social-links img {
+         width: 35px; /* Slightly larger icons */
+         height: 35px;
+     }
+
+     .social-links a:hover {
+         transform: scale(1.2) rotate(5deg) translateY(-2px); /* Added subtle lift */
+         opacity: 1;
+     }
+
+     /* --- Footer --- */
+     footer {
+         margin-top: 50px; /* Increased space before footer */
+         padding: 35px 20px; /* Increased padding */
+         background-color: var(--subtle-peach); /* Match quote section bg */
+         color: var(--text-color);
+         opacity: 0.85; /* Slightly less transparent */
+         font-size: 0.9rem;
+         border-top: 1px solid rgba(74, 44, 42, 0.1); /* Subtle top border */
+     }
+
+     footer strong {
+         color: var(--primary-gold);
+         font-weight: 600;
+     }
+
+     /* --- Entrance Animations --- */
+     @keyframes fadeInDown {
+         from { opacity: 0; transform: translateY(-30px); }
+         to { opacity: 1; transform: translateY(0); }
+     }
+
+     @keyframes fadeInUp {
+         from { opacity: 0; transform: translateY(30px); }
+         to { opacity: 1; transform: translateY(0); }
+     }
+
+     @keyframes zoomIn {
+       from { opacity: 0; transform: scale(0.95); }
+       to { opacity: 1; transform: scale(1); }
+     }
+
+
+     /* --- Responsiveness --- */
+     @media (max-width: 992px) {
+         main {
+             padding: 15px;
+         }
+          .image-display img {
+               max-width: 600px; /* Adjusted responsive max-width */
+         }
+         .quote-section {
+             padding: 30px;
+         }
+     }
+
+     @media (max-width: 768px) {
+         html {
+             font-size: 15px; /* Slightly smaller base font */
+         }
+         section {
+             margin-bottom: 30px; /* Adjust section margin */
+         }
+         .main-header h1 {
+             font-size: clamp(2rem, 5vw, 3rem); /* Adjust size for tablets */
+             padding-bottom: 10px;
+         }
+         .main-header h1::before,
+         .main-header h1::after {
+             height: 1.5px;
+             width: 40px;
+         }
+         .main-header h1::after {
+            width: 60px;
+         }
+         .image-display img {
+            max-width: 420px; /* Adjusted responsive max-width */
+         }
+         .image-display {
+            margin-bottom: 50px; /* Adjust margin */
+         }
+         .navigation {
+             gap: 10px 12px;
+             margin-bottom: 40px; /* Adjust margin */
+         }
+          .navigation a {
+             padding: 9px 20px;
+             font-size: 0.9rem;
+         }
+          .quote-section {
+             margin: 40px auto; /* Adjust margin */
+          }
+          .quote-section blockquote {
+             font-size: 1.3rem;
+         }
+         .quote-section blockquote::before,
+         .quote-section blockquote::after {
+              font-size: 2.5rem;
+         }
+         .social-connect h2 { font-size: 1.6rem;}
+         .social-links img { width: 32px; height: 32px;} /* Adjust icon size */
+         .social-links { gap: 30px; } /* Adjust gap */
+
+
+     }
+
+     @media (max-width: 480px) {
+         html {
+             font-size: 14px;
+         }
+          section {
+             padding: 25px 0; /* Adjust padding */
+             margin-bottom: 25px; /* Adjust margin */
+          }
+         .main-header {
+             padding-top: 40px;
+             padding-bottom: 20px;
+         }
+         .main-header h1 {
+             font-size: clamp(1.8rem, 7vw, 2.5rem); /* Adjust size for mobile */
+             letter-spacing: 1px;
+             padding-bottom: 8px;
+         }
+
+          .image-display img {
+               max-width: 90%; /* Allow image to take more width */
+               border-width: 3px;
+         }
+         .image-display { margin-bottom: 40px; } /* Adjust margin */
+
+         .intro { padding-bottom: 20px; } /* Adjust padding */
+
+         .navigation {
+             gap: 8px 10px;
+             margin-bottom: 30px; /* Adjust margin */
+         }
+          .navigation a {
+             padding: 8px 15px;
+             font-size: 0.85rem;
+         }
+          .quote-section {
+             padding: 25px 20px;
+             margin: 30px auto; /* Adjust margin */
+          }
+          .quote-section blockquote {
+             font-size: 1.2rem;
+          }
+          .quote-section blockquote::before,
+          .quote-section blockquote::after {
+               display: none; /* Hide quote marks on small screens */
+          }
+          .social-connect h2 { font-size: 1.5rem; margin-bottom: 20px;}
+          .social-links {  gap: 25px; /* Adjust gap */
+          }
+          .social-links img {  width: 30px; height: 30px;} /* Adjust icon size */
+          footer {padding: 25px 15px;font-size: 0.85rem; margin-top: 30px;} /* Adjust footer spacing */
+     }
     </style>
 </head>
 <body>
-    <h1>Welcome to Radhe Krishna Devotion</h1>
-    <div class="intro">
-        <p>Bringing you closer to Krishna with devotion and love.</p>
-    </div>
-    <div class="image-container">
-        <img src="https://i.pinimg.com/236x/75/f6/4d/75f64d4a726393e84bb0873b6ef02d9e.jpg" alt="Krishna">
-    </div>
-    <div class="nav-links">
-        <a href="2nd.html">Krishna Pictures</a>
-        <a href="3rd.html">Krishna Songs</a>
-        <a href="4th.html">Shree Krishna Names</a>
-        <a href="5th.html">Krishna Shlokas</a>
-        <a href="7thqueots.html">Daily Krishna Says</a>
-        <a href="8th.html">Stories</a>
-        <a href="9th.html">Quiz</a>
-        <a href="6thfeedback.html">Feedback</a>
 
-        <a href="creator.html">About Creator</a>
-    </div>
-    <div class="social-links">
-        <a href="https://www.youtube.com/channel/UC9qr5anLvw3DBXLvgvvwUMQ" target="_blank">
-            <img src="https://cdn-icons-png.flaticon.com/512/1384/1384060.png" alt="YouTube">
-        </a>
-        <a href="https://www.instagram.com/unmesh12634?igsh=MWNkcTNodTBjNnZ1MA%3D%3D&fbclid=PAZXh0bgNhZW0CMTEAAaZKyYCKXTDO7csJfcR8n4VODb25SJe4dz1C57qAE2Yq3A58_papCdSfyZc_aem_JFuwBIy2OUpn-TjQ4-DUMw" target="_blank">
-            <img src="https://cdn-icons-png.flaticon.com/512/1384/1384063.png" alt="Instagram">
-        </a>
-        <a href="mailto:unmeshjoshi083@gmail.com">
-            <img src="https://cdn-icons-png.flaticon.com/512/732/732200.png" alt="Email">
-        </a>
-    </div>
-    <marquee>कृष्णाय वासुदेवाय हरये परमात्मने। प्रणतः क्लेशनाशाय गोविंदाय नमो नमः॥</marquee>
+    <header class="main-header">
+        <h1>Welcome to Radhe Krishna Devotion</h1>
+    </header>
+<hr>
+    <main>
+        <section class="intro">
+            <p>Immerse yourself in the ocean of divine love. Explore the timeless tales and spiritual essence of Radha and Krishna.</p>
+        </section>
+
+        <section class="image-display">
+           <img src="https://i.pinimg.com/236x/75/f6/4d/75f64d4a726393e84bb0873b6ef02d9e.jpg" alt="Radha Krishna">
+        </section>
+
+        <nav class="navigation">
+            <a href="2nd.html">Gallery</a>
+            <a href="3rd.html">Melodies</a>
+            <a href="4th.html">Divine Names</a>
+            <a href="5th.html">Sacred Shlokas</a>
+            <a href="7thqueots.html">Daily Wisdom</a>
+            <a href="8th.html">Leelas & Stories</a>
+            <a href="9th.html">Devotion Quiz</a>
+            <a href="6thfeedback.html">Feedback</a>
+            <a href="creator.html">About Creator</a>
+        </nav>
+
+        <section class="quote-section">
+            <blockquote>
+                "कृष्णाय वासुदेवाय हरये परमात्मने। प्रणतः क्लेशनाशाय गोविंदाय नमो नमः॥"
+                <footer>- Traditional Prayer</footer>
+            </blockquote>
+             <p class="translation">"Salutations to Lord Govinda, Krishna, the son of Vasudeva, the remover of all distress, the Supreme Soul."</p>
+        </section>
+
+        <section class="social-connect">
+            <h2>Connect With Us</h2>
+            <div class="social-links">
+                 <a href="https://www.youtube.com/channel/UC9qr5anLvw3DBXLvgvvwUMQ" target="_blank" aria-label="YouTube Channel">
+                <img src="https://cdn-icons-png.flaticon.com/512/1384/1384060.png" alt="YouTube">
+                </a>
+
+                 <a href="https://www.instagram.com/unmesh12634?igsh=MWNkcTNodTBjNnZ1MA%3D%3D&fbclid=PAZXh0bgNhZW0CMTEAAaZKyYCKXTDO7csJfcR8n4VODb25SJe4dz1C57qAE2Yq3A58_papCdSfyZc_aem_JFuwBIy2OUpn-TjQ4-DUMw" target="_blank" aria-label="Instagram Profile">
+                     <img src="https://cdn-icons-png.flaticon.com/512/1384/1384063.png" alt="Instagram">
+                 </a>
+                 <a href="mailto:unmeshjoshi083@gmail.com" aria-label="Send Email">
+                     <img src="https://cdn-icons-png.flaticon.com/512/732/732200.png" alt="Email">
+                 </a>
+            </div>
+        </section>
+    </main>
+
     <footer>
-        <p>&copy; 2025 Radhe Krishna Devotion. All Rights Reserved.</p>
-        <p>✨ Created with ❤️ by <strong>Unmesh Joshi</strong></p>
+        <p>© <span id="current-year"></span> Radhe Krishna Devotion. All Rights Reserved.</p>
+        <p>✨ Crafted with Bhakti by <strong>Unmesh Joshi</strong></p>
     </footer>
+
+    <script>
+        // Simple script to update the year automatically
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+    </script>
 </body>
 </html>
