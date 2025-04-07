@@ -6,75 +6,276 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Daily Krishna Quote</title>
     <style>
-        body { background: linear-gradient(to bottom, #e0f7fa, #80deea); font-family: 'Arial', sans-serif; text-align: center; padding: 20px; margin: 0; }
-        .navbar { display: flex; flex-wrap: wrap; justify-content: center; background: #ff6600; padding: 10px; position: sticky; top: 0; z-index: 1000; }
-        .navbar a { text-decoration: none;color: white; padding: 10px 20px; font-size: 18px; font-weight: bold; transition: background 0.3s ease-in-out; }
-        .navbar a:hover { background: #e65c00;border-radius: 5px; }
-        h1 { color: white;background: linear-gradient(to right, #ff6600, #ffcc00); padding: 15px; border-radius: 10px; display: inline-block; }
-        .quote-box { width: 90%; max-width: 700px;  background: rgba(255, 255, 255, 0.9); padding: 20px; margin: 20px auto;border-radius: 10px; box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); font-size: 20px; font-weight: bold; }
-        .button { margin-top: 20px; padding: 10px 20px;font-size: 18px; background: #ff6600;color: white; border: none; border-radius: 5px; cursor: pointer; transition: 0.3s;}
-        .button:hover { background: #e65c00; }
-        .social-links { margin-top: 20px; }
-        .social-links a { text-decoration: none;color: white; background: #ff6600; padding: 10px 15px; border-radius: 5px; font-weight: bold; margin: 5px; display: inline-flex; align-items: center; gap: 10px; transition: transform 0.3s ease-in-out; }
-        .social-links a:hover { background: #e65c00; transform: scale(1.1); }
-        .social-links img { width: 25px; height: 25px; }
-        footer { margin-top: 30px; padding: 15px;background: rgba(0, 0, 0, 0.2);color: white;font-size: 16px;border-radius: 10px; }
-        marquee { font-size: 20px; color: #ff6600; font-weight: bold; animation: glow 2s infinite alternate; }
-        body { background: url("new7th.jpg") no-repeat center center fixed; background-size: cover; }
-        .quote-box { width: 90%;max-width: 600px;word-wrap: break-word;font-size: 18px}
-         @media screen and (max-width: 768px) {
-    .quote-box { font-size: 16px;padding: 15px;}
-}
+        :root {
+            --bg-color: #FFF8F0; /* Warm cream background */
+            --text-color: #4A2C2A; /* Deep warm brown text */
+            --primary-accent: #F9A825; /* Vibrant Yellow/Gold */
+            --primary-accent-dark: #F57F17; /* Darker Gold/Orange for hover */
+            --secondary-accent: #DAA520; /* Muted gold (can use for borders/details) */
+            --navbar-bg: #4A2C2A; /* Using dark brown for contrast */
+            --navbar-text: #FFFFFF;
+            --white-color: #FFFFFF;
+            --shadow-color: rgba(74, 44, 42, 0.1);
+            --shadow-color-hover: rgba(74, 44, 42, 0.2);
 
-
-        @media screen and (max-width: 768px) {
-            .navbar a { padding: 5px 10px; font-size: 16px; }
-            .quote-box { width: 100%; padding: 15px; font-size: 18px; }
-            h1 { padding: 10px; font-size: 24px; }
-            .button { padding: 8px 16px; font-size: 16px; }
-            .social-links a { padding: 8px 10px; font-size: 14px; }
+            --font-heading: 'Prata', serif;
+            --font-body: 'Nunito Sans', sans-serif;
+            --transition-speed: 0.3s;
         }
 
-        @media screen and (max-width: 480px) {
-            .navbar a { padding: 3px 8px; font-size: 14px; }
-            .quote-box { width: 100%; padding: 10px; font-size: 16px; }
-            h1 { padding: 8px; font-size: 20px; }
-            .button { padding: 6px 12px; font-size: 14px; }
-            .social-links a { padding: 6px 8px; font-size: 12px; }
-            marquee { font-size: 18px; }
+        body {
+            background: url("new7th.jpg") no-repeat center center fixed;
+            background-size: cover;
+            font-family: var(--font-body);
+            color: var(--text-color);
+            text-align: center;
+            padding: 20px;
+            margin: 0;
+        }
+
+        .navbar {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            background: var(--navbar-bg);
+            padding: 12px 15px;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        .navbar a {
+            text-decoration: none;
+            color: var(--navbar-text);
+            padding: 8px 18px;
+            font-size: 0.95rem;
+            font-weight: 600;
+            transition: background-color var(--transition-speed) ease, color var(--transition-speed) ease;
+            border-radius: 4px;
+            margin: 2px 5px;
+        }
+
+        .navbar a:hover {
+            background: var(--primary-accent);
+            color: var(--navbar-bg);
+        }
+
+        h1 {
+            color: var(--primary-accent-dark);
+            font-family: var(--font-heading);
+            background: rgba(255, 255, 255, 0.8); /* Soft background for better readability */
+            padding: 15px;
+            border-radius: 10px;
+            display: inline-block;
+            font-size: clamp(2.2rem, 6vw, 3.2rem);
+            margin-bottom: 1em;
+        }
+
+        .quote-box {
+            width: 90%;
+            max-width: 600px;
+            background: rgba(255, 248, 240, 0.9); /* Using the cream background with slight transparency */
+            padding: 30px;
+            margin: 20px auto;
+            border-radius: 10px;
+            box-shadow: 0px 4px 10px var(--shadow-color-hover);
+            font-size: 1.1rem;
+            line-height: 1.8;
+            font-weight: 600;
+            font-family: var(--font-body);
+            color: var(--text-color);
+            text-align: center;
+            word-wrap: break-word;
         }
 
         .button {
-            transition: background 0.3s, transform 0.3s;
+            margin-top: 20px;
+            padding: 12px 25px;
+            font-size: 1rem;
+            background: var(--primary-accent);
+            color: var(--navbar-bg);
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: background-color var(--transition-speed) ease, transform var(--transition-speed) ease, color var(--transition-speed) ease;
+            font-weight: 600;
         }
+
         .button:hover {
+            background: var(--primary-accent-dark);
+            color: var(--white-color);
             transform: scale(1.05);
         }
-        .glow-effect {
-            text-shadow: 0 0 10px rgba(255, 165, 0, 0.8), 0 0 20px rgba(255, 165, 0, 0.6);
+
+        .social-links {
+            margin-top: 30px;
+            display: flex;
+            justify-content: center;
+            gap: 15px;
         }
-        .hamburger { display: none; flex-direction: column; cursor: pointer; position: absolute; left: 20px; top: 15px; background: rgba(239, 236, 236, 0.5); 
-    padding: 5px;border-radius: 5px ;z-index: 1100}
-        .hamburger div { width: 20px; height: 2px; background: rgb(0, 0, 0); margin: 5px 0; transition: 0.4s; }
-        .mobile-nav { position: fixed; top: 0; left: -100%; width: 250px; height: 100vh; background: rgba(255, 102, 0, 0.9); padding: 20px; transition: 0.3s ease-in-out; }
-        .mobile-nav a { display: block; text-decoration: none; color: white; font-size: 20px; padding: 10px 0; }
-        .mobile-nav a:hover { background: #e65c00; }
-        .mobile-nav.open { left: 0; }
-        @media screen and (max-width: 768px) {
-            .nav-links { display: none; }
-            .hamburger { display: flex; }
+
+        .social-links a {
+            text-decoration: none;
+            color: var(--navbar-text);
+            background: var(--navbar-bg);
+            padding: 10px 15px;
+            border-radius: 5px;
+            font-weight: bold;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            transition: transform var(--transition-speed) ease, background-color var(--transition-speed) ease, color var(--transition-speed) ease;
         }
+
+        .social-links a:hover {
+            background: var(--primary-accent-dark);
+            color: var(--white-color);
+            transform: scale(1.1);
+        }
+
+        .social-links img {
+            width: 25px;
+            height: 25px;
+        }
+
+        footer {
+            margin-top: 30px;
+            padding: 15px;
+            background: var(--navbar-bg);
+            color: var(--navbar-text);
+            font-size: 0.9rem;
+            text-align: center;
+            border-radius: 10px;
+            opacity: 0.95;
+        }
+
+        marquee {
+            font-size: 1.1rem;
+            color: var(--primary-accent-dark);
+            font-weight: bold;
+            padding: 15px 0;
+            background-color: #f9f3e9; /* Light background for marquee */
+            border-radius: 5px;
+            margin-top: 30px;
+            margin-bottom: 30px;
+        }
+
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            position: absolute;
+            left: 20px;
+            top: 15px;
+            background: rgba(239, 236, 236, 0.5);
+            padding: 5px;
+            border-radius: 5px;
+            z-index: 1100;
+        }
+
+        .hamburger div {
+            width: 20px;
+            height: 2px;
+            background: var(--text-color);
+            margin: 5px 0;
+            transition: 0.4s;
+        }
+
+        .mobile-nav {
+            position: fixed;
+            top: 0;
+            left: -100%;
+            width: 250px;
+            height: 100vh;
+            background: var(--navbar-bg);
+            padding: 20px;
+            transition: 0.3s ease-in-out;
+        }
+
+        .mobile-nav a {
+            display: block;
+            text-decoration: none;
+            color: var(--navbar-text);
+            font-size: 1rem;
+            padding: 10px 0;
+            font-weight: 600;
+        }
+
+        .mobile-nav a:hover {
+            background: var(--primary-accent-dark);
+        }
+
+        .mobile-nav.open {
+            left: 0;
+        }
+
         @media screen and (max-width: 768px) {
-  body { font-size: 16px; }
-  img { max-width: 100%; height: auto; }
-}
+            body {
+                font-size: 1rem;
+            }
+            .quote-box {
+                font-size: 1rem;
+                padding: 20px;
+            }
+            .navbar a {
+                padding: 5px 10px;
+                font-size: 0.8rem;
+            }
+            h1 {
+                padding: 10px;
+                font-size: 1.8rem;
+            }
+            .button {
+                padding: 10px 20px;
+                font-size: 0.9rem;
+            }
+            .social-links a {
+                padding: 8px 10px;
+                font-size: 0.8rem;
+            }
+            .hamburger {
+                display: flex;
+                left: 15px;
+                top: 12px;
+            }
+        }
+
+        @media screen and (max-width: 480px) {
+            body {
+                font-size: 0.9rem;
+            }
+            .quote-box {
+                font-size: 0.9rem;
+                padding: 15px;
+            }
+            .navbar a {
+                padding: 3px 8px;
+                font-size: 0.7rem;
+            }
+            h1 {
+                padding: 8px;
+                font-size: 1.6rem;
+            }
+            .button {
+                padding: 8px 16px;
+                font-size: 0.8rem;
+            }
+            .social-links a {
+                padding: 6px 8px;
+                font-size: 0.7rem;
+            }
+            marquee {
+                font-size: 0.9rem;
+            }
+        }
     </style>
     <title>Krishna Says - Teachings & Divine Wisdom</title>
     <meta name="description" content="Explore Lord Krishna's timeless teachings and divine wisdom from the Bhagavad Gita and other scriptures.">
     <meta name="keywords" content="Krishna teachings, Bhagavad Gita wisdom, Hindu philosophy, Krishna's words">
     <meta name="author" content="Unmesh Joshi">
     <meta name="robots" content="index, follow">
-    
+
 </head>
 <body>
     <div class="hamburger" onclick="toggleMenu()">
@@ -108,7 +309,7 @@
             <a href="creator.html">About Creator</a>
         </div>
     </div>
-   
+
     <script>
         function toggleMenu() {
             var mobileNav = document.getElementById("mobileNav");
@@ -135,13 +336,11 @@
     <button class="button whatsapp-button" onclick="shareOnWhatsApp()">📲 Share on WhatsApp</button>
 
 <script>
-   function shareOnWhatsApp() {
-    let quoteText = document.getElementById("quote-box").innerText;
-    let pageLink = "https://unmesh-12634.github.io/krishna-devotion/7thqueots.html";
-    let whatsappURL = "https://api.whatsapp.com/send?text=" + encodeURIComponent(quoteText + " 🙏 Read more at: " + pageLink);
-    window.open(whatsappURL, "_blank");
-}
-
+    function shareOnWhatsApp() {
+        let quoteText = document.getElementById("quote-box").innerText;
+        let whatsappURL = "https://api.whatsapp.com/send?text=" + encodeURIComponent(quoteText + " 🙏 ~ Shared from Radhe Krishna Devotion");
+        window.open(whatsappURL, "_blank");
+    }
 </script>
     <br>
     <br>
@@ -150,7 +349,7 @@
         Your browser does not support the audio element.
     </audio>
     <button class="button" onclick="toggleMusic()">🔊 Play/Pause Music</button>
-    
+
     <script>
         function toggleMusic() {
             var music = document.getElementById("bg-music");
@@ -160,7 +359,7 @@
                 music.pause();
             }
         }
-</script> 
+</script>
     <br>
 
 
@@ -175,7 +374,7 @@
             <img src="https://cdn-icons-png.flaticon.com/512/732/732200.png" alt="Email" width="30"> Email Me
         </a>
     </div>
-   
+
 
     <script>
         const quotes = [
@@ -211,7 +410,7 @@
             "No one who does good work will ever come to a bad end, either here or in the world to come. – Bhagavad Gita 6.40",
             "You have control over your actions, never over the results. – Bhagavad Gita 2.47",
             "Be steadfast in yoga, O Arjuna. Perform your duty and abandon attachment. – Bhagavad Gita 2.48"];
-        
+
         function generateQuote() {
             const randomIndex = Math.floor(Math.random() * quotes.length);
             document.getElementById("quote-box").innerText = quotes[randomIndex];
@@ -220,9 +419,9 @@
         window.onload = generateQuote;
     </script>
 
-       <marquee><h3>Radhe Radhe... Radhe Radhe... Radhe Radhe...Radhe Radhe... Radhe Radhe... Radhe Radhe...Radhe Radhe... Radhe Radhe... Radhe Radhe...Radhe Radhe... Radhe Radhe... Radhe Radhe...</h3></marquee>
-     <footer>
-        <p>&copy; 2025 Radhe Krishna Devotion. All Rights Reserved.</p>
+        <marquee><h3 style="color: var(--primary-accent-dark);">Radhe Radhe... Radhe Radhe... Radhe Radhe...Radhe Radhe... Radhe Radhe... Radhe Radhe...Radhe Radhe... Radhe Radhe... Radhe Radhe...Radhe Radhe... Radhe Radhe... Radhe Radhe...</h3></marquee>
+    <footer>
+        <p>© 2025 Radhe Krishna Devotion. All Rights Reserved.</p>
     </footer>
 </body>
 </html>
