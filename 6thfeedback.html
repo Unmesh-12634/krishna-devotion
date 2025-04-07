@@ -7,42 +7,222 @@
     <meta name="description" content="Share your feedback on Krishna Devotion. Explore Krishna songs, pictures, shlokas, and more. Hare Krishna!">
     <link rel="icon" type="image/png" href="https://yourwebsite.com/favicon.png">
     <style>
-        body {background: linear-gradient(to bottom, #ffedd5, #fcd34d); font-family: Arial, sans-serif; text-align: center; margin: 0; padding: 0;}
-        .navbar {background: #ff6600; padding: 10px; position: fixed; width: 100%; top: 0; z-index: 1000; display: flex; justify-content: center;}
-        .navbar a {color: white; padding: 10px 15px; text-decoration: none; font-weight: bold;}
-        .navbar a:hover {background: #e65c00; border-radius: 5px;}
-        .form-container, .reviews-container {margin-top: 80px; padding: 20px; border: 2px solid #ff6600; border-radius: 10px; background: white; display: inline-block; width: 80%; transition: 0.3s ease-in-out; overflow: auto;}
-        .form-container:hover, .reviews-container:hover {box-shadow: 0px 6px 12px rgba(255, 102, 0, 0.4);}
-        .social-links img {width: 40px; margin: 10px; transition: transform 0.3s ease-in-out;}
-        .social-links img:hover {transform: scale(1.2);}
-        .footer {background: #ff6600; padding: 15px; color: white; margin-top: 20px;}
-        .hamburger {display: none; flex-direction: column; cursor: pointer; position: absolute; left: 20px; top: 15px;}
-        .hamburger div {width: 20px; height: 2px; background: black; margin: 5px 0; transition: 0.4s;}
-        .mobile-nav {position: fixed; top: 0; left: -100%; width: 250px; height: 100vh; background: rgba(255, 102, 0, 0.9); padding: 20px; transition: 0.3s ease-in-out;}
-        .mobile-nav a {display: block; text-decoration: none; color: white; font-size: 20px; padding: 10px 0;}
-        .mobile-nav a:hover {background: #e65c00;}
-        .mobile-nav.open {left: 0;}
-        @media screen and (max-width: 768px) {
-            .nav-links {display: none;}
-            .hamburger {display: flex;}
-        }
-        footer {background: #222; /* Dark background */color: #fff;padding: 20px 0; text-align: center;font-family: Arial, sans-serif;}
+        :root {
+            --bg-color: #fff5ea; /* Light cream background as requested */
+            --text-color: #4A2C2A; /* Deep warm brown text */
+            --primary-accent: #F9A825; /* Vibrant Yellow/Gold */
+            --primary-accent-dark: #F57F17; /* Darker Gold/Orange for hover */
+            --secondary-accent: #DAA520; /* Muted gold (can use for borders/details) */
+            --navbar-bg: #4A2C2A; /* Using dark brown for contrast */
+            --navbar-text: #FFFFFF;
+            --white-color: #FFFFFF;
+            --shadow-color: rgba(74, 44, 42, 0.1);
+            --shadow-color-hover: rgba(74, 44, 42, 0.2);
+            --gradient-start: #e7fdf8; /* Keeping these for potential subtle accents */
+            --gradient-mid: #c1fff7;
+            --gradient-end: #affff4;
 
-    .footer-container {display: flex;flex-wrap: wrap;justify-content: space-around; padding: 20px; max-width: 1200px; margin: auto;}
-    .footer-section {flex: 1; min-width: 250px; margin: 10px 0;}
-    .footer-section h3 {font-size: 18px;margin-bottom: 10px;color: #ff6600;}
-    .footer-section p {font-size: 14px;line-height: 1.6;color: #ccc;}
-    .footer-links a {display: block;color: #ccc;text-decoration: none;margin: 5px 0;transition: 0.3s ease;}
-    .footer-links a:hover { color: #ff6600;}
-    .social-icons {margin-top: 10px;}
-    .social-icons a {color: #fff;font-size: 20px;margin: 0 10px;display: inline-block;transition: 0.3s ease;}
-.social-icons a:hover {color: #ff6600}
-.footer-bottom {text-align: center;padding: 15px;background: #111;font-size: 14px;color: #ccc;}
-/* Responsive Design */
-@media (max-width: 768px) {
-    .footer-container {flex-direction: column;text-align: center;}
-}
-        .h1 {color: white; background: linear-gradient(to right, #ff6600, #ffcc00); padding: 15px; border-radius: 10px; display: inline-block; margin-top: 20px;}
+            --font-heading: 'Great Vibes', cursive;
+            --font-body: Arial, sans-serif;
+            --transition-speed: 0.3s;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            font-family: var(--font-body);
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+
+        .navbar {
+            background: var(--navbar-bg); /* Dark brown navbar */
+            padding: 12px 15px;
+            position: sticky;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            display: flex;
+            justify-content: center;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        .navbar a {
+            color: var(--navbar-text); /* White text on navbar */
+            padding: 8px 18px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 0.95rem;
+            transition: background-color var(--transition-speed) ease, color var(--transition-speed) ease;
+            border-radius: 4px;
+            margin: 2px 5px;
+        }
+
+        .navbar a:hover {
+            background: var(--primary-accent); /* Yellow/gold on hover */
+            color: var(--navbar-bg); /* Dark text on hover */
+        }
+
+        .form-container, .reviews-container {
+            margin-top: 80px;
+            padding: 25px; /* Slightly increased padding */
+            border: 1px solid var(--secondary-accent); /* Muted gold border */
+            border-radius: 10px;
+            background: rgba(255, 255, 255, 0.85); /* Slightly transparent white */
+            display: inline-block;
+            width: 85%; /* Slightly wider */
+            transition: box-shadow var(--transition-speed) ease-in-out;
+            overflow: auto;
+            box-shadow: 0px 4px 10px var(--shadow-color);
+        }
+
+        .form-container:hover, .reviews-container:hover {
+            box-shadow: 0px 8px 16px var(--shadow-color-hover);
+        }
+
+        .social-links {
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        .social-links a {
+            display: inline-block;
+            margin: 15px;
+        }
+
+        .social-links img {
+            width: 45px; /* Slightly larger social icons */
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .social-links img:hover {
+            transform: scale(1.1);
+        }
+
+        footer {
+            background: var(--navbar-bg); /* Dark background */
+            color: var(--navbar-text); /* White text */
+            padding: 20px 0;
+            text-align: center;
+            font-family: var(--font-body);
+            margin-top: 30px;
+            font-size: 0.9rem;
+        }
+
+        .footer a {
+            color: var(--primary-accent);
+            text-decoration: underline;
+        }
+
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            position: absolute;
+            left: 20px;
+            top: 15px;
+        }
+
+        .hamburger div {
+            width: 25px; /* Slightly wider hamburger lines */
+            height: 3px; /* Slightly thicker hamburger lines */
+            background: var(--text-color); /* Dark brown hamburger */
+            margin: 5px 0;
+            transition: 0.4s;
+        }
+
+        .mobile-nav {
+            position: fixed;
+            top: 0;
+            left: -100%;
+            width: 250px;
+            height: 100vh;
+            background: var(--navbar-bg); /* Dark brown mobile nav */
+            padding: 20px;
+            transition: 0.3s ease-in-out;
+        }
+
+        .mobile-nav a {
+            display: block;
+            text-decoration: none;
+            color: var(--navbar-text); /* White text on mobile nav */
+            font-size: 1rem;
+            padding: 10px 0;
+            font-weight: 600;
+        }
+
+        .mobile-nav a:hover {
+            background: var(--primary-accent-dark); /* Darker gold on hover */
+        }
+
+        .mobile-nav.open {
+            left: 0;
+        }
+
+        @media screen and (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            .hamburger {
+                display: flex;
+            }
+            .navbar {
+                display: none; /* Ensure desktop nav is hidden on mobile */
+            }
+            .form-container, .reviews-container {
+                margin-top: 70px;
+                width: 95%;
+                padding: 15px;
+            }
+            .social-links img {
+                width: 35px;
+                margin: 8px;
+            }
+        }
+
+        h1 {
+            color: var(--primary-accent-dark); /* Darker gold for the main heading */
+            background: rgba(255, 245, 234, 0.7); /* Slightly transparent background for the heading */
+            padding: 15px;
+            border-radius: 10px;
+            display: inline-block;
+            margin-top: 20px;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+            font-size: clamp(2rem, 7vw, 3rem);
+        }
+
+        h2 {
+            color: var(--primary-accent-dark); /* Darker gold for the subheading */
+            margin-top: 30px;
+            margin-bottom: 15px;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+        }
+
+        .reviews-container iframe {
+            pointer-events: auto;
+        }
+
+        #backToTop {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            display: none;
+            background: var(--primary-accent-dark); /* Darker gold for the button */
+            color: var(--white-color);
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            transition: background-color var(--transition-speed) ease, color var(--transition-speed) ease, box-shadow var(--transition-speed) ease;
+            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        #backToTop:hover {
+            background: var(--primary-accent); /* Lighter gold on hover */
+            color: var(--navbar-bg);
+            box-shadow: 3px 3px 7px rgba(0, 0, 0, 0.2);
+        }
     </style>
 </head>
 <body>
@@ -50,9 +230,9 @@
     <div class="hamburger" onclick="toggleMenu()">
         <div></div>
         <div></div>
-        <div></div> 
+        <div></div>
     </div>
-    
+
     <div class="mobile-nav" id="mobileNav">
         <a href="index.html" onclick="closeMenu()">Home</a>
         <a href="2nd.html" onclick="closeMenu()">Krishna Pictures</a>
@@ -98,9 +278,9 @@
         });
     </script>
     <br>
-     <hr>
+    <hr>
     <h1>💬 Share Your Feedback</h1>
-    
+
     <div class="form-container">
         <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdI6rKDr-_bWcoE-vHoGxFSkYF6TWGxMrymyymmAHu36LIcGA/viewform?embedded=true" width="100%" height="600" frameborder="0"></iframe>
     </div>
@@ -108,12 +288,12 @@
     <h2>📝 User Reviews</h2>
     <hr>
     <div class="reviews-container">
-        <iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQRl0oW9g-MR_wj_gYy7smOgSadkZXWvaGHWMBaClM2KSRCzT7ksTs5hXhkMoi3H9SuL96_yKGW_sTT/pubhtml" 
-                width="100%" 
+        <iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQRl0oW9g-MR_wj_gYy7smOgSadkZXWvaGHWMBaClM2KSRCzT7ksTs5hXhkMoi3H9SuL96_yKGW_sTT/pubhtml"
+                width="100%"
                 height="400">
         </iframe>
     </div>
-    <button onclick="scrollToTop()" id="backToTop" style="position:fixed; bottom:20px; right:20px; display:none; background:#ff6600; color:white; padding:10px 15px; border:none; border-radius:5px; cursor:pointer;">↑ Top</button>
+    <button onclick="scrollToTop()" id="backToTop">⬆ Top</button>
 
 <script>
     window.onscroll = function() { showScrollButton(); };
@@ -128,12 +308,12 @@
     function scrollToTop() {
         window.scrollTo({top: 0, behavior: 'smooth'});
     }
-</script>
 
+</script>
 
     <h2>📲 Connect With Me</h2>
     <p>Follow me for updates, new content, and Krishna devotion! 🙏✨</p>
-    
+
     <div class="social-links">
         <a href="https://www.youtube.com/channel/UC9qr5anLvw3DBXLvgvvwUMQ" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/1384/1384060.png" alt="YouTube"></a>
         <a href="https://wa.me/918209559793" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp"></a>
@@ -142,7 +322,7 @@
 
     <footer>
         <p>“सर्वधर्मान्परित्यज्य मामेकं शरणं व्रज।” – श्रीमद्भगवद्गीता 18.66</p>
-        <p>&copy; <span id="year"></span> Radhe Krishna Devotion. All Rights Reserved.</p>
+        <p>© <span id="year"></span> Radhe Krishna Devotion. All Rights Reserved.</p>
     </footer>
 
     <script>document.getElementById('year').innerText = new Date().getFullYear();</script>
