@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- Google tag (gtag.js) -->
+
+        <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-E0FNFMFRPF"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
@@ -10,41 +11,365 @@
 
   gtag('config', 'G-E0FNFMFRPF');
 </script>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Radha Krishna Stories</title>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
-        body {background: linear-gradient(to bottom, #e7fdf8, #c1fff7, #affff4); font-family: Arial, sans-serif; text-align: center; color: #5a2a27; }
-        h1 { color: #fb8f02; font-family: 'Great Vibes', cursive; }
-        .story-container { width: 80%; margin: auto; }
-        .story { border: 2px solid gold; background-color: rgba(255, 248, 225, 0.8); padding: 20px; margin: 20px 0; border-radius: 10px; box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);transition: transform 0.3s ease-in-out, box-shadow 0.3s; }
-        .story img { width: 80px; border-radius: 50px;width: 120px;height: auto; width: 120px;height: auto;} 
-        .close-btn { font-size: 28px;padding: 10px;}
-        .story-title { font-family: 'Great Vibes', cursive; font-size: 1.8em; margin: 10px 0; }
-        .story:hover {transform: scale(1.05);box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.2);}
-        .view-full-btn { background: #ff6600; color: white; padding: 10px; border: none; border-radius: 5px; cursor: pointer; }
-        .view-full-btn:hover { background: #e65c00; }
-        .modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.6);overflow-y: auto; }
-        .modal-content { background: white; padding: 20px; width: 60%; margin: 10% auto; border-radius: 10px; text-align: left;overflow-y: auto; }
-        .close-btn { float: right; font-size: 24px; cursor: pointer; }
-        .navbar {display: flex; justify-content: center; background: #ff6600;padding: 10px; position: sticky; top: 0; z-index: 1000; }
-        .navbar a {text-decoration: none; color: white; padding: 10px 20px; font-size: 18px;font-weight: bold;transition: background 0.3s ease-in-out; }
-        .navbar a:hover { background: #e65c00; border-radius: 5px; }
-        .hamburger { display: none; flex-direction: column; cursor: pointer; position: absolute; left: 20px; top: 15px; }
-        .hamburger div { width: 20px; height: 2px; background: rgb(0, 0, 0); margin: 5px 0; transition: 0.4s; }
-        .mobile-nav { position: fixed; top: 0; left: -100%; width: 250px; height: 100vh; background: rgba(255, 102, 0, 0.9); padding: 20px; transition: 0.3s ease-in-out; }
-        .mobile-nav a { display: block; text-decoration: none; color: white; font-size: 20px; padding: 10px 0; }
-        .mobile-nav a:hover { background: #e65c00; }
-        .mobile-nav.open { left: 0; }
-        @media screen and (max-width: 768px) {
-            .nav-links { display: none; }
-            .hamburger { display: flex; }
-            
-        }
-        button {background: #ff6600;color: white;padding: 10px 20px;border: none;border-radius: 8px;font-size: 16px;cursor: pointer;}
-        button:hover {background: #e65c00;}
+        :root {
+            --bg-color: #FFF8F0; /* Warm cream background */
+            --text-color: #4A2C2A; /* Deep warm brown text */
+            --primary-accent: #F9A825; /* Vibrant Yellow/Gold */
+            --primary-accent-dark: #F57F17; /* Darker Gold/Orange for hover */
+            --secondary-accent: #DAA520; /* Muted gold (can use for borders/details) */
+            --navbar-bg: #4A2C2A; /* Using dark brown for contrast */
+            --navbar-text: #FFFFFF;
+            --white-color: #FFFFFF;
+            --shadow-color: rgba(74, 44, 42, 0.1);
+            --shadow-color-hover: rgba(74, 44, 42, 0.2);
+            --gradient-start: #e7fdf8;
+            --gradient-mid: #c1fff7;
+            --gradient-end: #affff4;
 
+            --font-heading: 'Great Vibes', cursive;
+            --font-body: Arial, sans-serif;
+            --transition-speed: 0.3s;
+        }
+
+        body {
+            background: linear-gradient(to bottom, var(--gradient-start), var(--gradient-mid), var(--gradient-end));
+            font-family: var(--font-body);
+            text-align: center;
+            color: var(--text-color);
+            margin: 0;
+            padding-bottom: 60px; /* Space for the fixed music player */
+        }
+
+        h1 {
+            color: var(--primary-accent-dark);
+            font-family: var(--font-heading);
+            font-size: clamp(2.5rem, 8vw, 4rem);
+            margin-top: 1em;
+            margin-bottom: 0.5em;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            font-family: var(--font-heading);
+            font-size: 2rem;
+            color: var(--primary-accent-dark);
+            margin-top: 2em;
+            margin-bottom: 1em;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+        }
+
+        .story-container {
+            width: 90%;
+            max-width: 800px;
+            margin: 20px auto;
+        }
+
+        .story {
+            border: 1px solid var(--secondary-accent);
+            background-color: rgba(255, 248, 240, 0.85); /* Slightly more opaque */
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 6px 12px var(--shadow-color); /* Slightly stronger shadow */
+            transition: transform var(--transition-speed) ease-in-out, box-shadow var(--transition-speed);
+            text-align: left;
+        }
+
+        .story img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            float: right;
+            margin-left: 15px;
+            object-fit: cover;
+            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .story-title {
+            font-family: var(--font-heading);
+            font-size: 1.6em;
+            margin: 10px 0;
+            color: var(--primary-accent-dark);
+        }
+
+        .story p {
+            line-height: 1.6;
+            margin-bottom: 15px;
+            color: var(--text-color);
+        }
+
+        .story:hover {
+            transform: scale(1.03); /* Slightly more pronounced hover effect */
+            box-shadow: 0px 10px 20px var(--shadow-color-hover);
+        }
+
+        .view-full-btn {
+            background: var(--primary-accent);
+            color: var(--navbar-bg);
+            padding: 10px 20px;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            transition: background-color var(--transition-speed) ease, color var(--transition-speed) ease;
+            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .view-full-btn:hover {
+            background: var(--primary-accent-dark);
+            color: var(--white-color);
+            box-shadow: 3px 3px 7px rgba(0, 0, 0, 0.2);
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            z-index: 1000;
+        }
+
+        .modal-content {
+            background: var(--white-color);
+            padding: 30px; /* Increased padding for more space */
+            width: 85%; /* Slightly wider modal */
+            max-width: 700px;
+            margin: 10% auto; /* Adjusted top margin */
+            border-radius: 10px;
+            text-align: left;
+            position: relative;
+            box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        .close-btn {
+            position: absolute;
+            top: 15px;
+            right: 20px;
+            font-size: 28px; /* Slightly larger close button */
+            cursor: pointer;
+            color: var(--text-color);
+            opacity: 0.7;
+            transition: opacity var(--transition-speed);
+        }
+
+        .close-btn:hover {
+            opacity: 1;
+        }
+
+        .navbar {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            background: var(--navbar-bg);
+            padding: 12px 15px;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        .navbar a {
+            text-decoration: none;
+            color: var(--navbar-text);
+            padding: 8px 18px;
+            font-size: 0.95rem;
+            font-weight: 600;
+            transition: background-color var(--transition-speed) ease, color var(--transition-speed) ease;
+            border-radius: 4px;
+            margin: 2px 5px;
+        }
+
+        .navbar a:hover {
+            background: var(--primary-accent);
+            color: var(--navbar-bg);
+        }
+
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            position: absolute;
+            left: 20px;
+            top: 15px;
+        }
+
+        .hamburger div {
+            width: 25px;
+            height: 3px;
+            background: var(--text-color);
+            margin: 5px 0;
+            transition: 0.4s;
+        }
+
+        .mobile-nav {
+            position: fixed;
+            top: 0;
+            left: -100%;
+            width: 250px;
+            height: 100vh;
+            background: var(--navbar-bg);
+            padding: 20px;
+            transition: 0.3s ease-in-out;
+            z-index: 1100;
+        }
+
+        .mobile-nav a {
+            display: block;
+            text-decoration: none;
+            color: var(--navbar-text);
+            font-size: 1rem;
+            padding: 10px 0;
+            font-weight: 600;
+        }
+
+        .mobile-nav a:hover {
+            background: var(--primary-accent-dark);
+        }
+
+        .mobile-nav.open {
+            left: 0;
+        }
+
+        @media screen and (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            .hamburger {
+                display: flex;
+            }
+            .navbar {
+                display: none; /* Ensure desktop nav is hidden on mobile */
+            }
+            h1 {
+                font-size: 3rem;
+            }
+            h2 {
+                font-size: 1.8rem;
+            }
+            .story {
+                padding: 15px;
+            }
+            .story img {
+                width: 80px;
+                height: 80px;
+                margin-left: 10px;
+            }
+            .story-title {
+                font-size: 1.4em;
+            }
+        }
+
+        button {
+            background: var(--primary-accent);
+            color: var(--navbar-bg);
+            padding: 12px 25px;
+            border: none;
+            border-radius: 25px;
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: background-color var(--transition-speed) ease, color var(--transition-speed) ease;
+            margin: 10px 5px;
+            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        button:hover {
+            background: var(--primary-accent-dark);
+            color: var(--white-color);
+            box-shadow: 3px 3px 7px rgba(0, 0, 0, 0.2);
+        }
+
+        h2 + form { /* Style the form below the "Submit Your Own Story" heading */
+            background-color: rgba(255, 248, 240, 0.85);
+            padding: 25px;
+            margin: 20px auto;
+            border-radius: 10px;
+            box-shadow: 0px 6px 12px var(--shadow-color);
+            width: 90%;
+            max-width: 600px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        h2 + form textarea {
+            width: 95%;
+            padding: 12px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 1rem;
+            font-family: var(--font-body);
+            color: var(--text-color);
+        }
+
+        h2 + form button[type="submit"] {
+            padding: 12px 30px;
+            font-size: 1rem;
+        }
+
+        #backToTop {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            display: none;
+            background: var(--primary-accent-dark);
+            color: var(--white-color);
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            transition: background-color var(--transition-speed) ease;
+            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        #backToTop:hover {
+            background: var(--primary-accent);
+            color: var(--navbar-bg);
+            box-shadow: 3px 3px 7px rgba(0, 0, 0, 0.2);
+        }
+
+        #music-player {
+            position: fixed;
+            bottom: 10px;
+            left: 10px;
+            background: var(--navbar-bg);
+            padding: 10px 15px;
+            border-radius: 10px;
+            color: var(--navbar-text);
+            cursor: pointer;
+            z-index: 999;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        #music-player button {
+            padding: 8px 15px;
+            margin: 0;
+        }
+
+        footer {
+            background: var(--navbar-bg);
+            color: var(--navbar-text);
+            text-align: center;
+            padding: 15px;
+            font-size: 0.9rem;
+            margin-top: 30px;
+        }
+
+        footer a {
+            color: var(--primary-accent);
+            text-decoration: underline;
+        }
     </style>
     <title>Radha Krishna Stories - Divine Love & Leelas</title>
     <meta name="description" content="Read enchanting Radha Krishna stories, experience divine love, and explore their spiritual leelas.">
@@ -54,7 +379,7 @@
 
 </head>
 <body>
-   <div class="hamburger" onclick="toggleMenu()">
+    <div class="hamburger" onclick="toggleMenu()">
         <div></div>
         <div></div>
         <div></div>
@@ -102,33 +427,25 @@
                 mobileNav.classList.remove("open");
             }
         });
-    </script> 
+    </script>
     <h1>Radha Krishna Stories</h1>
-    <audio id="bg-music" autoplay loop>
-        <source src="flutemusic.mp3" type="audio/mpeg">
-
-    </audio>
-    
-    <button class="button" onclick="toggleMusic()">🔊 Play/Pause Music</button>
     <div class="story-container" id="stories"></div>
     <button id="see-more" onclick="seeMoreStories()">See More Stories</button>
-    
-    
-    
+
     <div id="storyModal" class="modal">
         <div class="modal-content">
-            <span class="close-btn" onclick="closeModal()">&times;</span>
+            <span class="close-btn" onclick="closeModal()">×</span>
             <h2 id="modalTitle"></h2>
             <p id="modalText"></p>
         </div>
     </div>
-    
+
     <script>
         let storiesData = [
             {title: "Radha & Krishna’s First Meeting", img: "radhakrishn8thpage.jpg" , text: "Krishna and Radha first met in Vrindavan...", fullText: "This is the full story of how Krishna and Radha first met in Vrindavan, filled with divine moments. In the beautiful land of Vrindavan, Krishna, the charming cowherd, grew up spreading love and joy. Meanwhile, in Barsana, King Vrishabhanu and Queen Kirti were blessed with a divine daughter, Radha. But from birth, Radha never opened her eyes, leaving everyone worried.One day, Yashoda took little Krishna to Vrishabhanu’s palace. As Krishna’s tiny hands touched baby Radha, a miracle happened—Radha opened her eyes for the first time and saw Krishna. It was as if she had been waiting for him all along. Their souls recognized each other instantly, forming an eternal bond of divine love.From that moment, Radha and Krishna became inseparable, their love transcending time. More than a worldly love story, their union symbolized the purest form of devotion (Bhakti) and divine connection—a love that still inspires millions." },
             {title: "The Rasleela", img: "rasleela.jpg", text: "One of the most beautiful leelas was the Rasleela...", fullText: "This is the full story of the divine Rasleela where Krishna danced with the gopis One moonlit night in Vrindavan, under the cool silver glow of Sharad Purnima, Krishna stood by the Yamuna River, playing his flute. The melody was so enchanting that the Gopis (cowherd women) of Vrindavan, leaving behind their homes, families, and all worldly ties, rushed towards him, drawn by the divine call of love.Krishna welcomed them with a smile, and in that sacred moment, he multiplied himself so that each Gopi felt his undivided presence. In the heart of the forest, under the celestial sky, began the Rāsleela, a divine dance where Krishna and the Gopis moved in perfect harmony. Their love was pure, free from desire, a devotion that transcended the material world.As the dance reached its peak, the Gopis, in their pride, thought Krishna belonged only to them. To humble them, Krishna suddenly disappeared. The Gopis, heartbroken, searched for him everywhere, calling out his name in longing. Finally, when their love turned into pure surrender, Krishna reappeared, showering them with divine bliss.The Rāsleela was not just a dance—it was the highest form of devotion (Bhakti), where the soul merges with the Divine. Even today, it symbolizes selfless love, surrender, and eternal union with God. 💖✨."},
             {title: "Krishna Lifting Govardhan Hill", img: "goverdhanparvat.jpg", text: "To protect the villagers of Vrindavan...", fullText: "Krishna lifted the Govardhan Hill on his little finger to protect the villagers from the wrath of Indra. In Vrindavan, the people worshipped Indra, the god of rain, believing he controlled their prosperity. But young Krishna taught them that it was Govardhan Hill, with its lush pastures and rivers, that truly nurtured them. Following Krishna’s advice, the villagers offered prayers to Govardhan instead of Indra.Angered by this, Indra sent a terrifying storm with heavy rain and thunder to punish them. The villagers, frightened, rushed to Krishna for help. With a divine smile, Krishna effortlessly lifted the massive Govardhan Hill on his little finger, providing shelter to all. For seven days and nights, he held it up while the storm raged.Defeated, Indra finally realized Krishna’s divine power and bowed before him, seeking forgiveness. Krishna, ever merciful, forgave Indra and taught him that true devotion lies in humility, not pride.Since then, the people of Vrindavan celebrate Govardhan Puja, honoring Krishna as the Divine Protector and nurturer of all beings. 🌿🙏✨"},
-            {title : "Radha's Jealousy", img :"Radharanijelous.jpg", text:"Radha once became very jealous...", fullText: "Radha's jealousy and how Krishna pacified her with his divine charm and loveRadha and Krishna's love was divine, yet like any true love, it had moments of playful jealousy. Krishna, known for his charming nature, often teased Radha by spending time with other Gopis, making her heart burn with longing.One day, as Radha waited for Krishna, she heard whispers that he was flirting with another Gopi. Filled with jealousy, she refused to speak to him when he arrived. Krishna, seeing her anger, smiled mischievously and tried to pacify her with sweet words and playful gestures. But Radha turned away, her face glowing with both love and annoyance.Understanding her feelings, Krishna humbly placed his flute at her feet, promising that no melody, no moment, and no love could ever be greater than his love for her. Radha's heart melted, and she forgave him, realizing that her jealousy was only a reflection of her deep, divine love.This leela (divine play) symbolizes that even in love, moments of longing and separation only strengthen the eternal bond between the soul (Radha) and the Divine (Krishna). 💖✨"},
+            {title : "Radha's Jealousy", img :"radharanijelous.jpg", text:"Radha once became very jealous...", fullText: "Radha's jealousy and how Krishna pacified her with his divine charm and loveRadha and Krishna's love was divine, yet like any true love, it had moments of playful jealousy. Krishna, known for his charming nature, often teased Radha by spending time with other Gopis, making her heart burn with longing.One day, as Radha waited for Krishna, she heard whispers that he was flirting with another Gopi. Filled with jealousy, she refused to speak to him when he arrived. Krishna, seeing her anger, smiled mischievously and tried to pacify her with sweet words and playful gestures. But Radha turned away, her face glowing with both love and annoyance.Understanding her feelings, Krishna humbly placed his flute at her feet, promising that no melody, no moment, and no love could ever be greater than his love for her. Radha's heart melted, and she forgave him, realizing that her jealousy was only a reflection of her deep, divine love.This leela (divine play) symbolizes that even in love, moments of longing and separation only strengthen the eternal bond between the soul (Radha) and the Divine (Krishna). 💖✨"},
             {title: "Krishna and the Butter Thief", img: "makhan.jpg", text: "Little Krishna loved butter...", fullText: "The mischievous tales of young Krishna stealing butter from the homes of the villagers.Little Krishna, the naughty but lovable child of Vrindavan, had a special love for butter. No matter where his mother Yashoda hid it, he always found a way to steal and enjoy it, earning the name “Makhan Chor” (Butter Thief).he village women (Gopis) were often troubled by Krishna and his friends sneaking into their homes, breaking pots, and eating butter. They complained to Yashoda, who decided to catch him. One day, she saw Krishna with his friends, happily eating butter and feeding it to monkeys. As soon as the Gopis arrived, the monkeys ran away, and Krishna stood there, his face covered in butter!Yashoda scolded him, but Krishna, with his big, innocent eyes, denied everything. Amused yet firm, she tried to tie him up as punishment, but each time the rope fell short. Only when she tied him with love and not anger did the rope finally fit.This story shows Krishna’s playful nature and the power of pure love—for even God can only be bound by true devotion. His butter-stealing mischief is still celebrated during Janmashtami! 🥄💛✨"},
             {title: "🐍 Krishna and Kaliya – The Divine Dance of Victory 🐍"  ,img:"kaliya.jpg", text: "Krishna danced so powerfully that Kaliya started bleeding, his pride crushed.", fullText:"In the Yamuna River near Vrindavan, a giant, poisonous serpent named Kaliya lived with his family. His venom was so deadly that it turned the water black, killing fish, trees, and even birds that flew above. The people of Vrindavan were terrified, as no one could go near the river.Hearing their worries, Krishna decided to stop Kaliya’s terror. One day, while playing with his friends, he climbed a tree near the river and jumped into the toxic waters. The loud splash disturbed Kaliya, and the angry serpent rose from the water, wrapping his huge coils around Krishna. Everyone watching from the shore screamed in fear.But Krishna, the Supreme Protector, smiled and easily freed himself. He leapt onto Kaliya’s hood and began dancing gracefully, pressing down with his divine feet. Kaliya tried to fight back, but Krishna’s weight became unbearable. With every step, the serpent’s strength weakened. Krishna danced so powerfully that Kaliya started bleeding, his pride crushed.Realizing Krishna was no ordinary boy but the Supreme Lord, Kaliya surrendered. His wives begged Krishna for mercy. Krishna forgave him but ordered him to leave the Yamuna River forever. Defeated but blessed, Kaliya and his family left for the deep ocean, and the Yamuna’s waters became pure again.The people of Vrindavan celebrated Krishna’s victory, for he had once again protected them. The story of Kaliya Mardhan teaches that evil and arrogance are destroyed when faced with divine grace, and true surrender leads to salvation. 🐍✨" },
             { title: "🌟The Divine Birth of Lord Krishna 🌟", img:"birth.jpg",text:" Vishnu transformed into a beautiful baby—Krishna.", fullText:"Long ago, in the kingdom of Mathura, there was a cruel king named Kansa. He was feared by all and had even imprisoned his own sister, Devaki, and her husband, Vasudeva, after hearing a prophecy that Devaki’s eighth son would be the cause of his death.One by one, Kansa killed every child born to Devaki. When the time came for the birth of her eighth child, the atmosphere was filled with a divine glow. At midnight on the holy day of Janmashtami, Lord Vishnu appeared before Devaki and Vasudeva, revealing that he would take birth as their son to end Kansa’s tyranny. In an instant, Vishnu transformed into a beautiful baby—Krishna.A miracle happened—the prison doors unlocked, the guards fell into a deep sleep, and the chains binding Vasudeva broke open. Following divine guidance, Vasudeva carried baby Krishna in a basket and set out to Gokul, crossing the flooded Yamuna River. As he walked, the waters parted, and Sheshnag, the divine serpent, spread his hoods to protect Krishna from the rain.Vasudeva safely reached the house of Nanda and Yashoda, where a baby girl had just been born. He exchanged Krishna with the girl and hurried back to Mathura. When Kansa tried to kill the newborn girl, she transformed into Goddess Yogmaya, warning him that his destroyer was already born and safe.Meanwhile, in Gokul, Krishna was lovingly raised by Yashoda and Nanda, growing up to fulfill the prophecy and defeat Kansa, bringing peace to the world. 🌿✨Even today, Janmashtami is celebrated with devotion and joy to honor the divine birth of Lord Krishna. 🎊💛"},
@@ -156,12 +473,14 @@
                     <h2 class="story-title">${story.title}</h2>
                     <p>${story.text}</p>
                     <button class="view-full-btn" onclick="viewFullStory(${i})">View Full Story</button>
-                    
+
                 `;
                 container.appendChild(storyElement);
             }
             if (visibleStories >= storiesData.length) {
                 document.getElementById("see-more").style.display = "none";
+            } else {
+                document.getElementById("see-more").style.display = "block";
             }
         }
 
@@ -179,11 +498,11 @@
         function closeModal() {
             document.getElementById("storyModal").style.display = "none";
         }
-        
+
         document.addEventListener("DOMContentLoaded", loadStories);
     </script>
     <h2>📝 Submit Your Own Story</h2>
-    
+
     <form>
         <textarea placeholder="Write your experience..." required></textarea>
         <button type="submit">Submit Story</button>
@@ -198,9 +517,7 @@
         window.scrollTo({ top: 0, behavior: "smooth" });
     };
 </script>
-<style>
-    #backToTop { position: fixed; bottom: 20px; right: 20px; display: none; background: orange; padding: 10px; border-radius: 50%; cursor: pointer; }
-</style>
+
 <div id="music-player">
     <audio id="bg-music" loop>
         <source src="flutemusic.mp3" type="audio/mpeg">
@@ -218,17 +535,11 @@
         }
     }
 </script>
-<style>
-    #music-player {
-        position: fixed; nav-up: 10px; right: 10px; background: #ff6600;
-        padding: 10px; border-radius: 10px; color: white; cursor: pointer;
-    }
-</style>
 
 </body>
-<footer style="background: #ff6600; color: white; text-align: center; padding: 10px; font-size: 16px; margin-top: 20px;">
+<footer style="background: var(--navbar-bg); color: var(--navbar-text); text-align: center; padding: 15px; font-size: 0.9rem; margin-top: 30px;">
     <p>✨ Created with ❤ by <strong>Unmesh Joshi</strong></p>
-    <p>📩 Contact: <a href="mailto:unmeshjoshi083@gmail.com" style="color: white; text-decoration: underline;">unmeshjoshi083@gmail.com</a></p>
-    <p>📷 Follow me on <a href="https://www.instagram.com/unmesh12634" style="color: white; text-decoration: underline;" target="_blank">Instagram</a> | 🎵 <a href="https://www.youtube.com/channel/UC9qr5anLvw3DBXLvgvvwUMQ" style="color: white; text-decoration: underline;" target="_blank">YouTube</a></p>
+    <p>📩 Contact: <a href="mailto:unmeshjoshi083@gmail.com" style="color: var(--primary-accent); text-decoration: underline;">unmeshjoshi083@gmail.com</a></p>
+    <p>📷 Follow me on <a href="https://www.instagram.com/unmesh12634" style="color: var(--primary-accent); text-decoration: underline;" target="_blank">Instagram</a> | 🎵 <a href="https://www.youtube.com/channel/UC9qr5anLvw3DBXLvgvvwUMQ" style="color: var(--primary-accent); text-decoration: underline;" target="_blank">YouTube</a></p>
 </footer>
 </html>
