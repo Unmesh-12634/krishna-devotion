@@ -1,19 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta property="og:image" content="https://yourwebsite.com/images/pic3.jpg">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About the Creator - Unmesh Joshi</title>
     <meta name="description" content="Learn more about Unmesh Joshi, the creator of this Radha Krishna Devotion website.">
-    <meta name="keywords" content="Unmesh Joshi, about the author, Radha Krishna blog, devotional content creator">
+    <meta name="keywords" content="Unmesh Joshi, about the author, Radha Krishna blog, devotional content creator, website creator">
     <meta name="author" content="Unmesh Joshi">
     <meta name="robots" content="index, follow">
-    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-    
+
+    <meta property="og:image" content="https://yourwebsite.com/images/radha-krishna-sharing-image.jpg">
+    <meta property="og:title" content="About the Creator - Unmesh Joshi | Radha Krishna Devotion">
+    <meta property="og:description" content="Learn about Unmesh Joshi and the inspiration behind the Radha Krishna Devotion website.">
+    <meta property="og:type" content="website">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Prata&family=Nunito+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-E0FNFMFRPF"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-E0FNFMFRPF');
+    </script>
+
     <style>
         :root {
-            --bg-color: #FFF8F0; /* Warm cream background */
+            --bg-color: #fff5ea; /* Warm cream background */
             --text-color: #4A2C2A; /* Deep warm brown text */
             --primary-accent: #F9A825; /* Vibrant Yellow/Gold */
             --primary-accent-dark: #F57F17; /* Darker Gold/Orange for hover */
@@ -23,163 +39,53 @@
             --white-color: #FFFFFF;
             --shadow-color: rgba(74, 44, 42, 0.1);
             --shadow-color-hover: rgba(74, 44, 42, 0.2);
-            --gradient-start: #e7fdf8;
-            --gradient-mid: #c1fff7;
-            --gradient-end: #affff4;
 
-            --font-heading: 'Great Vibes', cursive;
-            --font-body: 'Poppins', sans-serif;
+            --font-heading: 'Prata', serif;
+            --font-body: 'Nunito Sans', sans-serif;
             --transition-speed: 0.3s;
         }
 
-        body {
-            font-family: var(--font-body);
-            text-align: center;
-            background: linear-gradient(to bottom, #fdf3e7, #ffddc1, #ffbcaf); /* Original background */
-            padding-bottom: 60px; /* Space for fixed footer if needed */
-            color: var(--text-color);
+        * {
             margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
 
-        .container {
-            max-width: 800px;
-            margin: 50px auto; /* Increased top margin */
-            background: rgba(255, 248, 240, 0.85); /* Slightly more opaque cream */
-            padding: 30px;
-            border-radius: 15px;
-            box-shadow: 0px 6px 15px var(--shadow-color-hover); /* More prominent shadow */
-            border: 1px solid var(--secondary-accent); /* Subtle gold border */
+        html {
+            scroll-behavior: smooth;
+            font-size: 16px;
         }
 
-        h1 {
-            font-family: var(--font-heading);
-            font-size: clamp(2.5rem, 8vw, 4rem);
-            color: var(--primary-accent-dark); /* Darker gold for heading */
-            margin-top: 0.5em;
-            margin-bottom: 0.8em;
-            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+        body {
+            background-color: var(--bg-color);
+            font-family: var(--font-body);
+            color: var(--text-color);
+            line-height: 1.6;
+            position: relative; /* Needed for overlay */
+            overflow-x: hidden; /* Prevent horizontal scroll */
+            padding-bottom: 80px; /* Space for footer */
         }
 
-        img {
-            width: 180px; /* Slightly smaller image */
-            height: 180px;
-            object-fit: cover;
-            border-radius: 50%;
-            margin-bottom: 20px;
-            box-shadow: 0px 4px 10px var(--shadow-color);
-            border: 3px solid var(--primary-accent); /* Gold border around image */
-        }
-
-        p {
-            font-size: 1.1rem;
-            line-height: 1.7;
-            margin-bottom: 1.5em;
-        }
-
-        a {
-            color: var(--primary-accent); /* Gold for links */
-            text-decoration: none;
-            font-weight: bold;
-            transition: color var(--transition-speed) ease;
-        }
-
-        a:hover {
-            text-decoration: underline;
-            color: var(--primary-accent-dark); /* Darker gold on hover */
-        }
-
-        h2 {
-            color: var(--primary-accent-dark); /* Darker gold for subheading */
-            font-size: 2rem;
-            margin-top: 2em;
-            margin-bottom: 1em;
-            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
-        }
-
-        .social-links {
-            margin-top: 20px;
-        }
-
-        .social-links a {
-            display: inline-block;
-            margin: 10px;
-            padding: 10px 20px;
-            background: var(--primary-accent); /* Gold background for social links */
-            color: var(--navbar-bg); /* Dark text on social links */
-            border-radius: 5px;
-            transition: background-color var(--transition-speed) ease, transform var(--transition-speed) ease, color var(--transition-speed) ease;
-            box-shadow: 2px 2px 5px var(--shadow-color);
-            font-weight: bold;
-        }
-
-        .social-links a:hover {
-            background: var(--primary-accent-dark); /* Darker gold on hover */
-            color: var(--white-color);
-            transform: scale(1.05);
-            box-shadow: 3px 3px 7px var(--shadow-color-hover);
-        }
-
-        
-        .mobile-nav {
+        /* Overlay for when mobile nav is open */
+        body.mobile-nav-open::before {
+            content: '';
             position: fixed;
             top: 0;
-            left: -100%;
-            width: 250px;
-            height: 100vh;
-            background: var(--navbar-bg); /* Dark brown mobile nav */
-            padding: 20px;
-            transition: 0.3s ease-in-out;
-        }
-
-        .mobile-nav a {
-            display: block;
-            text-decoration: none;
-            color: var(--navbar-text); /* White text on mobile nav */
-            font-size: 1rem;
-            padding: 10px 0;
-            font-weight: 600;
-        }
-
-        .mobile-nav a:hover {
-            background: var(--primary-accent-dark); /* Darker gold on hover */
-        }
-
-        .mobile-nav.open {
             left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 1400; /* Below mobile nav, above content */
+            transition: background-color var(--transition-speed) ease;
         }
 
-        @media screen and (max-width: 768px) {
-            body {
-                font-size: 16px;
-                padding-bottom: 50px; /* Adjust for mobile footer */
-            }
-            .container {
-                margin: 30px auto;
-                padding: 20px;
-            }
-            h1 {
-                font-size: 3rem;
-            }
-            img {
-                width: 150px;
-                height: 150px;
-            }
-            p {
-                font-size: 1rem;
-                line-height: 1.6;
-            }
-            .social-links a {
-                padding: 8px 15px;
-                margin: 8px;
-                font-size: 0.9rem;
-            }
-        }
 
+        /* --- Navbar --- */
         .navbar {
             display: flex;
-            flex-wrap: wrap;
+            flex-wrap: wrap; /* Allow wrapping on smaller screens if needed */
             justify-content: center;
-            background: var(--navbar-bg); /* Dark brown navbar */
+            background: var(--navbar-bg);
             padding: 12px 15px;
             position: sticky;
             top: 0;
@@ -189,128 +95,359 @@
 
         .navbar a {
             text-decoration: none;
-            color: var(--navbar-text); /* White text on navbar */
+            color: var(--navbar-text);
             padding: 8px 18px;
             font-size: 0.95rem;
             font-weight: 600;
             transition: background-color var(--transition-speed) ease, color var(--transition-speed) ease;
             border-radius: 4px;
-            margin: 2px 5px;
+            margin: 2px 5px; /* Spacing for wrapped items */
         }
 
         .navbar a:hover {
-            background: var(--primary-accent); /* Yellow/gold on hover */
-            color: var(--navbar-bg); /* Dark text on hover */
+            background: var(--primary-accent);
+            color: var(--navbar-bg);
         }
 
-        footer {
-            background: var(--navbar-bg); /* Dark background */
-            color: var(--navbar-text); /* White text */
-            text-align: center;
-            padding: 15px;
-            font-size: 0.9rem;
-            margin-top: 30px;
+        /* --- Hamburger Menu --- */
+        .hamburger {
+            display: none; /* Hidden by default */
+            flex-direction: column;
+            justify-content: space-around;
+            width: 30px;
+            height: 25px;
+            cursor: pointer;
+            position: fixed;
+            top: 20px; /* Adjusted position */
+            left: 20px;
+            z-index: 2000; /* Above everything */
+            padding: 5px; /* Clickable area */
+            background-color: rgba(255, 255, 255, 0.8); /* Slight background for visibility */
+            border-radius: 4px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.2);
         }
 
-        footer a {
-            color: var(--primary-accent);
-            text-decoration: underline;
+        .hamburger div {
+            width: 100%;
+            height: 3px;
+            background: var(--primary-accent-dark); /* Use accent color */
+            border-radius: 2px;
+            transition: all 0.4s ease;
         }
-        .hamburger { display: flex; flex-direction: column; cursor: pointer; position: absolute; top: 15px; left: 20px; z-index: 1001; }
-        .hamburger div { width: 20px; height: 2px; background: #ff6600; margin: 3px 0; transition: 0.4s }
+
+        /* Hamburger Animation */
+         .hamburger.active div:nth-child(1) { transform: rotate(-45deg) translate(-5px, 6px); }
+         .hamburger.active div:nth-child(2) { opacity: 0; }
+         .hamburger.active div:nth-child(3) { transform: rotate(45deg) translate(-5px, -6px); }
+
+        /* --- Mobile Nav Panel --- */
         .mobile-nav {
             position: fixed;
             top: 0;
-            left: -100%;
-            width: 250px;
+            left: -100%; /* Start off-screen */
+            width: 280px; /* Slightly wider */
+            max-width: 80%; /* Max width */
             height: 100vh;
-            background: rgba(0, 0, 0, 0.2);
-            padding: 20px;
-            transition: 0.3s ease-in-out;
+            background: var(--navbar-bg); /* Match desktop nav */
+            padding: 60px 20px 20px 20px; /* Padding top for space */
+            transition: left 0.35s ease-in-out;
+            z-index: 1500; /* Below hamburger, above overlay */
+            box-shadow: 3px 0 10px rgba(0, 0, 0, 0.3);
+            overflow-y: auto; /* Scroll if links exceed height */
         }
+
         .mobile-nav a {
             display: block;
             text-decoration: none;
-            color: white;
-            font-size: 20px;
-            padding: 10px 0;
+            color: var(--navbar-text);
+            font-size: 1.1rem;
+            font-weight: 600;
+            padding: 12px 15px; /* More padding */
+            margin-bottom: 5px; /* Space between links */
+            border-radius: 4px;
+            transition: background-color var(--transition-speed) ease, color var(--transition-speed) ease;
         }
+
         .mobile-nav a:hover {
-            background: #4A2C2A;
+            background: var(--primary-accent);
+            color: var(--navbar-bg);
         }
+
         .mobile-nav.open {
-            left: 0;
+            left: 0; /* Slide in */
         }
+
+
+        /* --- Main Content Container --- */
+        .container {
+            max-width: 800px;
+            margin: 40px auto; /* Adjusted margin */
+            background: rgba(255, 255, 255, 0.7); /* Slightly transparent white background */
+            padding: 30px 40px; /* Adjust padding */
+            border-radius: 15px;
+            box-shadow: 0px 6px 20px var(--shadow-color-hover); /* More prominent shadow */
+            border: 1px solid var(--secondary-accent); /* Subtle gold border */
+            text-align: center;
+        }
+
+        .container h1 {
+            font-family: var(--font-heading);
+            font-size: clamp(2.5rem, 7vw, 3.5rem); /* Adjusted heading size */
+            color: var(--primary-accent-dark);
+            margin-top: 0;
+            margin-bottom: 0.8em;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+        }
+
+        .container img.creator-photo { /* Specific class for creator photo */
+            width: 180px;
+            height: 180px;
+            object-fit: cover;
+            border-radius: 50%;
+            margin: 10px auto 25px auto; /* Center image */
+            display: block;
+            box-shadow: 0px 4px 12px var(--shadow-color);
+            border: 4px solid var(--primary-accent); /* Gold border around image */
+        }
+
+        .container p {
+            font-size: 1.1rem;
+            line-height: 1.7;
+            margin-bottom: 1.5em;
+            text-align: left; /* Justify text for readability */
+            text-align: center;
+        }
+        .container p strong {
+            font-weight: 600;
+             color: var(--primary-accent-dark); /* Make strong text stand out slightly */
+        }
+
+        .container a {
+            color: var(--primary-accent);
+            text-decoration: none;
+            font-weight: 600; /* Bold links */
+            transition: color var(--transition-speed) ease;
+        }
+
+        .container a:hover {
+            text-decoration: underline;
+            color: var(--primary-accent-dark);
+        }
+
+        .container h2 {
+            font-family: var(--font-heading); /* Use heading font for sub-heading too */
+            color: var(--primary-accent-dark);
+            font-size: clamp(1.8rem, 5vw, 2.5rem); /* Responsive size */
+            margin-top: 2em;
+            margin-bottom: 1em;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        /* --- Social Links --- */
+        .social-links {
+            margin-top: 30px;
+            text-align: center; /* Center the links block */
+        }
+
+        .social-links a {
+            display: inline-flex; /* Use flex for icon alignment */
+            align-items: center;
+            gap: 8px; /* Space between icon and text */
+            margin: 8px 10px; /* Adjust margin */
+            padding: 10px 20px;
+            background: var(--primary-accent);
+            color: var(--navbar-bg); /* Dark text */
+            border-radius: 25px; /* Pill shape */
+            transition: background-color var(--transition-speed) ease, transform var(--transition-speed) ease, color var(--transition-speed) ease;
+            box-shadow: 2px 2px 5px var(--shadow-color);
+            font-weight: 600;
+            text-decoration: none; /* Remove underline */
+        }
+         .social-links a i {
+             font-size: 1.1em; /* Slightly larger icon */
+         }
+
+
+        .social-links a:hover {
+            background: var(--primary-accent-dark);
+            color: var(--white-color);
+            transform: translateY(-3px) scale(1.03); /* Lift effect */
+            box-shadow: 3px 5px 10px var(--shadow-color-hover);
+            text-decoration: none; /* Ensure no underline on hover */
+        }
+
+
+        /* --- Footer --- */
+        footer {
+            margin-top: 50px;
+            padding: 30px 20px;
+            background-color: var(--navbar-bg); /* Match navbar */
+            color: var(--navbar-text);
+            opacity: 0.95;
+            font-size: 0.9rem;
+            text-align: center;
+            line-height: 1.8;
+            position: relative; /* Keep it in flow */
+            bottom: 0;
+            width: 100%;
+        }
+
+        footer strong {
+            color: var(--primary-accent); /* Highlight name */
+            font-weight: 600;
+        }
+        footer p {
+           color: var(--navbar-text); /* Ensure p tags inherit color */
+           margin-bottom: 0.5em;
+           opacity: 0.9;
+           text-align: center; /* Override container text-align */
+        }
+
+        /* --- Responsive Design --- */
         @media screen and (max-width: 768px) {
-            body { font-size: 16px; }
-            img { max-width: 100%; height: auto; }
+            .navbar {
+                display: none; /* Hide desktop nav */
+            }
+            .hamburger {
+                display: flex; /* Show hamburger */
+            }
+             .container {
+                margin: 30px 20px; /* Adjust margin for smaller screens */
+                padding: 25px;
+             }
+             .container img.creator-photo {
+                 width: 150px;
+                 height: 150px;
+             }
+             .container p {
+                 font-size: 1rem;
+             }
+             .social-links a {
+                 padding: 8px 15px;
+                 margin: 6px 8px;
+                 font-size: 0.9rem;
+             }
+             .container h1 { font-size: 2.8rem; }
+             .container h2 { font-size: 2rem; }
+
+             footer { padding: 20px 15px; }
         }
+
+        @media screen and (max-width: 480px) {
+            html { font-size: 15px; }
+            body { padding-bottom: 70px; } /* Adjust footer space */
+
+            .container {
+                margin: 20px 15px;
+                padding: 20px;
+                border-radius: 10px;
+            }
+             .container img.creator-photo {
+                 width: 120px;
+                 height: 120px;
+                 border-width: 3px;
+             }
+            .container p {
+                font-size: 0.95rem;
+                line-height: 1.6;
+            }
+            .social-links a {
+                padding: 7px 12px;
+                margin: 5px;
+                font-size: 0.85rem;
+                gap: 5px;
+             }
+             .container h1 { font-size: 2.2rem; }
+             .container h2 { font-size: 1.7rem; }
+
+            .hamburger { top: 15px; left: 15px; } /* Adjust hamburger position */
+            .mobile-nav { width: 250px; } /* Adjust width */
+
+            footer { padding: 15px 10px; font-size: 0.85rem; }
+        }
+
     </style>
-
-    <script>
-        function toggleMenu() {
-            var mobileNav = document.getElementById("mobileNav");
-            if (mobileNav.classList.contains("open")) {
-                mobileNav.classList.remove("open");
-            } else {
-                mobileNav.classList.add("open");
-            }
-        }
-    </script>
-
-    <script>
-        function toggleMenu() {
-            var mobileNav = document.getElementById("mobileNav");
-            if (mobileNav.classList.contains("open")) {
-                mobileNav.classList.remove("open");
-            } else {
-                mobileNav.classList.add("open");
-            }
-        }
-    </script>
 </head>
 
 <body>
-    <div class="hamburger" onclick="toggleMenu()">
+    <div class="hamburger" id="hamburgerIcon" onclick="toggleMenu()">
         <div></div>
         <div></div>
         <div></div>
     </div>
 
     <div class="mobile-nav" id="mobileNav">
-        <a href="index.html">Home</a>
-        <a href="2nd.html">Krishna Pictures</a>
-        <a href="3rd.html">Krishna Songs</a>
-        <a href="4th.html">Shree Krishna Names</a>
-        <a href="5th.html">Krishna Shlokas</a>
-        <a href="7thqueots.html">Daily Krishna Says</a>
-        <a href="8th.html">Stories</a>
-        <a href ="9th.html">Quiz</a>
-        <a href="6thfeedback.html">Feedback</a>
-        <a href="creator.html">About Creator</a>
+         <a href="index.html" onclick="toggleMenu()">Home</a> <a href="2nd.html" onclick="toggleMenu()">Krishna Pictures</a>
+         <a href="3rd.html" onclick="toggleMenu()">Krishna Songs</a>
+         <a href="4th.html" onclick="toggleMenu()">Shree Krishna Names</a>
+         <a href="5th.html" onclick="toggleMenu()">Krishna Shlokas</a>
+         <a href="7thqueots.html" onclick="toggleMenu()">Daily Krishna Says</a>
+         <a href="8th.html" onclick="toggleMenu()">Stories</a>
+         <a href="9th.html" onclick="toggleMenu()">Quiz</a>
+         <a href="6thfeedback.html" onclick="toggleMenu()">Feedback</a>
+         <a href="creator.html" onclick="toggleMenu()">About Creator</a>
     </div>
 
-    <div class="container">
+    <div class="navbar">
+         <a href="index.html">Home</a>
+         <a href="2nd.html">Krishna Pictures</a>
+         <a href="3rd.html">Krishna Songs</a>
+         <a href="4th.html">Shree Krishna Names</a>
+         <a href="5th.html">Krishna Shlokas</a>
+         <a href="7thqueots.html">Daily Krishna Says</a>
+         <a href="8th.html">Stories</a>
+         <a href="9th.html">Quiz</a>
+         <a href="6thfeedback.html">Feedback</a>
+         <a href="creator.html">About Creator</a>
+    </div>
+
+    <main class="container">
         <h1>About the Creator</h1>
-        <img src="mypic.jpg" alt="Unmesh Joshi">
-        <p>Hello! My name is <strong>Unmesh Joshi</strong>, and I am the creator of this **Radha Krishna Devotion** website. My love for **spirituality, music, and web development** inspired me to build this platform to share the **divine teachings, stories, and devotion of Lord Krishna**.</p>
-        
-        <p>As a **guitarist and music editor**, I also create devotional tunes and **Krishna-themed music edits** on YouTube and Instagram.</p>
-        
-        <p>This website is a humble attempt to bring together beautiful **stories, bhajans, names, and teachings** of Lord Krishna for all devotees. I hope you find peace, love, and inspiration here. 🙏</p>
 
-        <h2>🌐 Connect with Me</h2>
+        <img src="mypic.jpg" alt="Photo of Unmesh Joshi" class="creator-photo">
+
+        <p>Hello! My name is <strong>Unmesh Joshi</strong>, and I am the creator of this <strong>Radha Krishna Devotion</strong> website. My love for <strong>spirituality, music, and web development</strong> inspired me to build this platform to share the <strong>divine teachings, stories, and devotion of Lord Krishna</strong>.</p>
+
+        <p>As a <strong>guitarist and music editor</strong>, I also enjoy creating devotional tunes and <strong>Krishna-themed music edits</strong> which I sometimes share online.</p>
+
+        <p>This website is a humble attempt to bring together beautiful <strong>stories, bhajans, names, and teachings</strong> of Lord Krishna for all devotees. I hope you find peace, love, and inspiration here. 🙏</p>
+
+        <h2><i class="fas fa-link"></i> Connect with Me</h2>
         <div class="social-links">
-          <a href="https://www.youtube.com/channel/UC9qr5anLvw3DBXLvgvvwUMQ" target="_blank">🎵 YouTube</a>
-            <a href="https://www.instagram.com/unmesh12634" target="_blank">📷 Instagram</a>
-            <a href="https://wa.me/918209559793" target="_blank">WhatsApp</a>
-            <a href="mailto:unmeshjoshi083@gmail.com">📩 Email Me</a>
-             </div>
-              <a href="index.html">🏠 Back to Home</a>
-    </div>
-     <footer class="footer">
-        <p>✨ Created with ❤️ by <strong>Unmesh Joshi</strong></p>
+            <a href="#" target="_blank" rel="noopener noreferrer"><i class="fab fa-youtube"></i> YouTube</a>
+            <a href="https://www.instagram.com/unmesh12634" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i> Instagram</a>
+            <a href="https://wa.me/918209559793" target="_blank" rel="noopener noreferrer"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+            <a href="mailto:unmeshjoshi083@gmail.com"><i class="fas fa-envelope"></i> Email Me</a>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; <span id="current-year"></span> Radhe Krishna Devotion. All Rights Reserved.</p>
+        <p>✨ Crafted with Bhakti by <strong>Unmesh Joshi</strong></p>
     </footer>
+
+    <script>
+        // --- Mobile Menu Toggle ---
+        function toggleMenu() {
+            var mobileNav = document.getElementById("mobileNav");
+            var hamburgerIcon = document.getElementById("hamburgerIcon");
+            var body = document.body;
+
+            mobileNav.classList.toggle("open");
+            hamburgerIcon.classList.toggle("active"); // For icon animation
+            body.classList.toggle("mobile-nav-open"); // For overlay and preventing body scroll
+
+           
+            if (body.classList.contains("mobile-nav-open")) {
+               
+            } else {
+                 
+            }
+
+        }
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+    </script>
 
 </body>
 </html>
