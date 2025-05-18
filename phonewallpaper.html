@@ -15,7 +15,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Krishna Pictures & Wallpapers</title>
-     <link rel="website icon" type="png" href="profile.jpg">
     <style>
         :root {
             --bg-color: #FFF8F0; /* Warm cream background */
@@ -34,38 +33,14 @@
             --transition-speed: 0.3s;
         }
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+        * { margin: 0; padding: 0;box-sizing: border-box; }
 
-        html {
-            scroll-behavior: smooth;
-            font-size: 16px;
-        }
+        html {scroll-behavior: smooth;font-size: 16px; }
 
-        body {
-            background-color: var(--bg-color);
-            font-family: var(--font-body);
-            color: var(--text-color);
-            line-height: 1.6;
-            position: relative; /* Needed for overlay */
-            overflow-x: hidden; /* Prevent horizontal scroll */
-        }
+        body {background-color: var(--bg-color);font-family: var(--font-body);color: var(--text-color);line-height: 1.6; position: relative; /* Needed for overlay */ overflow-x: hidden; /* Prevent horizontal scroll */ }
 
         /* Overlay for when mobile nav is open */
-        body.mobile-nav-open::before {
-            content: '';
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.5);
-            z-index: 1400; /* Below mobile nav, above content */
-            transition: background-color var(--transition-speed) ease;
-        }
+        body.mobile-nav-open::before { content: ''; position: fixed; top: 0; left: 0;width: 100%;height: 100%;background-color: rgba(0, 0, 0, 0.5);z-index: 1400; transition: background-color var(--transition-speed) ease;}
 
 
         h1, h2 {
@@ -332,34 +307,15 @@
         }
 
         footer strong {
-            color: var(--primary-accent); /* Highlight name */
-            font-weight: 600;
-        }
-        footer p {
-           color: var(--navbar-text); /* Ensure p tags inherit color */
-           margin-bottom: 0.5em;
-           opacity: 0.9;
-        }
+            color: var(--primary-accent); font-weight: 600 }
+        footer p {color: var(--navbar-text); margin-bottom: 0.5em;opacity: 0.9;}
 
-        /* --- Responsive Design --- */
         @media screen and (max-width: 768px) {
-            .navbar {
-                display: none; /* Hide desktop nav */
-            }
-            .hamburger {
-                display: flex; /* Show hamburger */
-            }
-            .gallery-container {
-                padding: 20px;
-                gap: 20px;
-                grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            }
-            .gallery-item img {
-                height: 250px; /* Adjust height for tablets */
-            }
-             .pc-wallpapers .gallery-item img {
-                 height: 180px; /* Adjust PC height for tablets */
-             }
+            .navbar {display: none; /* Hide desktop nav */}
+            .hamburger {display: flex; /* Show hamburger */}
+            .gallery-container {   padding: 20px;gap: 20px;grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); }
+            .gallery-item img {height: 250px; /* Adjust height for tablets */}
+             .pc-wallpapers .gallery-item img {height: 180px; /* Adjust PC height for tablets */}
             h1 { margin-top: 1em; }
             h2 { margin-top: 2em; }
         }
@@ -369,27 +325,12 @@
 
             .gallery-container {
                 padding: 15px;
-                gap: 15px;
-                grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Smaller columns */
-            }
-            .gallery-item img {
-                height: 200px; /* Adjust height for mobile */
-            }
-             .pc-wallpapers .gallery-item img {
-                 height: 150px; /* Adjust PC height for mobile */
-             }
-             .download-link {
-                 font-size: 0.8rem;
-                 padding: 5px 12px;
-             }
-             .view-more-button {
-                 padding: 8px 20px;
-                 font-size: 0.9rem;
-             }
-             .quote-section {
-                 padding: 20px 25px;
-                 margin: 30px auto;
-             }
+                gap: 15px;grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Smaller columns */}
+            .gallery-item img {height: 200px; /* Adjust height for mobile */}
+             .pc-wallpapers .gallery-item img {height: 150px; /* Adjust PC height for mobile */}
+             .download-link {font-size: 0.8rem;padding: 5px 12px;}
+             .view-more-button { padding: 8px 20px;font-size: 0.9rem; }
+             .quote-section { padding: 20px 25px; margin: 30px auto; }
              .quote-section blockquote { font-size: 1.2rem; }
              h1 { font-size: 2rem; }
              h2 { font-size: 1.4rem; }
@@ -520,13 +461,61 @@
             <img src="pic12.jpg" alt="Krishna Image">
             <a class="download-link" href="pic12.jpeg" download>Download</a>
         </div>
-           <div class =" gallery-item">
+        <div class =" gallery-item">
             <img src="new1.jpg" alt=" krishna image">
             <a class=" download-link" href="new1.jpg" download> Download</a>
         </div>
         <div class =" gallery-item">
             <img src="new2.jpg" alt=" krishna image">
             <a class=" download-link" href="new2.jpg" download> Download</a>
+        </div>
+        <div class =" gallery-item">
+            <img src="krishna asthetic 1.jpg" alt=" krishna image">
+            <a class=" download-link" href="krishna asthetic 1.jpg" download> Download</a>
+        </div>
+        <div class =" gallery-item">
+            <img src="krishna asthetic 2.jpg" alt=" krishna image">
+            <a class=" download-link" href="krishna asthetic 2.jpg" download> Download</a>
+        </div>
+        <div class =" gallery-item">
+            <img src="krishna asthetic 3.jpg" alt=" krishna image">
+            <a class=" download-link" href="krishna asthetic 3.jpg" download> Download</a>
+        </div>
+            <div class =" gallery-item">
+            <img src="krishna asthetic 4.jpg" alt=" krishna image">
+            <a class=" download-link" href="krishna asthetic 4.jpg" download> Download</a>
+        </div>
+            <div class =" gallery-item">
+            <img src="krishna asthetic 5.jpg" alt=" krishna image">
+            <a class=" download-link" href="krishna asthetic 5.jpg" download> Download</a>
+        </div>
+        <div class =" gallery-item">
+            <img src="krishna asthetic 6.jpg" alt=" krishna image">
+            <a class=" download-link" href="krishna asthetic 6.jpg" download> Download</a>
+        </div>
+        <div class =" gallery-item">
+            <img src="krishna asthetic 7.jpg" alt=" krishna image">
+            <a class=" download-link" href="krishna asthetic 7.jpg" download> Download</a>
+        </div>
+        <div class =" gallery-item">
+            <img src="krishna asthetic 8.jpg" alt=" krishna image">
+            <a class=" download-link" href="krishna asthetic 8.jpg" download> Download</a>
+        </div>
+        <div class =" gallery-item">
+            <img src="krishna asthetic 9.jpg" alt=" krishna image">
+            <a class=" download-link" href="krishna asthetic 9.jpg" download> Download</a>
+        </div>
+        <div class =" gallery-item">
+            <img src="krishna asthetic 10.jpg" alt=" krishna image">
+            <a class=" download-link" href="krishna asthetic 10.jpg" download> Download</a>
+        </div>
+        <div class =" gallery-item">
+            <img src="krishna asthetic 11.jpg" alt=" krishna image">
+            <a class=" download-link" href="krishna asthetic 11.jpg" download> Download</a>
+        </div>
+        <div class =" gallery-item">
+            <img src="krishna radha hands.jpg" alt=" krishna image">
+            <a class=" download-link" href="krishna radha hands.jpg" download> Download</a>
         </div>
     </div>
     <hr>
@@ -547,7 +536,22 @@
     }
 </script>
 
+<script>
+  window.addEventListener('DOMContentLoaded', () => {
+    const container = document.querySelector('.gallery-container');
+    const items = Array.from(container.children);
+
+    for (let i = items.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [items[i], items[j]] = [items[j], items[i]];
+    }
+
+    container.innerHTML = '';
+    items.forEach(item => container.appendChild(item));
+  });
+</script>
     
+
     <hr>
     <marquee><h3>यदा यदा हि धर्मस्य ग्लानिर्भवति भारत। अभ्युत्थानम् अधर्मस्य तदात्मानं सृजाम्यहम्॥ परित्राणाय साधूनां विनाशाय च दुष्कृताम्। धर्मसंस्थापनार्थाय संभवामि युगे युगे॥</h3></marquee>
     <hr>
@@ -558,7 +562,6 @@
 </footer>
 
 <script>
-    // --- Mobile Menu Toggle ---
     function toggleMenu() {
         var mobileNav = document.getElementById("mobileNav");
         var hamburgerIcon = document.getElementById("hamburgerIcon");
@@ -568,7 +571,6 @@
         hamburgerIcon.classList.toggle("active"); // For icon animation (optional)
         body.classList.toggle("mobile-nav-open"); // For overlay and preventing body scroll (optional)
 
-        // Optional: Prevent body scroll when mobile menu is open
         if (body.classList.contains("mobile-nav-open")) {
             body.style.overflow = 'hidden';
         } else {
@@ -576,7 +578,6 @@
         }
     }
 
-    // --- Auto Year Update ---
     document.getElementById('current-year').textContent = new Date().getFullYear();
 </script>
 </html>
