@@ -1,13 +1,16 @@
 from flask import Flask, render_template, request
 import mysql.connector
+import os
+from dotenv import load_dotenv
 
+load_dotenv()
 app = Flask(__name__)
 
 db = mysql.connector.connect(
-    host="localhost",
-    user="root",
-    password="Unii@12634",
-    database="Krishna_devotion"
+    host=os.environ.get("DB_HOST"),
+    user=os.environ.get("DB_USER"),
+    password=os.environ.get("DB_PASSWORD"),
+    database=os.environ.get("DB_NAME")
 )
 cursor = db.cursor(dictionary=True)
 
