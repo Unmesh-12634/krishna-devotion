@@ -37,5 +37,5 @@ def feedbacks():
     data = cursor.fetchall()
     return render_template('view_feedback.html', feedbacks=data)
 
-if __name__ == '__main__':
-    app.run(debug=True)
+if __name__ == "__main__":
+    app.run(host='0.0.0.0', port=10000)  # Port 10000 is good for Render
