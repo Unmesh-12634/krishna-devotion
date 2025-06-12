@@ -4,251 +4,69 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Krishna Devotion - Feedback</title>
-    <link rel="website icon" type="png" href="profile.jpg">
     <meta name="description" content="Share your feedback on Krishna Devotion. Explore Krishna songs, pictures, shlokas, and more. Hare Krishna!">
     <link rel="icon" type="image/png" href="https://yourwebsite.com/favicon.png">
     <style>
-        :root {
-            --bg-color: #fff5ea; /* Light cream background as requested */
-            --text-color: #4A2C2A; /* Deep warm brown text */
-            --primary-accent: #F9A825; /* Vibrant Yellow/Gold */
-            --primary-accent-dark: #F57F17; /* Darker Gold/Orange for hover */
-            --secondary-accent: #DAA520; /* Muted gold (can use for borders/details) */
-            --navbar-bg: #4A2C2A; /* Using dark brown for contrast */
-            --navbar-text: #FFFFFF;
-            --white-color: #FFFFFF;
-            --shadow-color: rgba(74, 44, 42, 0.1);
-            --shadow-color-hover: rgba(74, 44, 42, 0.2);
-            --gradient-start: #e7fdf8; /* Keeping these for potential subtle accents */
-            --gradient-mid: #c1fff7;
-            --gradient-end: #affff4;
 
-            --font-heading: 'Great Vibes', cursive;
-            --font-body: Arial, sans-serif;
-            --transition-speed: 0.3s;
-        }
+        body {  background: linear-gradient(to bottom, #ffedd5, #fcd34d); font-family: Arial, sans-serif;margin: 0;padding: 0; padding-top: 60px;  }
+        .header {background: #ff6600;padding: 10px;position: fixed;width: 100%;top: 0;z-index: 1000;display: flex;justify-content: center;align-items: center;}
+        .navbar a {color: white;padding: 10px 15px;text-decoration: none;font-weight: bold;}
+        .navbar a:hover {background: #e65c00;border-radius: 5px;}
+        .hamburger {display: none;flex-direction: column;cursor: pointer;position: absolute;left: 20px;top: 15px;background: transparent;border: none;  padding: 5px;}
+        .hamburger div {width: 25px;height: 3px;background: white;margin: 4px 0;}
+        .mobile-nav {position: fixed;top: 0;left: -100%;width: 250px;height: 100vh;background: rgba(255, 102, 0, 0.95);padding-top: 60px;transition: left 0.3s ease-in-out;}
+        .mobile-nav a {display: block;color: white;font-size: 18px;padding: 15px 20px;text-decoration: none;font-weight: bold;}
+        .mobile-nav a:hover {background: #e65c00;}
+        .mobile-nav.open {left: 0;}
+        @media screen and (max-width: 768px) {.navbar { display: none; }.hamburger { display: flex; }}
+        main {padding: 20px 0;}
+        .form-container, .reviews-container {margin: 20px auto; padding: 25px;border: 2px solid #ff6600;border-radius: 10px;background: white;width: 80%;max-width: 700px;box-shadow: 0 4px 8px rgba(0,0,0,0.1);transition: box-shadow 0.3s ease-in-out;}
+        .form-container:hover, .reviews-container:hover {box-shadow: 0 8px 16px rgba(255, 102, 0, 0.3);}
+        form label {font-weight: bold;display: block;margin-top: 15px;  margin-bottom: 5px;}
+        form input, form textarea {width: 100%;padding: 12px;font-size: 16px;border-radius: 5px;border: 1px solid #ccc;box-sizing: border-box;} form button {width: 100%;padding: 12px;margin-top: 20px;font-size: 18px;border-radius: 5px;border: none;background-color: #ff6600;color: white;font-weight: bold;cursor: pointer;  transition: background-color 0.3s;}
+        form button:hover {background-color: #e65c00; }
+        .rating-container {margin-top: 15px;}
+        #star-container {font-size: 30px;color: #ffcc00;cursor: pointer;}
+        .star {transition: transform 0.2s;display: inline-block;}
+        .star:hover {transform: scale(1.2);}
+        .reviews-container h2 {text-align: center;  color: #e65c00;}
+        .review-entry {background: #fff7e6;padding: 15px;margin: 15px 0;border-left: 5px solid #ff6600;border-radius: 5px;}
+        .review-entry p {margin: 5px 0;}
+        .footer {background: #222;color: #fff;text-align: center;padding: 20px 0 10px;}
+        .footer .quote {font-size: 16px;font-style: italic;color: #ccc;margin: 0 20px 20px;}
+        .social-links { margin-bottom: 20px;}
+        .social-links a { margin: 0 10px; }
+        .social-links img { width: 40px; transition: transform 0.3s;}
+        .social-links img:hover {transform: scale(1.2); }
+        .footer-bottom {background: #111; padding: 10px;font-size: 14px;color: #ccc;}
+        .review-entry {
+    border-left: 5px solid #ff6600;
+    background: #fff7e6;
+    padding: 15px;
+    margin: 20px 0;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+.fade-in {
+  animation: fadeIn 1.2s ease-in-out;
+}
 
-        body {
-            background-color: var(--bg-color);
-            font-family: var(--font-body);
-            text-align: center;
-            margin: 0;
-            padding: 0;
-        }
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
 
-        .navbar {
-            background: var(--navbar-bg); /* Dark brown navbar */
-            padding: 12px 15px;
-            position: sticky;
-            width: 100%;
-            top: 0;
-            z-index: 1000;
-            display: flex;
-            justify-content: center;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-        }
 
-        .navbar a {
-            color: var(--navbar-text); /* White text on navbar */
-            padding: 8px 18px;
-            text-decoration: none;
-            font-weight: bold;
-            font-size: 0.95rem;
-            transition: background-color var(--transition-speed) ease, color var(--transition-speed) ease;
-            border-radius: 4px;
-            margin: 2px 5px;
-        }
-
-        .navbar a:hover {
-            background: var(--primary-accent); /* Yellow/gold on hover */
-            color: var(--navbar-bg); /* Dark text on hover */
-        }
-
-        .form-container, .reviews-container {
-            margin-top: 80px;
-            padding: 25px; /* Slightly increased padding */
-            border: 1px solid var(--secondary-accent); /* Muted gold border */
-            border-radius: 10px;
-            background: rgba(255, 255, 255, 0.85); /* Slightly transparent white */
-            display: inline-block;
-            width: 85%; /* Slightly wider */
-            transition: box-shadow var(--transition-speed) ease-in-out;
-            overflow: auto;
-            box-shadow: 0px 4px 10px var(--shadow-color);
-        }
-
-        .form-container:hover, .reviews-container:hover {
-            box-shadow: 0px 8px 16px var(--shadow-color-hover);
-        }
-
-        .social-links {
-            margin-top: 20px;
-            text-align: center;
-        }
-
-        .social-links a {
-            display: inline-block;
-            margin: 15px;
-        }
-
-        .social-links img {
-            width: 45px; /* Slightly larger social icons */
-            transition: transform 0.3s ease-in-out;
-        }
-
-        .social-links img:hover {
-            transform: scale(1.1);
-        }
-
-        footer {
-            background: var(--navbar-bg); /* Dark background */
-            color: var(--navbar-text); /* White text */
-            padding: 20px 0;
-            text-align: center;
-            font-family: var(--font-body);
-            margin-top: 30px;
-            font-size: 0.9rem;
-        }
-
-        .footer a {
-            color: var(--primary-accent);
-            text-decoration: underline;
-        }
-
-        .hamburger {
-            display: none;
-            flex-direction: column;
-            cursor: pointer;
-            position: absolute;
-            left: 20px;
-            top: 15px;
-        }
-
-        .hamburger div {
-            width: 25px; /* Slightly wider hamburger lines */
-            height: 3px; /* Slightly thicker hamburger lines */
-            background: var(--text-color); /* Dark brown hamburger */
-            margin: 5px 0;
-            transition: 0.4s;
-        }
-
-        .mobile-nav {
-            position: fixed;
-            top: 0;
-            left: -100%;
-            width: 250px;
-            height: 100vh;
-            background: var(--navbar-bg); /* Dark brown mobile nav */
-            padding: 20px;
-            transition: 0.3s ease-in-out;
-        }
-
-        .mobile-nav a {
-            display: block;
-            text-decoration: none;
-            color: var(--navbar-text); /* White text on mobile nav */
-            font-size: 1rem;
-            padding: 10px 0;
-            font-weight: 600;
-        }
-
-        .mobile-nav a:hover {
-            background: var(--primary-accent-dark); /* Darker gold on hover */
-        }
-
-        .mobile-nav.open {
-            left: 0;
-        }
-
-        @media screen and (max-width: 768px) {
-            .nav-links {
-                display: none;
-            }
-            .hamburger {
-                display: flex;
-            }
-            .navbar {
-                display: none; /* Ensure desktop nav is hidden on mobile */
-            }
-            .form-container, .reviews-container {
-                margin-top: 70px;
-                width: 95%;
-                padding: 15px;
-            }
-            .social-links img {
-                width: 35px;
-                margin: 8px;
-            }
-        }
-
-        h1 {
-            color: var(--primary-accent-dark); /* Darker gold for the main heading */
-            background: rgba(255, 245, 234, 0.7); /* Slightly transparent background for the heading */
-            padding: 15px;
-            border-radius: 10px;
-            display: inline-block;
-            margin-top: 20px;
-            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
-            font-size: clamp(2rem, 7vw, 3rem);
-        }
-
-        h2 {
-            color: var(--primary-accent-dark); /* Darker gold for the subheading */
-            margin-top: 30px;
-            margin-bottom: 15px;
-            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
-        }
-
-        .reviews-container iframe {
-            pointer-events: auto;
-        }
-
-        #backToTop {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            display: none;
-            background: var(--primary-accent-dark); /* Darker gold for the button */
-            color: var(--white-color);
-            padding: 10px 15px;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            font-size: 0.9rem;
-            transition: background-color var(--transition-speed) ease, color var(--transition-speed) ease, box-shadow var(--transition-speed) ease;
-            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
-        }
-
-        #backToTop:hover {
-            background: var(--primary-accent); /* Lighter gold on hover */
-            color: var(--navbar-bg);
-            box-shadow: 3px 3px 7px rgba(0, 0, 0, 0.2);
-        }
     </style>
 </head>
 <body>
 
-    <div class="hamburger" onclick="toggleMenu()">
-        <div></div>
-        <div></div>
-        <div></div>
-    </div>
+    <header class="header">
+        <button class="hamburger" onclick="toggleMenu()" aria-label="Toggle navigation menu">
+            <div></div><div></div><div></div>
+        </button>
 
-    <div class="mobile-nav" id="mobileNav">
-        <a href="index.html" onclick="closeMenu()">Home</a>
-        <a href="2nd.html" onclick="closeMenu()">Krishna Pictures</a>
-        <a href="3rd.html" onclick="closeMenu()">Krishna Songs</a>
-        <a href="4th.html" onclick="closeMenu()">Shree Krishna Names</a>
-        <a href="5th.html" onclick="closeMenu()">Krishna Shlokas</a>
-        <a href="7thqueots.html" onclick="closeMenu()">Daily Krishna Says</a>
-        <a href="8th.html" onclick="closeMenu()">Stories</a>
-        <a href="9th.html">Quiz</a>
-        <a href="6thfeedback.html" onclick="closeMenu()">Feedback</a>
-        <a href="creator.html" onclick="closeMenu()">About Creator</a>
-    </div>
-
-    <div class="navbar">
-        <div class="nav-links">
+        <nav class="navbar">
             <a href="index.html">Home</a>
             <a href="2nd.html">Krishna Pictures</a>
             <a href="3rd.html">Krishna Songs</a>
@@ -259,74 +77,192 @@
             <a href="9th.html">Quiz</a>
             <a href="6thfeedback.html">Feedback</a>
             <a href="creator.html">About Creator</a>
-        </div>
-    </div>
+        </nav>
+    </header>
 
+    <nav class="mobile-nav" id="mobileNav">
+        <a href="index.html" onclick="closeMenu()">Home</a>
+        <a href="2nd.html" onclick="closeMenu()">Krishna Pictures</a>
+        <a href="3rd.html" onclick="closeMenu()">Krishna Songs</a>
+        <a href="4th.html" onclick="closeMenu()">Shree Krishna Names</a>
+        <a href="5th.html" onclick="closeMenu()">Krishna Shlokas</a>
+        <a href="7thqueots.html" onclick="closeMenu()">Daily Krishna Says</a>
+        <a href="8th.html" onclick="closeMenu()">Stories</a>
+        <a href="9th.html" onclick="closeMenu()">Quiz</a>
+        <a href="6thfeedback.html" onclick="closeMenu()">Feedback</a>
+        <a href="creator.html" onclick="closeMenu()">About Creator</a>
+    </nav>
+
+    <main>
+        <div class="form-container">
+            <h2 style="text-align:center; color: #e65c00;">Share Your Feedback</h2>
+            <form id="feedbackForm">
+
+
+
+                <label for="name">Your Name:</label>
+                <input type="text" id="name" name="name" placeholder="Enter your name" required>
+
+                <label for="email">Your Email (optional):</label>
+                <input type="email" id="email" name="email" placeholder="Enter your email">
+                
+                <label for="message">Your Feedback:</label>
+                <textarea id="message" name="message" placeholder="Write your valuable feedback here..." rows="5" required></textarea>
+
+                <div class="rating-container">
+                    <label>Your Rating:</label>
+                    <div id="star-container" title="Rate us">
+                        <span class="star" data-value="1">☆</span>
+                        <span class="star" data-value="2">☆</span>
+                        <span class="star" data-value="3">☆</span>
+                        <span class="star" data-value="4">☆</span>
+                        <span class="star" data-value="5">☆</span>
+                    </div>
+                    <input type="hidden" name="rating" id="rating" required>
+                </div>
+
+                <button type="submit">Submit Feedback</button>
+            </form>
+            <div id="thankYouMessage" class="fade-in" style="display:none; margin-top: 20px; text-align: center; color: #e65c00; font-size: 18px; font-weight: bold;"></div>
+
+</div>
+
+        </div>
+
+        <div class="reviews-container">
+            <h2>📝 What Devotees Are Saying</h2>
+            
+            {% if feedbacks %}
+      {% for fb in feedbacks %}
+          <div class="review-entry feedback-item"
+               {% if loop.index > 10 %}style="display: none;"{% endif %}>
+              <p><strong>{{ fb.name }}</strong></p>
+              <p>{{ fb.message }}</p>
+              <p>⭐ Rating: {{ fb.rating }} / 5</p>
+              <p style="font-size: 12px; color: gray;">
+                  Submitted on: {{ fb.date_submitted.strftime('%d %b %Y, %I:%M %p') }}
+              </p>
+          </div>
+      {% endfor %}
+      <div style="text-align:center;">
+          <button id="showMoreBtn" style="padding: 10px 20px; margin-top: 10px; background-color: #ff6600; color: white; border: none; border-radius: 5px; cursor: pointer;">
+              Show More
+          </button>
+      </div>
+  {% else %}
+      <p style="text-align: center;">No feedback yet. Be the first to write! 🕉️</p>
+  {% endif %}
+
+        </div>
+    </main>
+
+    <footer class="footer">
+        <p class="quote">“सर्वधर्मान्परित्यज्य मामेकं शरणं व्रज।” – श्रीमद्भगवद्गीता 18.66</p>
+        
+        <div class="social-links">
+            <a href="https://www.youtube.com/channel/UC9qr5anLvw3DBXLvgvvwUMQ" target="_blank" aria-label="Our YouTube Channel"><img src="https://cdn-icons-png.flaticon.com/512/1384/1384060.png" alt="YouTube"></a>
+            <a href="https://wa.me/918209559793" target="_blank" aria-label="Chat on WhatsApp"><img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp"></a>
+            <a href="mailto:unmeshjoshi083@gmail.com" aria-label="Send us an Email"><img src="https://cdn-icons-png.flaticon.com/512/732/732200.png" alt="Email"></a>
+        </div>
+        
+        <div class="footer-bottom">
+            © <span id="year"></span> Radhe Krishna Devotion. All Rights Reserved.
+        </div>
+    </footer>
+    
     <script>
+        // --- MOBILE MENU SCRIPT ---
+        const mobileNav = document.getElementById("mobileNav");
+        const hamburger = document.querySelector(".hamburger");
+
         function toggleMenu() {
-            var mobileNav = document.getElementById("mobileNav");
             mobileNav.classList.toggle("open");
         }
+
         function closeMenu() {
-            document.getElementById("mobileNav").classList.remove("open");
+            mobileNav.classList.remove("open");
         }
+
+        
         document.addEventListener("click", function(event) {
-            var mobileNav = document.getElementById("mobileNav");
-            var hamburger = document.querySelector(".hamburger");
             if (!mobileNav.contains(event.target) && !hamburger.contains(event.target)) {
                 closeMenu();
             }
         });
+
+        const stars = document.querySelectorAll('.star');
+        const ratingInput = document.getElementById('rating');
+
+        stars.forEach((star) => {
+            star.addEventListener('click', () => {
+                const rating = star.getAttribute('data-value');
+                ratingInput.value = rating;
+
+                stars.forEach((s, index) => {
+                    s.innerHTML = (index < rating) ? '★' : '☆';
+                });
+            });
+        });
+
+        document.getElementById('year').innerText = new Date().getFullYear();
     </script>
-    <br>
-    <hr>
-    <h1>💬 Share Your Feedback</h1>
+   <script>
+const thankYouMessages = [
+  "🌼 Radhe Radhe! Your kind feedback adds fragrance to our devotion.",
+  "🕉️ Your words are a reflection of true bhakti. Thank you!",
+  "🌷 Thank you for sharing your divine thoughts. May Lord Krishna always guide your heart.",
+  "💫 Your feedback is like a lamp lighting our path. Jai Shree Krishna!",
+  "🎶 Every word you share adds melody to our devotion. Thank you from the bottom of our hearts!",
+  "✨ Your message touched our hearts. Thank you for making this platform more soulful.",
+  "🌿 Like Vrindavan’s breeze, your words bring peace to our soul."
+];
 
-    <div class="form-container">
-        <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdI6rKDr-_bWcoE-vHoGxFSkYF6TWGxMrymyymmAHu36LIcGA/viewform?embedded=true" width="100%" height="600" frameborder="0"></iframe>
-    </div>
-    <hr>
-    <h2>📝 User Reviews</h2>
-    <hr>
-    <div class="reviews-container">
-        <iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQRl0oW9g-MR_wj_gYy7smOgSadkZXWvaGHWMBaClM2KSRCzT7ksTs5hXhkMoi3H9SuL96_yKGW_sTT/pubhtml"
-                width="100%"
-                height="400">
-        </iframe>
-    </div>
-    <button onclick="scrollToTop()" id="backToTop">⬆ Top</button>
+document.getElementById('feedbackForm').addEventListener('submit', function (e) {
+  e.preventDefault();
 
-<script>
-    window.onscroll = function() { showScrollButton(); };
-    function showScrollButton() {
-        let button = document.getElementById("backToTop");
-        if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
-            button.style.display = "block";
-        } else {
-            button.style.display = "none";
-        }
+  const formData = new FormData(this);
+  const userName = formData.get('name') || 'Devotee';
+
+  fetch('/', {
+    method: 'POST',
+    body: formData
+  })
+  .then(response => {
+    if (response.ok) {
+      const randomIndex = Math.floor(Math.random() * thankYouMessages.length);
+      const message = thankYouMessages[randomIndex];
+
+      const thankYouDiv = document.getElementById('thankYouMessage');
+      thankYouDiv.innerHTML = `<p><strong>🙏 ${userName},</strong> ${message}</p>`;
+      thankYouDiv.style.display = 'block';
+
+      this.reset();
+      document.getElementById('rating').value = '';
+      document.querySelectorAll('.star').forEach(s => s.innerHTML = '☆');
+    } else {
+      alert("Something went wrong. Please try again.");
     }
-    function scrollToTop() {
-        window.scrollTo({top: 0, behavior: 'smooth'});
-    }
-
+  });
+});
 </script>
 
-    <h2>📲 Connect With Me</h2>
-    <p>Follow me for updates, new content, and Krishna devotion! 🙏✨</p>
+<script>
+document.getElementById("showMoreBtn").addEventListener("click", function () {
+    const hiddenItems = document.querySelectorAll(".feedback-item[style*='display: none']");
+    let count = 0;
 
-    <div class="social-links">
-        <a href="https://www.youtube.com/channel/UC9qr5anLvw3DBXLvgvvwUMQ" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/1384/1384060.png" alt="YouTube"></a>
-        <a href="https://wa.me/918209559793" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp"></a>
-        <a href="mailto:unmeshjoshi083@gmail.com"><img src="https://cdn-icons-png.flaticon.com/512/732/732200.png" alt="Email"></a>
-    </div>
+    hiddenItems.forEach(item => {
+        if (count < 5) {  // reveal 5 at a time
+            item.style.display = "block";
+            count++;
+        }
+    });
 
-    <footer>
-        <p>“सर्वधर्मान्परित्यज्य मामेकं शरणं व्रज।” – श्रीमद्भगवद्गीता 18.66</p>
-        <p>© <span id="year"></span> Radhe Krishna Devotion. All Rights Reserved.</p>
-    </footer>
-
-    <script>document.getElementById('year').innerText = new Date().getFullYear();</script>
+    if (document.querySelectorAll(".feedback-item[style*='display: none']").length === 0) {
+        this.style.display = "none";  // hide button if no more feedbacks
+    }
+});
+</script>
 
 </body>
 </html>
